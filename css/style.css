@@ -7,8 +7,8 @@
 :root {
   --navy: #0A1628;
   --navy-light: #111d33;
-  --gold: #C9982A;
-  --gold-hover: #daa830;
+  --gold: #D4A42A;
+  --gold-hover: #e0b030;
   --off-white: #F8F6F1;
   --cool-gray: #6B7280;
   --coral: #E8703A;
@@ -50,13 +50,13 @@ a:hover { color: var(--gold-hover); }
 ul, ol { list-style: none; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'DM Serif Display', Georgia, serif;
   color: var(--navy);
   line-height: 1.2;
   font-weight: 700;
 }
 
-h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+h1 { font-size: clamp(1.8rem, 4vw, 3rem); }
 h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
 h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
 h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
@@ -216,12 +216,12 @@ p { margin-bottom: 1rem; }
 }
 
 .nav-logo img {
-  height: 40px;
+  height: 56px;
   width: auto;
 }
 
 .nav-logo span {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
@@ -473,7 +473,7 @@ p { margin-bottom: 1rem; }
 }
 
 .stat-item .stat-number {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 2.4rem;
   font-weight: 700;
   color: var(--navy);
@@ -531,6 +531,9 @@ p { margin-bottom: 1rem; }
 .pathway-card {
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
 }
 
 .pathway-card .pathway-details {
@@ -552,7 +555,8 @@ p { margin-bottom: 1rem; }
   font-size: .9rem;
   font-weight: 600;
   color: var(--gold);
-  margin-top: 12px;
+  margin-top: auto;
+  padding-top: 12px;
   transition: gap var(--transition);
 }
 
@@ -572,7 +576,7 @@ p { margin-bottom: 1rem; }
 
 .testimonial-card::before {
   content: '\201C';
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 4rem;
   color: var(--gold);
   opacity: .3;
@@ -846,7 +850,7 @@ p { margin-bottom: 1rem; }
   align-items: center;
   justify-content: center;
   color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 2.2rem;
   font-weight: 700;
 }
@@ -894,7 +898,7 @@ p { margin-bottom: 1rem; }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Serif Display', serif;
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -917,6 +921,8 @@ p { margin-bottom: 1rem; }
   text-align: center;
   transition: all var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card:hover {
@@ -955,7 +961,7 @@ p { margin-bottom: 1rem; }
 }
 
 .pricing-amount {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 3rem;
   font-weight: 700;
   color: var(--navy);
@@ -998,7 +1004,8 @@ p { margin-bottom: 1rem; }
   flex-shrink: 0;
 }
 
-.pricing-card .btn { width: 100%; }
+.pricing-card .btn { width: 100%; margin-top: auto; }
+.pricing-features { flex: 1; }
 
 .alt-payment {
   max-width: 600px;
@@ -1136,7 +1143,7 @@ p { margin-bottom: 1rem; }
 }
 
 .data-card .data-number {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--gold);
