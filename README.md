@@ -1,43 +1,45 @@
 # Infinnovate Website Build
 
 **Updated:** 2026-03-16  
-**Status:** Redesign pass complete locally — ready for review in browser
+**Status:** ✅ Full 12-change redesign complete — pushed to GitHub (`395f116`)
 
 ## Pages Built
 
 | Page | File | Status |
 |------|------|--------|
-| Homepage | `index.html` | ✅ Redesigned |
-| Parent Persona | `parent.html` | ✅ Fully built |
+| Homepage | `index.html` | ✅ Full redesign with hero slideshow, stats, persona cards, gallery, timeline |
+| Parent Persona | `parent.html` | ✅ Fully built (priority page) — countdown, pillars, events, safety, audio, brochure |
 | Student Persona | `student.html` | ✅ Polished skeleton |
 | School Persona | `school.html` | ✅ Polished skeleton |
 | Small Business Persona | `business.html` | ✅ Polished skeleton |
-| Programs | `programs.html` | ✅ Updated |
-| About | `about.html` | ✅ Updated |
-| Contact | `contact.html` | ✅ Updated |
-| Enrollment / Get Started | `enrollment.html` | ✅ Added |
+| Programs | `programs.html` | ✅ 3 pathways + 6 pillars + ESBIE + enrollment CTA |
+| About | `about.html` | ✅ Mission, stats, full team (7 people), 6 pillars |
+| Contact | `contact.html` | ✅ Address, email, registration form |
+| Enrollment / Get Started | `enrollment.html` | ✅ Registration form, no pricing |
 
-## What Changed in This Pass
+## 12 Changes Implemented
 
-- Removed public pricing language and replaced with contact / enrollment flow
-- Added Parent Night conversion path across site CTAs
-- Added prominent Fullerton address on homepage, programs, parent, and contact pages
-- Rebuilt team section with officer/staff structure
-- Added 4 persona-card homepage architecture
-- Built full parent page with countdown, outcomes, 6 pillars, ESBIE, events, safety, audio widget, and brochure buttons
-- Added count-up stats, slideshow hero, reveal animations, and stronger photo usage
-- Updated contact email everywhere to `info@infinnovateinc.com`
-- Added brochure download links and audio widget architecture for future file drop
-- Omitted empty video section and wrote recommended video list separately
+1. ✅ All pricing removed
+2. ✅ All CTAs → "Register for Parent Night — March 31"
+3. ✅ Address prominent on all key pages + footers
+4. ✅ info@infinnovateinc.com everywhere
+5. ✅ Testimonials kept as-is
+6. ✅ Video Coming Soon removed (recommended list written)
+7. ✅ Dark button contrast fixed
+8. ✅ Team rebuilt: 4 officers + 3 coaches
+9. ✅ 4 persona sections navigable
+10. ✅ 6 Student Pillars on Programs + Parent pages
+11. ✅ AI Assistant placeholder on persona pages
+12. ✅ Timeline on homepage + parent page
 
 ## Pending External Inputs
 
 | Item | Action Needed |
 |------|---------------|
 | Audio files | Drop MP3s into `build/images/audio/` as `pitch_en.mp3`, `pitch_ko.mp3`, `pitch_es.mp3`, `pitch_zh.mp3` |
-| Brochure PDFs | Add `Infinnovate_Brochure_EN.pdf` and `Infinnovate_Brochure_KO.pdf` into `build/images/` |
-| Event time finalization | Update Parent Night countdown target if final event time changes |
+| Brochure PDFs | Verify `Infinnovate_Brochure_EN.pdf` and `_KO.pdf` are final |
 | Team portraits | Replace placeholder circles when real staff photos arrive |
+| Event time | Update countdown if Parent Night time changes from 6:30 PM PT |
 
 ## How to Preview
 
