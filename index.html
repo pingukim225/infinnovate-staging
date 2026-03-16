@@ -1,30 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Infinnovate — Parent Night in Fullerton</title>
+<meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infinnovate — Coming Soon</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: '#0A1628',
+          gold: '#C9982A',
+          coral: '#E8703A',
+          cream: '#F8F6F1',
+          sage: '#1B6B45'
+        },
+        fontFamily: {
+          display: ['Cormorant Garamond', 'serif'],
+          sans: ['Inter', 'sans-serif']
+        },
+        boxShadow: {
+          glow: '0 24px 60px rgba(10,22,40,.18)'
+        }
+      }
+    }
+  }
+</script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0A1628;font-family:'Inter',sans-serif;color:#fff;text-align:center;padding:40px 20px}
-.wrap{max-width:600px}
-.logo{height:50px;margin-bottom:40px}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin-bottom:16px;line-height:1.2}
-h1 span{color:#C9982A}
-p{color:rgba(255,255,255,.7);font-size:1.1rem;line-height:1.7;margin-bottom:32px}
-.contact{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#C9982A;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:.95rem;transition:all .3s}
-.contact:hover{background:#daa830;transform:translateY(-2px)}
-.sub{margin-top:40px;font-size:.85rem;color:rgba(255,255,255,.4)}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,sans-serif;background:#fff;color:#0A1628}
+  .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center;transform:scale(1.05);animation:kenburns 18s ease-in-out infinite alternate}
+  .hero-slide.active{opacity:1}
+  @keyframes kenburns{0%{transform:scale(1.03) translate3d(0,0,0)}100%{transform:scale(1.12) translate3d(-1%, -1%, 0)}}
+  .glass{backdrop-filter: blur(12px); background: rgba(255,255,255,.1)}
+  .reveal{opacity:0; transform:translateY(28px); transition:all .8s ease}
+  .reveal.show{opacity:1; transform:translateY(0)}
+  .card-lift{transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease}
+  .card-lift:hover{transform:translateY(-8px); box-shadow:0 24px 50px rgba(10,22,40,.12); border-color:#C9982A}
+  .nav-link{position:relative}
+  .nav-link:after{content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#C9982A; transition:width .25s ease}
+  .nav-link:hover:after,.nav-link.active:after{width:100%}
+  .count-box{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16)}
+  .ticker{overflow:hidden;white-space:nowrap}
+  .ticker-track{display:inline-flex;gap:2.5rem; padding-left:100%; animation:ticker 22s linear infinite}
+  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+  .masonry{columns:2; column-gap:1rem}
+  .masonry img{break-inside:avoid; margin-bottom:1rem}
+  @media (min-width:1024px){.masonry{columns:4}}
+  @keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,152,42,.5)}50%{box-shadow:0 0 24px 8px rgba(201,152,42,.35)}}
+  .pulse-gold{animation:pulse-gold 2.2s ease-in-out infinite}
+  @media (max-width:767px){.masonry{columns:1}.hero-slide{animation:none;transform:none}}
 </style>
+
 </head>
 <body>
-<div class="wrap">
-<img src="images/WHITE LOGO_bold (1).png" alt="Infinnovate" class="logo">
-<h1>Something <span>Infinite</span> is Coming</h1>
-<p>We're building something special — an academy that equips the next generation with financial literacy, business leadership, and AI skills.</p>
-<a href="mailto:jimmy.kim@infinnovateinc.com" class="contact">Contact Us →</a>
-<p class="sub">Infinnovate, Inc. · Fullerton, CA<br>© 2026 All rights reserved.</p>
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-9 w-auto rounded">
+        <span class="font-display text-2xl font-semibold text-navy">Infinnovate</span>
+      </a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="parent.html">I'm a Parent</a>
+        <a class="nav-link" href="programs.html">Programs</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="enrollment.html">Get Started</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+      <a href="enrollment.html#register" class="hidden lg:inline-flex items-center rounded-full bg-gold px-5 py-3 text-sm font-bold text-white shadow-lg shadow-gold/20">Register for Parent Night — March 31</a>
+      <button id="menuBtn" class="lg:hidden rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold">Menu</button>
+    </div>
+    <div id="mobileNav" class="hidden lg:hidden pb-4">
+      <div class="grid gap-3 text-sm font-semibold text-slate-700">
+        <a href="index.html">Home</a>
+        <a href="parent.html">I'm a Parent</a>
+        <a href="student.html">I'm a Student</a>
+        <a href="school.html">I'm a School</a>
+        <a href="business.html">I'm a Small Business</a>
+        <a href="programs.html">Programs</a>
+        <a href="about.html">About</a>
+        <a href="enrollment.html">Get Started</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main>
+  <section class="relative min-h-[88vh] overflow-hidden bg-navy text-white">
+    <div class="hero-slide" style="background-image:url('images/IMG_7625.webp')"></div>
+    <div class="hero-slide" style="background-image:url('images/IMG_6506.webp')"></div>
+    <div class="hero-slide" style="background-image:url('images/IMG_7097.webp')"></div>
+    <div class="hero-slide" style="background-image:url('images/IMG_9010.webp')"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/45"></div>
+    <div class="relative max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-32">
+      <div class="max-w-3xl reveal">
+        <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-gold">Parent Night • March 31 • Fullerton</div>
+        <h1 class="mt-6 font-display text-6xl sm:text-7xl lg:text-8xl leading-[.95]">Believe in Being Infinite™</h1>
+        <p class="mt-6 max-w-2xl text-lg md:text-xl leading-8 text-slate-200">Where students become leaders, entrepreneurs, and innovators through financial literacy, AI fluency, and real-world business experiences.</p>
+        
+<div class="grid grid-cols-4 gap-3 max-w-xl pt-6">
+  <div class="count-box rounded-2xl p-4 text-center"><div id="days" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Days</div></div>
+  <div class="count-box rounded-2xl p-4 text-center"><div id="hours" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Hours</div></div>
+  <div class="count-box rounded-2xl p-4 text-center"><div id="minutes" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Minutes</div></div>
+  <div class="count-box rounded-2xl p-4 text-center"><div id="seconds" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Seconds</div></div>
 </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="enrollment.html#register" class="pulse-gold rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg shadow-gold/30">Register for Parent Night — March 31</a>
+          <a href="parent.html" class="rounded-full border border-white/20 glass px-7 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white">Explore the Parent Experience</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<section class="bg-navy text-white py-5 border-y border-white/10">
+  <div class="ticker text-sm font-semibold uppercase tracking-[0.22em] text-gold/90">
+    <div class="ticker-track">
+      <span>190+ Students Served</span>
+      <span>19+ Events Delivered</span>
+      <span>75% Confidence Increase</span>
+      <span>32 Active Students in Pilot</span>
+      <span>Fullerton School District Partner</span>
+      <span>190+ Students Served</span>
+      <span>19+ Events Delivered</span>
+      <span>75% Confidence Increase</span>
+      <span>32 Active Students in Pilot</span>
+      <span>Fullerton School District Partner</span>
+    </div>
+  </div>
+</section>
+
+  <section class="bg-cream py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="reveal max-w-3xl mb-12">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Choose your path</div>
+        <h2 class="font-display text-5xl mt-3">One academy. Four ways in.</h2>
+        <p class="mt-4 text-slate-600 text-lg leading-8">Infinnovate serves families, students, schools, and community partners — but right now the Parent journey is the main event.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <a href="parent.html" class="card-lift reveal rounded-[2rem] border-2 border-gold bg-white p-8 shadow-glow">
+          <div class="text-4xl">🛡️</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Parent</h3><p class="mt-3 text-slate-600 leading-7">See how Infinnovate prepares your child for life with confidence, business fluency, and practical skills.</p>
+        </a>
+        <a href="student.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🎓</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Student</h3><p class="mt-3 text-slate-600 leading-7">A polished preview of the student experience, with the full portal coming soon.</p></a>
+        <a href="school.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🏫</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a School</h3><p class="mt-3 text-slate-600 leading-7">District-aligned enrichment, partnership-ready delivery, and a clear local track record.</p></a>
+        <a href="business.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🤝</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Small Business</h3><p class="mt-3 text-slate-600 leading-7">Community partnerships, sponsorship opportunities, and AI-powered business support.</p></a>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-2 items-center">
+      <div class="reveal">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our new home</div>
+        <h2 class="font-display text-5xl mt-3">Purpose-built for the next generation</h2>
+        <p class="mt-5 text-lg text-slate-600 leading-8">A dedicated Fullerton space designed for hands-on learning, team problem-solving, parent transparency, and a premium academy feel.</p>
+        <div class="mt-8 rounded-3xl bg-navy text-white p-7 shadow-glow">
+          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Visit us</div>
+          <div class="mt-3 text-2xl font-semibold">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 reveal">
+        <img src="images/View01_revised.webp" alt="Infinnovate classroom render front view" class="rounded-[2rem] shadow-glow h-full object-cover">
+        <img src="images/View02_revised.webp" alt="Infinnovate classroom render alternate angle" class="rounded-[2rem] shadow-glow h-full object-cover md:translate-y-8">
+      </div>
+    </div>
+  </section>
+  <section class="bg-navy text-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="reveal max-w-3xl mb-12">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Infinnovate difference</div>
+        <h2 class="font-display text-5xl mt-3">More than tutoring. This is life readiness.</h2>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-3">
+        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-8"><div class="text-4xl">🎯</div><h3 class="mt-5 font-display text-3xl">Not tutoring — life readiness</h3><p class="mt-4 text-slate-300 leading-8">We bridge the gap between strong grades and the practical confidence students need to thrive in the real world.</p></div>
+        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-8"><div class="text-4xl">🧭</div><h3 class="mt-5 font-display text-3xl">The ESBIE journey</h3><p class="mt-4 text-slate-300 leading-8">Employee → Start-Up → Big Business → Investor → Entrepreneur. Students learn by moving through the real rhythm of value creation.</p></div>
+        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-8"><div class="text-4xl">🤖</div><h3 class="mt-5 font-display text-3xl">AI as a learning partner</h3><p class="mt-4 text-slate-300 leading-8">AI is applied to branding, research, and problem-solving so students learn modern tools with responsibility and purpose.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="py-20 lg:py-28 bg-cream">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div>
+          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Real students. Real energy.</div>
+          <h2 class="font-display text-5xl mt-3">A program parents can actually picture their child in.</h2>
+        </div>
+        <p class="max-w-2xl text-slate-600 text-lg leading-8">From classroom collaboration to Parkchella-style showcases, the visual proof matters. This is a real academy with real engagement.</p>
+      </div>
+      <div class="masonry reveal">
+        <img src="images/IMG_7097.webp" alt="Students doing hands-on activity" class="rounded-[1.6rem] shadow-lg w-full">
+        <img src="images/IMG_9010.webp" alt="Student presenting at whiteboard" class="rounded-[1.6rem] shadow-lg w-full">
+        <img src="images/IMG_7569.webp" alt="Students outdoors on sports field" class="rounded-[1.6rem] shadow-lg w-full">
+        <img src="images/IMG_7041.webp" alt="Young student engaged in classroom activity" class="rounded-[1.6rem] shadow-lg w-full">
+        <img src="images/IMG_7478.webp" alt="Students collaborating in group work" class="rounded-[1.6rem] shadow-lg w-full">
+        <img src="images/IMG_6564.webp" alt="Group activity inside Infinnovate" class="rounded-[1.6rem] shadow-lg w-full">
+        <img src="images/IMG_7732.webp" alt="Obeya room and progress wall" class="rounded-[1.6rem] shadow-lg w-full">
+        <img src="images/IMG_6359.webp" alt="Outdoor student event with food" class="rounded-[1.6rem] shadow-lg w-full">
+      </div>
+    </div>
+  </section>
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-6 md:grid-cols-3">
+      <div class="reveal rounded-[2rem] border border-slate-200 p-8 text-center"><div class="font-display text-6xl text-gold font-bold" data-counter="190" data-suffix="+">0+</div><div class="mt-2 font-semibold">Students Served</div></div>
+      <div class="reveal rounded-[2rem] border border-slate-200 p-8 text-center"><div class="font-display text-6xl text-gold font-bold" data-counter="19" data-suffix="+">0+</div><div class="mt-2 font-semibold">Events Delivered</div></div>
+      <div class="reveal rounded-[2rem] border border-slate-200 p-8 text-center"><div class="font-display text-6xl text-gold font-bold" data-counter="32">0</div><div class="mt-2 font-semibold">Active Students in Pilot</div></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-16 grid gap-6 lg:grid-cols-2">
+      <div class="reveal rounded-[2rem] bg-cream p-8 border border-slate-200"><p class="text-lg leading-8 text-slate-700">“I’m glad my daughter is getting real-world, practical experience.”</p><div class="mt-5 text-sm font-bold uppercase tracking-[0.2em] text-gold">Parent perspective</div></div>
+      <div class="reveal rounded-[2rem] bg-cream p-8 border border-slate-200"><p class="text-lg leading-8 text-slate-700">“I love how the program is structured. There’s a clear learning path.”</p><div class="mt-5 text-sm font-bold uppercase tracking-[0.2em] text-gold">Student perspective</div></div>
+    </div>
+  </section>
+  <section class="bg-navy text-white py-20">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:p-12">
+        <div class="grid gap-8 lg:grid-cols-3 lg:items-center">
+          <div>
+            <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Your timeline</div>
+            <h2 class="font-display text-5xl mt-3">What happens next</h2>
+          </div>
+          <div class="lg:col-span-2 grid gap-5 md:grid-cols-3">
+            <div class="rounded-2xl bg-white/5 p-6 border border-white/10"><div class="text-gold font-bold">NOW</div><div class="mt-2 text-xl font-semibold">Parent Night registration open</div></div>
+            <div class="rounded-2xl bg-white/5 p-6 border border-white/10"><div class="text-gold font-bold">MARCH 31</div><div class="mt-2 text-xl font-semibold">Parent Night — meet the team</div></div>
+            <div class="rounded-2xl bg-white/5 p-6 border border-white/10"><div class="text-gold font-bold">MAY–SEPT 2026</div><div class="mt-2 text-xl font-semibold">Cohort #1 and Summer Academy</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+    <div class="grid gap-10 lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-5">
+          <img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-10 w-auto">
+          <div>
+            <div class="font-display text-3xl font-semibold">Infinnovate</div>
+            <div class="text-sm text-slate-300">Believe in Being Infinite™</div>
+          </div>
+        </div>
+        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
+      </div>
+      <div>
+        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3>
+        <p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p>
+      </div>
+      <div>
+        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3>
+        <a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a>
+        <a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a>
+      </div>
+    </div>
+    <div class="mt-10 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
+      <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
+      <div class="flex gap-5">
+        <a href="parent.html">Parents</a>
+        <a href="programs.html">Programs</a>
+        <a href="enrollment.html">Enrollment</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  document.querySelectorAll('[data-counter]').forEach(el => {
+    const target = Number(el.dataset.counter);
+    const suffix = el.dataset.suffix || '';
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        let start = 0; const dur = 1600; const startTime = performance.now();
+        function tick(now){
+          const progress = Math.min((now-startTime)/dur,1);
+          const value = Math.floor(progress*target);
+          el.textContent = value + suffix;
+          if(progress < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
+        }
+        requestAnimationFrame(tick); io.disconnect();
+      });
+    }, {threshold:.4});
+    io.observe(el);
+  });
+
+  const deadline = new Date('2026-03-31T18:30:00-07:00').getTime();
+  function paintCountdown(){
+    const now = new Date().getTime();
+    const dist = deadline - now;
+    const ids = ['days','hours','minutes','seconds'];
+    if (dist <= 0){ ids.forEach(id=>{ const el = document.getElementById(id); if(el) el.textContent='0'; }); return; }
+    const d = Math.floor(dist / (1000*60*60*24));
+    const h = Math.floor((dist % (1000*60*60*24))/(1000*60*60));
+    const m = Math.floor((dist % (1000*60*60))/(1000*60));
+    const s = Math.floor((dist % (1000*60))/1000);
+    [['days',d],['hours',h],['minutes',m],['seconds',s]].forEach(([id,val])=>{ const el=document.getElementById(id); if(el) el.textContent = String(val).padStart(2,'0'); });
+  }
+  paintCountdown(); setInterval(paintCountdown,1000);
+
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length) {
+    let idx = 0; slides[0].classList.add('active');
+    setInterval(()=>{ slides[idx].classList.remove('active'); idx = (idx + 1) % slides.length; slides[idx].classList.add('active'); }, 5000);
+  }
+
+  const audioButtons = document.querySelectorAll('[data-audio-btn]');
+  const audioEl = document.getElementById('audioPlayer');
+  const audioTitle = document.getElementById('audioTitle');
+  const audioStatus = document.getElementById('audioStatus');
+  audioButtons.forEach(btn => btn.addEventListener('click', () => {
+    if (btn.dataset.disabled === 'true') return;
+    audioButtons.forEach(b=>b.classList.remove('ring-2','ring-gold'));
+    btn.classList.add('ring-2','ring-gold');
+    if (audioEl) audioEl.src = btn.dataset.src;
+    if (audioTitle) audioTitle.textContent = btn.dataset.label;
+    if (audioStatus) audioStatus.textContent = 'Ready to play';
+  }));
+  if (audioEl && audioStatus){ audioEl.addEventListener('play', ()=> audioStatus.textContent='Playing'); audioEl.addEventListener('pause', ()=> audioStatus.textContent='Paused'); }
+
+  const registerForm = document.getElementById('registerForm');
+  if (registerForm){
+    registerForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const fd = new FormData(registerForm);
+      const subject = encodeURIComponent('Parent Night Registration Inquiry');
+      const body = encodeURIComponent(`Name: ${fd.get('name')}
+Email: ${fd.get('email')}
+Student Age/Grade: ${fd.get('student')}
+Message: ${fd.get('message')}`);
+      window.location.href = `mailto:info@infinnovateinc.com?subject=${subject}&body=${body}`;
+    });
+  }
+</script>
+
 </body>
 </html>
