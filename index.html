@@ -104,6 +104,24 @@
   .count-box{transition:background .3s}
   .count-box:hover{background:rgba(255,255,255,.12)}
 
+  /* === Premium Pillar Cards v2 === */
+  .pillar-card-v2{transition:transform .4s cubic-bezier(.25,.46,.45,.94),box-shadow .4s ease,border-color .4s ease}
+  .pillar-card-v2:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(10,22,40,.1);border-color:rgba(201,152,42,.3)}
+  .pillar-icon-wrap{transition:transform .3s,box-shadow .3s}
+  .pillar-card-v2:hover .pillar-icon-wrap{transform:scale(1.08);box-shadow:0 8px 20px rgba(201,152,42,.15)}
+
+  /* === Future-Proof Cards === */
+  .fp-card{min-height:140px;display:flex;flex-direction:column;justify-content:flex-start}
+
+  /* === Journey card connector arrows (desktop) === */
+  @media(min-width:768px){
+    .journey-card{position:relative}
+    .journey-card:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:#C9982A;font-size:1.2rem;font-weight:700;z-index:2}
+  }
+
+  /* === Why Slideshow cells === */
+  .why-slide-cell{background:#f0ede6}
+
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Halyard+Display:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -158,10 +176,16 @@
         <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-gold">Parent Night • March 31 • Fullerton</div>
         <h1 class="mt-6 font-display text-6xl sm:text-7xl lg:text-8xl leading-[.95]">Believe in Being Infinite™</h1>
         <p class="mt-6 max-w-3xl text-xl md:text-2xl leading-8 text-slate-200">Education Was Designed for the Past.<br>We Build for the Future.</p>
-        <div class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-          <p>Infinnovate is a next-generation academy where students learn<br>business, finance, leadership, and AI through real-world experience.</p>
-          <p class="mt-5">Not tutoring.<br>Not test prep.<br>Not theory.</p>
-          <p class="mt-5">Real skills.<br>Real confidence.<br>Real life readiness.</p>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Infinnovate is a next-generation academy where students learn<br>business, finance, leadership, and AI through real-world experience.</p>
+
+        <!-- 3×2 Matrix: "Not…" vs "Real…" -->
+        <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-0 max-w-lg" role="table" aria-label="What we are not vs what we are">
+          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium">Not tutoring.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold">Real skills.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium">Not test prep.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold">Real confidence.</div>
+          <div class="py-2 text-lg text-slate-400 font-medium">Not theory.</div>
+          <div class="py-2 text-lg text-gold font-bold">Real life readiness.</div>
         </div>
 
 <div class="grid grid-cols-4 gap-3 max-w-xl pt-6">
@@ -210,17 +234,23 @@
           </div>
         </div>
         <div class="reveal">
-          <div class="grid grid-cols-2 gap-5">
-            <img src="images/IMG_6506.webp" alt="Students collaborating" class="rounded-[1.6rem] shadow-glow w-full h-56 object-cover">
-            <img src="images/IMG_7097.webp" alt="Presentation practice" class="rounded-[1.6rem] shadow-glow w-full h-56 object-cover md:translate-y-6">
-            <img src="images/IMG_9010.webp" alt="Hands-on learning" class="rounded-[1.6rem] shadow-glow w-full h-56 object-cover">
-            <div class="rounded-[1.6rem] bg-white/80 backdrop-blur border border-slate-200 p-6 flex items-center justify-center text-center">
-              <div>
-                <div class="text-gold text-xs font-bold uppercase tracking-[0.22em]">Real experience</div>
-                <div class="font-display text-2xl mt-2">Business • Money • Leadership • AI</div>
-              </div>
+          <!-- Premium image slideshow with uniform grid -->
+          <div class="grid grid-cols-2 gap-4" id="whySlideshow">
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_6506.webp" alt="Students collaborating" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            </div>
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_7097.webp" alt="Presentation practice" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            </div>
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_9010.webp" alt="Hands-on learning" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            </div>
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_7625.webp" alt="Student engagement" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
             </div>
           </div>
+          <!-- Slideshow dots -->
+          <div class="flex justify-center gap-2 mt-4" id="whyDots"></div>
         </div>
       </div>
     </div>
@@ -248,7 +278,7 @@
   </section>
 
   <!-- 5. ESBIE model / Journey -->
-  <section class="py-20 lg:py-28 bg-mesh-light section-divider">
+  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Journey</div>
@@ -272,45 +302,18 @@
         <p class="mt-4 text-lg text-slate-700 font-semibold">They learn how the world works.</p>
       </div>
 
-      <!-- Horizontal timeline -->
-      <div class="reveal relative mb-10 hidden md:block">
-        <div class="absolute left-0 right-0 top-10 h-0.5 bg-slate-200"></div>
-        <div class="grid grid-cols-5 gap-4">
-          <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-cream border border-slate-200 flex items-center justify-center shadow-sm font-display text-3xl text-gold">E</div>
-            <div class="mt-3 text-sm font-semibold">Employee</div>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-cream border border-slate-200 flex items-center justify-center shadow-sm font-display text-3xl text-gold">S</div>
-            <div class="mt-3 text-sm font-semibold">Start-Up</div>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-cream border border-slate-200 flex items-center justify-center shadow-sm font-display text-3xl text-gold">B</div>
-            <div class="mt-3 text-sm font-semibold">Big Business</div>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-cream border border-slate-200 flex items-center justify-center shadow-sm font-display text-3xl text-gold">I</div>
-            <div class="mt-3 text-sm font-semibold">Investor</div>
-          </div>
-          <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-cream border border-slate-200 flex items-center justify-center shadow-sm font-display text-3xl text-gold">E</div>
-            <div class="mt-3 text-sm font-semibold">Entrepreneur</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid gap-5 md:grid-cols-5 reveal">
-        <div class="rounded-[2rem] border border-slate-200 bg-cream p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Employee</div><p class="mt-3 text-slate-600 leading-7">Learn responsibility, teamwork, communication, and what it means to contribute inside a real organization.</p></div>
-        <div class="rounded-[2rem] border border-slate-200 bg-cream p-6 text-left h-full"><div class="font-display text-5xl text-gold">S</div><div class="mt-3 text-xl font-semibold">Start-Up</div><p class="mt-3 text-slate-600 leading-7">Learn creativity, initiative, problem solving, and how to build something new from the ground up.</p></div>
-        <div class="rounded-[2rem] border border-slate-200 bg-cream p-6 text-left h-full"><div class="font-display text-5xl text-gold">B</div><div class="mt-3 text-xl font-semibold">Big Business</div><p class="mt-3 text-slate-600 leading-7">Learn systems, scale, leadership, structure, and how larger organizations make decisions and deliver results.</p></div>
-        <div class="rounded-[2rem] border border-slate-200 bg-cream p-6 text-left h-full"><div class="font-display text-5xl text-gold">I</div><div class="mt-3 text-xl font-semibold">Investor</div><p class="mt-3 text-slate-600 leading-7">Learn money, risk, opportunity, and how to evaluate ideas, businesses, and long-term value.</p></div>
-        <div class="rounded-[2rem] border border-slate-200 bg-cream p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Entrepreneur</div><p class="mt-3 text-slate-600 leading-7">Bring it all together — leadership, initiative, resilience, and execution — to create, launch, and lead.</p></div>
+      <div class="grid gap-5 md:grid-cols-5 reveal-stagger reveal">
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Employee</div><p class="mt-3 text-slate-600 leading-7">Learn responsibility, teamwork, communication, and what it means to contribute inside a real organization.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">S</div><div class="mt-3 text-xl font-semibold">Start-Up</div><p class="mt-3 text-slate-600 leading-7">Learn creativity, initiative, problem solving, and how to build something new from the ground up.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">B</div><div class="mt-3 text-xl font-semibold">Big Business</div><p class="mt-3 text-slate-600 leading-7">Learn systems, scale, leadership, structure, and how larger organizations make decisions and deliver results.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">I</div><div class="mt-3 text-xl font-semibold">Investor</div><p class="mt-3 text-slate-600 leading-7">Learn money, risk, opportunity, and how to evaluate ideas, businesses, and long-term value.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Entrepreneur</div><p class="mt-3 text-slate-600 leading-7">Bring it all together — leadership, initiative, resilience, and execution — to create, launch, and lead.</p></div>
       </div>
     </div>
   </section>
 
   <!-- 6. AI will change every career — Future Proof -->
-  <section class="py-20 lg:py-28 bg-depth-cream section-divider relative overflow-hidden">
+  <section class="py-20 lg:py-28 bg-mesh-light section-divider relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Future-proof</div>
@@ -335,73 +338,104 @@
           </div>
         </div>
 
-        <!-- Right: AI capability cards grid -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="rounded-2xl bg-white/80 backdrop-blur border border-slate-200 p-5 hover:border-gold/30 hover:shadow-lg transition-all duration-300">
+        <!-- Right: AI capability cards grid — aligned 2-col with depth -->
+        <div class="grid grid-cols-2 gap-4 reveal-stagger reveal">
+          <div class="fp-card card-premium rounded-2xl p-5">
             <div class="text-2xl mb-2">🔎</div>
             <div class="font-semibold text-navy">Research</div>
             <p class="text-sm text-slate-500 mt-1 leading-relaxed">Ask smarter questions, find better answers</p>
           </div>
-          <div class="rounded-2xl bg-white/80 backdrop-blur border border-slate-200 p-5 hover:border-gold/30 hover:shadow-lg transition-all duration-300">
+          <div class="fp-card card-premium rounded-2xl p-5">
             <div class="text-2xl mb-2">✍️</div>
             <div class="font-semibold text-navy">Writing</div>
             <p class="text-sm text-slate-500 mt-1 leading-relaxed">Draft, edit &amp; polish with AI as your co-writer</p>
           </div>
-          <div class="rounded-2xl bg-white/80 backdrop-blur border border-slate-200 p-5 hover:border-gold/30 hover:shadow-lg transition-all duration-300">
+          <div class="fp-card card-premium rounded-2xl p-5">
             <div class="text-2xl mb-2">💻</div>
             <div class="font-semibold text-navy">Coding</div>
             <p class="text-sm text-slate-500 mt-1 leading-relaxed">Build apps &amp; automate ideas — no experience needed</p>
           </div>
-          <div class="rounded-2xl bg-white/80 backdrop-blur border border-slate-200 p-5 hover:border-gold/30 hover:shadow-lg transition-all duration-300">
+          <div class="fp-card card-premium rounded-2xl p-5">
             <div class="text-2xl mb-2">📊</div>
             <div class="font-semibold text-navy">Business Planning</div>
             <p class="text-sm text-slate-500 mt-1 leading-relaxed">Turn an idea into a real plan, step by step</p>
           </div>
-          <div class="rounded-2xl bg-white/80 backdrop-blur border border-slate-200 p-5 hover:border-gold/30 hover:shadow-lg transition-all duration-300">
+          <div class="fp-card card-premium rounded-2xl p-5">
             <div class="text-2xl mb-2">🎨</div>
             <div class="font-semibold text-navy">Design</div>
             <p class="text-sm text-slate-500 mt-1 leading-relaxed">Create logos, posters &amp; visuals with AI tools</p>
           </div>
-          <div class="rounded-2xl bg-white/80 backdrop-blur border border-slate-200 p-5 hover:border-gold/30 hover:shadow-lg transition-all duration-300">
+          <div class="fp-card card-premium rounded-2xl p-5">
             <div class="text-2xl mb-2">🧩</div>
             <div class="font-semibold text-navy">Problem Solving</div>
             <p class="text-sm text-slate-500 mt-1 leading-relaxed">Break big challenges into solvable pieces</p>
           </div>
-          <div class="rounded-2xl bg-white/80 backdrop-blur border border-slate-200 p-5 hover:border-gold/30 hover:shadow-lg transition-all duration-300 col-span-2">
-            <div class="flex items-start gap-4">
-              <div class="text-2xl">🧠</div>
-              <div>
-                <div class="font-semibold text-navy">Decision Making</div>
-                <p class="text-sm text-slate-500 mt-1 leading-relaxed">Weigh options &amp; choose with confidence</p>
-              </div>
-            </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">🛡️</div>
+            <div class="font-semibold text-navy">AI is a Tool</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">We teach students to use it wisely</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">🧠</div>
+            <div class="font-semibold text-navy">Decision Making</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Weigh options &amp; choose with confidence</p>
           </div>
         </div>
       </div>
 
-      <p class="reveal mt-12 text-lg text-slate-700 font-semibold text-center">AI is a tool.<br>We teach students to use it wisely.</p>
+      <p class="reveal mt-12 text-lg text-slate-700 font-semibold text-center">Every skill your child builds here is amplified by AI fluency.</p>
     </div>
   </section>
 
   <!-- Six Pillars with Alice icons -->
-  <section class="py-20 lg:py-28 bg-mesh-light">
+  <section class="py-20 lg:py-28 bg-depth-cream">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal flex items-center gap-4 mb-10">
         <img src="images/logo_black.png" alt="Infinnovate" class="h-8 w-auto">
         <h2 class="font-display text-4xl">Six Pillars of Growth</h2>
       </div>
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3 reveal-stagger reveal">
-        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-12 w-12"><div><div class="font-semibold text-lg">Spiritual</div><p class="mt-2 text-slate-600 leading-7">Character, values, identity, and purpose.</p></div></div></div>
-        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/academics.png" alt="Academics" class="h-12 w-12"><div><div class="font-semibold text-lg">Academics</div><p class="mt-2 text-slate-600 leading-7">Strong learning habits, discipline, focus, and intellectual growth.</p></div></div></div>
-        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/health.png" alt="Health" class="h-12 w-12"><div><div class="font-semibold text-lg">Health</div><p class="mt-2 text-slate-600 leading-7">Physical wellness, energy, resilience, and healthy routines.</p></div></div></div>
-        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/finances.png" alt="Finances" class="h-12 w-12"><div><div class="font-semibold text-lg">Finances</div><p class="mt-2 text-slate-600 leading-7">Money management, saving, budgeting, and financial literacy.</p></div></div></div>
-        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/social.png" alt="Social" class="h-12 w-12"><div><div class="font-semibold text-lg">Social</div><p class="mt-2 text-slate-600 leading-7">Communication, relationships, teamwork, and confidence with others.</p></div></div></div>
-        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/career.png" alt="Career" class="h-12 w-12"><div><div class="font-semibold text-lg">Career</div><p class="mt-2 text-slate-600 leading-7">Exposure to business, leadership, entrepreneurship, and future pathways.</p></div></div></div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex items-start gap-5">
+            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-9 w-9"></div>
+            <div><div class="font-semibold text-lg text-navy">Spiritual</div><p class="mt-2 text-slate-600 leading-7">Character, values, identity, and purpose.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex items-start gap-5">
+            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/academics.png" alt="Academics" class="h-9 w-9"></div>
+            <div><div class="font-semibold text-lg text-navy">Academics</div><p class="mt-2 text-slate-600 leading-7">Strong learning habits, discipline, focus, and intellectual growth.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex items-start gap-5">
+            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/health.png" alt="Health" class="h-9 w-9"></div>
+            <div><div class="font-semibold text-lg text-navy">Health</div><p class="mt-2 text-slate-600 leading-7">Physical wellness, energy, resilience, and healthy routines.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex items-start gap-5">
+            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/finances.png" alt="Finances" class="h-9 w-9"></div>
+            <div><div class="font-semibold text-lg text-navy">Finances</div><p class="mt-2 text-slate-600 leading-7">Money management, saving, budgeting, and financial literacy.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex items-start gap-5">
+            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/social.png" alt="Social" class="h-9 w-9"></div>
+            <div><div class="font-semibold text-lg text-navy">Social</div><p class="mt-2 text-slate-600 leading-7">Communication, relationships, teamwork, and confidence with others.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex items-start gap-5">
+            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/career.png" alt="Career" class="h-9 w-9"></div>
+            <div><div class="font-semibold text-lg text-navy">Career</div><p class="mt-2 text-slate-600 leading-7">Exposure to business, leadership, entrepreneurship, and future pathways.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-depth-cream py-20 lg:py-28 relative overflow-hidden">
+  <section class="bg-mesh-light py-20 lg:py-28 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Choose your path</div>
@@ -418,7 +452,7 @@
       </div>
     </div>
   </section>
-  <section class="py-20 lg:py-28 bg-mesh-light section-divider">
+  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-2 items-center">
       <div class="reveal">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our new home</div>
@@ -697,6 +731,58 @@ Message: ${fd.get('message')}`);
 
 
 <script>(function(){ const hdr = document.getElementById('site-header'); window.addEventListener('scroll', function(){ if(window.scrollY > 80){ hdr.classList.add('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.remove('bg-transparent'); } else { hdr.classList.remove('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.add('bg-transparent'); } }, {passive:true}); })();</script>
+
+<!-- Why Infinnovate: Image Slideshow (cycles groups of 4 from pool of images) -->
+<script>
+(function(){
+  const pool = [
+    ['images/IMG_6506.webp','images/IMG_7097.webp','images/IMG_9010.webp','images/IMG_7625.webp'],
+    ['images/IMG_7041.webp','images/IMG_6564.webp','images/IMG_7478.webp','images/IMG_7569.webp'],
+    ['images/IMG_6508.webp','images/IMG_7081.webp','images/IMG_7445.webp','images/IMG_6065.webp'],
+    ['images/IMG_7732.webp','images/IMG_6359.webp','images/IMG_7643.webp','images/IMG_0987.webp']
+  ];
+  const cells = document.querySelectorAll('#whySlideshow .why-slide-cell');
+  const dotsContainer = document.getElementById('whyDots');
+  if(!cells.length || !dotsContainer) return;
+
+  // Build dots
+  pool.forEach((_,i) => {
+    const dot = document.createElement('button');
+    dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (i===0?'bg-gold scale-110':'bg-slate-300');
+    dot.setAttribute('aria-label','Slide group '+(i+1));
+    dotsContainer.appendChild(dot);
+    dot.addEventListener('click', () => goTo(i));
+  });
+
+  let current = 0;
+  function goTo(idx){
+    current = idx;
+    cells.forEach((cell,ci) => {
+      const img = cell.querySelector('img');
+      if(!img) return;
+      img.style.opacity = '0';
+      img.style.transform = 'scale(1.08)';
+      setTimeout(() => {
+        img.src = pool[current][ci];
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 250);
+    });
+    dotsContainer.querySelectorAll('button').forEach((d,di) => {
+      d.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (di===current?'bg-gold scale-110':'bg-slate-300');
+    });
+  }
+
+  // Add transition styles to images
+  cells.forEach(cell => {
+    const img = cell.querySelector('img');
+    if(img) img.style.transition = 'opacity .5s ease, transform .7s ease';
+  });
+
+  // Auto-advance every 4s
+  setInterval(() => goTo((current+1)%pool.length), 4000);
+})();
+</script>
 
 </body>
 </html>
