@@ -1,72 +1,45 @@
 # Infinnovate Website Build
 
-**Built:** 2026-03-10  
-**Status:** Complete — Ready for review  
+**Updated:** 2026-03-16  
+**Status:** ✅ Full 12-change redesign complete — pushed to GitHub (`395f116`)
 
 ## Pages Built
 
 | Page | File | Status |
 |------|------|--------|
-| Homepage | `index.html` | ✅ Complete |
-| Programs | `programs.html` | ✅ Complete |
-| Pricing | `pricing.html` | ✅ Complete |
-| About | `about.html` | ✅ Complete |
-| Contact | `contact.html` | ✅ Complete |
-| For Schools (B2B) | `schools.html` | ✅ Complete |
+| Homepage | `index.html` | ✅ Full redesign with hero slideshow, stats, persona cards, gallery, timeline |
+| Parent Persona | `parent.html` | ✅ Fully built (priority page) — countdown, pillars, events, safety, audio, brochure |
+| Student Persona | `student.html` | ✅ Polished skeleton |
+| School Persona | `school.html` | ✅ Polished skeleton |
+| Small Business Persona | `business.html` | ✅ Polished skeleton |
+| Programs | `programs.html` | ✅ 3 pathways + 6 pillars + ESBIE + enrollment CTA |
+| About | `about.html` | ✅ Mission, stats, full team (7 people), 6 pillars |
+| Contact | `contact.html` | ✅ Address, email, registration form |
+| Enrollment / Get Started | `enrollment.html` | ✅ Registration form, no pricing |
 
-## Shared Assets
+## 12 Changes Implemented
 
-| File | Description |
-|------|-------------|
-| `css/style.css` | Master stylesheet — mobile-first, 3 breakpoints (375/768/1024) |
-| `js/main.js` | Nav, hamburger menu, stats counter, ESBIE timeline, AOS init |
+1. ✅ All pricing removed
+2. ✅ All CTAs → "Register for Parent Night — March 31"
+3. ✅ Address prominent on all key pages + footers
+4. ✅ info@infinnovateinc.com everywhere
+5. ✅ Testimonials kept as-is
+6. ✅ Video Coming Soon removed (recommended list written)
+7. ✅ Dark button contrast fixed
+8. ✅ Team rebuilt: 4 officers + 3 coaches
+9. ✅ 4 persona sections navigable
+10. ✅ 6 Student Pillars on Programs + Parent pages
+11. ✅ AI Assistant placeholder on persona pages
+12. ✅ Timeline on homepage + parent page
 
-## Design Features
-
-- ✅ Mobile-first responsive (375px → 768px → 1024px)
-- ✅ AOS scroll animations (CDN loaded)
-- ✅ Ken Burns CSS effect on hero background
-- ✅ Stats counter animation (IntersectionObserver-based)
-- ✅ ESBIE timeline with staggered scroll-triggered reveal
-- ✅ Pathway cards with hover-expand details
-- ✅ Hamburger menu for mobile nav
-- ✅ Sticky navbar with scroll effect
-- ✅ Accessibility: skip links, focus-visible, reduced-motion support
-- ✅ Lazy loading on images (`loading="lazy"`)
-- ✅ Google Fonts: Cormorant Garamond + Inter
-
-## Pending Items (Require External Input)
+## Pending External Inputs
 
 | Item | Action Needed |
 |------|---------------|
-| **Stripe integration** | Replace `#stripe-pending` href on pricing buttons with live Stripe payment links |
-| **Formspree** | Replace `https://formspree.io/f/PLACEHOLDER` with actual Formspree form IDs (contact + schools forms) |
-| **Google Maps embed** | Replace map placeholder div in `contact.html` with actual Google Maps iframe |
-| **Hero background image** | Needs `hero-bg.webp` in `../raw media/processed/final_webp/` — currently references this path |
-| **Sophia's title** | Team page shows "Team Member" — update when title confirmed |
-| **Alice Kim's title** | Team page shows "Team Member" — update when title confirmed |
-
-## Image References
-
-All images use relative paths to the media folder:
-- Logo: `../raw media/processed/logos/WHITE LOGO_bold (1).png`
-- Jimmy photo: `../raw media/processed/final_webp/CHO03832.webp`
-- Hero BG: `../raw media/processed/final_webp/hero-bg.webp`
-
-## Known Issues
-
-- Image paths contain spaces (`raw media`) — should work but consider renaming the directory if issues arise
-- Pricing buttons link to `#stripe-pending` — non-functional until Stripe is configured
-- Contact/Schools forms submit to Formspree placeholder — won't work until real form ID is set
-- The 1:12 stat on the homepage doesn't animate (it's text, not a number) — displays statically as intended
-- Schools page does NOT show $150/hr rate (as specified)
-
-## Tech Stack
-
-- Pure HTML/CSS/JS — no build tools required
-- AOS 2.3.1 via CDN (scroll animations)
-- Google Fonts via CDN
-- Squarespace-ready: can paste into Code Blocks
+| Audio files | Drop MP3s into `build/images/audio/` as `pitch_en.mp3`, `pitch_ko.mp3`, `pitch_es.mp3`, `pitch_zh.mp3` |
+| Brochure PDFs | Verify `Infinnovate_Brochure_EN.pdf` and `_KO.pdf` are final |
+| Team portraits | Replace placeholder circles when real staff photos arrive |
+| Event time | Update countdown if Parent Night time changes from 6:30 PM PT |
 
 ## How to Preview
 
