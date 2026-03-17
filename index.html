@@ -56,19 +56,23 @@
   @keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,152,42,.5)}50%{box-shadow:0 0 24px 8px rgba(201,152,42,.35)}}
   .pulse-gold{animation:pulse-gold 2.2s ease-in-out infinite}
   @media (max-width:767px){.masonry{columns:1}.hero-slide{animation:none;transform:none}}
+.font-display { font-family: 'Halyard Display', sans-serif; }
+
 </style>
+
+<link href="https://fonts.googleapis.com/css2?family=Halyard+Display:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+<header id="site-header" class="absolute top-0 left-0 right-0 z-50 bg-transparent transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="flex items-center justify-between py-4">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-9 w-auto rounded">
-        <span class="font-display text-2xl font-semibold text-navy">Infinnovate</span>
+        <img src="images/WHITE LOGO_bold (1).png" alt="Infinnovate logo" class="h-14 w-auto">
+        
       </a>
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="parent.html">I'm a Parent</a>
         <a class="nav-link" href="programs.html">Programs</a>
@@ -97,13 +101,13 @@
 
 
 <main>
-  <section class="relative min-h-[88vh] overflow-hidden bg-navy text-white">
+  <section class="relative min-h-screen overflow-hidden bg-navy text-white">
     <div class="hero-slide" style="background-image:url('images/IMG_7625.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_6506.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_7097.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_9010.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/45"></div>
-    <div class="relative max-w-7xl mx-auto px-5 lg:px-8 py-24 lg:py-32">
+    <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-36 pb-24 lg:pt-44 lg:pb-32">
       <div class="max-w-3xl reveal">
         <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-gold">Parent Night • March 31 • Fullerton</div>
         <h1 class="mt-6 font-display text-6xl sm:text-7xl lg:text-8xl leading-[.95]">Believe in Being Infinite™</h1>
@@ -386,6 +390,9 @@ Message: ${fd.get('message')}`);
     });
   }
 </script>
+
+
+<script>(function(){ const hdr = document.getElementById('site-header'); window.addEventListener('scroll', function(){ if(window.scrollY > 80){ hdr.classList.add('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.remove('bg-transparent'); } else { hdr.classList.remove('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.add('bg-transparent'); } }, {passive:true}); })();</script>
 
 </body>
 </html>
