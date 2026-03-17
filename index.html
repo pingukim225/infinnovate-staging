@@ -58,41 +58,51 @@
   @media (max-width:767px){.masonry{columns:1}.hero-slide{animation:none;transform:none}}
   .font-display { font-family: 'Halyard Display', sans-serif; }
 
-  /* === Premium Background Treatments === */
-  .bg-mesh-light{background:linear-gradient(135deg,#f8f6f1 0%,#fff 40%,#f0ede6 70%,#f8f6f1 100%)}
-  .bg-mesh-navy{background:linear-gradient(160deg,#0A1628 0%,#0f2240 35%,#0A1628 60%,#0d1d38 100%)}
-  .bg-depth-cream{background:linear-gradient(180deg,#f8f6f1 0%,#fff 30%,#f8f6f1 70%,#f0ede6 100%)}
+  /* === Premium Background Treatments (v2 — visually rich) === */
+  .bg-mesh-light{background:linear-gradient(135deg,#f3efe7 0%,#faf8f4 25%,#edeae2 50%,#f8f6f0 75%,#f0ece3 100%);position:relative}
+  .bg-mesh-light::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(201,152,42,.07),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 70%,rgba(27,107,69,.05),transparent 60%);pointer-events:none}
+  .bg-mesh-navy{background:linear-gradient(160deg,#060e1c 0%,#0f2240 25%,#0A1628 50%,#132c52 75%,#0A1628 100%);position:relative}
+  .bg-mesh-navy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 20%,rgba(201,152,42,.06),transparent 60%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(27,107,69,.04),transparent 60%);pointer-events:none}
+  .bg-depth-cream{background:linear-gradient(180deg,#f0ece3 0%,#faf8f4 20%,#ede8dd 45%,#f8f6f1 65%,#e8e3d8 100%);position:relative}
+  .bg-depth-cream::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 75% 40%,rgba(201,152,42,.08),transparent 55%),radial-gradient(ellipse 50% 40% at 15% 60%,rgba(27,107,69,.05),transparent 55%);pointer-events:none}
   .bg-accent-glow{position:relative;overflow:hidden}
-  .bg-accent-glow::before{content:'';position:absolute;top:-40%;right:-20%;width:60%;height:80%;background:radial-gradient(ellipse,rgba(201,152,42,.06) 0%,transparent 70%);pointer-events:none}
-  .bg-accent-glow::after{content:'';position:absolute;bottom:-30%;left:-15%;width:50%;height:70%;background:radial-gradient(ellipse,rgba(27,107,69,.04) 0%,transparent 70%);pointer-events:none}
+  .bg-accent-glow::before{content:'';position:absolute;top:-30%;right:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(201,152,42,.1) 0%,transparent 65%);pointer-events:none}
+  .bg-accent-glow::after{content:'';position:absolute;bottom:-20%;left:-10%;width:45%;height:60%;background:radial-gradient(ellipse,rgba(27,107,69,.07) 0%,transparent 65%);pointer-events:none}
   .section-divider{position:relative}
-  .section-divider::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:2px;background:linear-gradient(90deg,transparent,#C9982A,transparent)}
+  .section-divider::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:2px;background:linear-gradient(90deg,transparent,#C9982A,transparent)}
 
-  /* Navy sections: subtle grid texture */
+  /* Navy sections: visible dot grid + gold accent line */
   .navy-texture{position:relative;overflow:hidden}
-  .navy-texture::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
-  .navy-texture::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,152,42,.2),transparent)}
+  .navy-texture::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+  .navy-texture::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 10%,rgba(201,152,42,.35) 50%,transparent 90%)}
 
-  /* Soft floating orbs for depth */
-  @keyframes float-slow{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.02)}}
-  .float-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:float-slow 8s ease-in-out infinite}
+  /* Soft floating orbs for depth — larger, more visible */
+  @keyframes float-slow{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.04)}}
+  .float-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:float-slow 8s ease-in-out infinite}
 
-  /* === AI Capability Orbit (Future Proof) === */
-  .orbit-container{position:relative;width:100%;max-width:680px;margin:0 auto;aspect-ratio:1/1}
-  .orbit-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,#0A1628,#1a3050);border:2px solid rgba(201,152,42,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;box-shadow:0 0 60px rgba(201,152,42,.15),0 0 120px rgba(10,22,40,.3)}
-  .orbit-hub .hub-icon{font-size:2rem;line-height:1}
-  .orbit-hub .hub-label{color:#C9982A;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-top:4px}
+  /* === AI Capability Orbit (Future Proof) — v2: smaller wheel, bigger text === */
+  .orbit-container{position:relative;width:100%;max-width:480px;margin:0 auto;aspect-ratio:1/1}
+  .orbit-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#0A1628,#1a3050);border:2px solid rgba(201,152,42,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;box-shadow:0 0 60px rgba(201,152,42,.15),0 0 120px rgba(10,22,40,.3)}
+  .orbit-hub .hub-icon{font-size:1.6rem;line-height:1}
+  .orbit-hub .hub-label{color:#C9982A;font-size:.65rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-top:3px}
   .orbit-ring{position:absolute;top:50%;left:50%;border:1px dashed rgba(201,152,42,.15);border-radius:50%;transform:translate(-50%,-50%)}
   .orbit-ring-1{width:72%;height:72%}
   .orbit-ring-2{width:100%;height:100%}
   .orbit-node{position:absolute;transform:translate(-50%,-50%);z-index:5;text-align:center;transition:transform .4s ease}
   .orbit-node:hover{transform:translate(-50%,-50%) scale(1.08)}
-  .orbit-node .node-circle{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#fff,#f8f6f1);border:2px solid rgba(201,152,42,.25);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 8px 30px rgba(10,22,40,.08);transition:border-color .3s,box-shadow .3s}
+  .orbit-node .node-circle{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#fff,#f8f6f1);border:2px solid rgba(201,152,42,.25);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 8px 30px rgba(10,22,40,.08);transition:border-color .3s,box-shadow .3s}
   .orbit-node:hover .node-circle{border-color:#C9982A;box-shadow:0 8px 30px rgba(201,152,42,.2)}
-  .orbit-node .node-icon{font-size:1.6rem}
-  .orbit-node .node-label{margin-top:6px;font-size:.8rem;font-weight:700;color:#0A1628;white-space:nowrap}
-  .orbit-node .node-desc{font-size:.65rem;color:#64748b;max-width:120px;margin:2px auto 0;line-height:1.3}
+  .orbit-node .node-icon{font-size:1.3rem}
+  .orbit-node .node-label{margin-top:5px;font-size:.95rem;font-weight:700;color:#0A1628;white-space:nowrap}
+  .orbit-node .node-desc{font-size:.8rem;color:#64748b;max-width:140px;margin:3px auto 0;line-height:1.35}
   .orbit-line{position:absolute;top:50%;left:50%;transform-origin:0 0;height:1px;background:linear-gradient(90deg,rgba(201,152,42,.25),rgba(201,152,42,.05));z-index:1}
+  
+  /* Supporting text cards flanking the orbit */
+  .orbit-explainer{display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:center}
+  .orbit-side-text{font-size:1.05rem;line-height:1.7;color:#475569}
+  .orbit-side-text h4{font-size:1.15rem;font-weight:700;color:#0A1628;margin-bottom:.5rem}
+  .orbit-side-text .highlight{color:#C9982A;font-weight:600}
+  @media (max-width:1023px){.orbit-explainer{grid-template-columns:1fr;gap:1.5rem}.orbit-container{max-width:380px}}
 
   /* Orbit: mobile fallback */
   .orbit-mobile{display:none}
@@ -218,7 +228,7 @@
   <!-- 3. Why Infinnovate -->
   <section class="py-20 lg:py-28 bg-mesh-light bg-accent-glow section-divider">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="float-orb" style="width:300px;height:300px;background:rgba(201,152,42,.04);top:-10%;right:-5%"></div>
+      <div class="float-orb" style="width:400px;height:400px;background:rgba(201,152,42,.08);top:-10%;right:-5%"></div>
       <div class="grid gap-10 lg:grid-cols-2 items-start">
         <div class="reveal max-w-3xl lg:max-w-none">
           <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Why Infinnovate</div>
@@ -251,7 +261,7 @@
   <!-- 4. Not tutoring: Academy -->
   <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="float-orb" style="width:400px;height:400px;background:rgba(201,152,42,.03);bottom:-20%;left:-10%;animation-delay:-3s"></div>
+      <div class="float-orb" style="width:500px;height:500px;background:rgba(201,152,42,.06);bottom:-20%;left:-10%;animation-delay:-3s"></div>
       <div class="reveal max-w-3xl mb-10">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The difference</div>
         <h2 class="font-display text-5xl mt-3">This Is Not Tutoring.<br>This Is an Academy.</h2>
@@ -334,79 +344,82 @@
 
   <!-- 6. AI will change every career — Capability Orbit -->
   <section class="py-20 lg:py-28 bg-depth-cream bg-accent-glow section-divider relative overflow-hidden">
-    <div class="float-orb" style="width:500px;height:500px;background:rgba(201,152,42,.04);top:10%;right:-15%;animation-delay:-2s"></div>
-    <div class="float-orb" style="width:350px;height:350px;background:rgba(27,107,69,.03);bottom:5%;left:-10%;animation-delay:-5s"></div>
+    <div class="float-orb" style="width:550px;height:550px;background:rgba(201,152,42,.08);top:10%;right:-15%;animation-delay:-2s"></div>
+    <div class="float-orb" style="width:400px;height:400px;background:rgba(27,107,69,.06);bottom:5%;left:-10%;animation-delay:-5s"></div>
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal max-w-3xl mb-4">
+      <div class="reveal max-w-3xl mb-6">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Future-proof</div>
         <h2 class="font-display text-5xl mt-3">AI Will Change Every Career.</h2>
         <p class="mt-4 text-xl text-slate-700">Our students are ready.</p>
+        <p class="mt-3 text-lg text-slate-600 leading-8 max-w-2xl">Every skill your child builds at Infinnovate is amplified by AI fluency — the ability to use modern tools responsibly, creatively, and confidently across any field.</p>
       </div>
 
-      <!-- Desktop: Radial Orbit -->
-      <div class="reveal mt-8">
+      <!-- Desktop: Orbit with flanking text -->
+      <div class="reveal mt-8 orbit-explainer">
+        <!-- Left supporting text -->
+        <div class="orbit-side-text">
+          <h4>Why AI fluency matters</h4>
+          <p>By the time today's students enter the workforce, <span class="highlight">AI will be embedded in every career</span> — from medicine to marketing, engineering to entrepreneurship.</p>
+          <p class="mt-4">Infinnovate doesn't just teach students about AI. We teach them to <span class="highlight">think with it</span> — using it as a partner for research, writing, design, and problem solving.</p>
+        </div>
+
+        <!-- Center: Smaller orbit wheel -->
         <div class="orbit-container">
-          <!-- Rings -->
           <div class="orbit-ring orbit-ring-1"></div>
           <div class="orbit-ring orbit-ring-2"></div>
-
-          <!-- Connecting lines drawn by JS -->
-
-          <!-- Center hub -->
           <div class="orbit-hub">
             <div class="hub-icon">🤖</div>
             <div class="hub-label">AI</div>
-            <div style="color:#94a3b8;font-size:.6rem;margin-top:2px;text-align:center;line-height:1.2">Fluency</div>
+            <div style="color:#94a3b8;font-size:.55rem;margin-top:2px;text-align:center;line-height:1.2">Fluency</div>
           </div>
-
-          <!-- 7 nodes positioned around the orbit -->
-          <!-- Research — top -->
           <div class="orbit-node" style="top:3%;left:50%">
             <div class="node-circle"><span class="node-icon">🔎</span></div>
             <div class="node-label">Research</div>
             <div class="node-desc">Ask smarter questions, find better answers</div>
           </div>
-          <!-- Writing — top-right -->
           <div class="orbit-node" style="top:18%;left:88%">
             <div class="node-circle"><span class="node-icon">✍️</span></div>
             <div class="node-label">Writing</div>
             <div class="node-desc">Draft, edit &amp; polish with AI as your co-writer</div>
           </div>
-          <!-- Coding — right -->
           <div class="orbit-node" style="top:55%;left:96%">
             <div class="node-circle"><span class="node-icon">💻</span></div>
             <div class="node-label">Coding</div>
             <div class="node-desc">Build apps &amp; automate ideas — no experience needed</div>
           </div>
-          <!-- Business Planning — bottom-right -->
           <div class="orbit-node" style="top:85%;left:78%">
             <div class="node-circle"><span class="node-icon">📊</span></div>
             <div class="node-label">Business Planning</div>
             <div class="node-desc">Turn an idea into a real plan, step by step</div>
           </div>
-          <!-- Design — bottom-left -->
           <div class="orbit-node" style="top:85%;left:22%">
             <div class="node-circle"><span class="node-icon">🎨</span></div>
             <div class="node-label">Design</div>
             <div class="node-desc">Create logos, posters &amp; visuals with AI tools</div>
           </div>
-          <!-- Problem Solving — left -->
           <div class="orbit-node" style="top:55%;left:4%">
             <div class="node-circle"><span class="node-icon">🧩</span></div>
             <div class="node-label">Problem Solving</div>
             <div class="node-desc">Break big challenges into solvable pieces</div>
           </div>
-          <!-- Decision Making — top-left -->
           <div class="orbit-node" style="top:18%;left:12%">
             <div class="node-circle"><span class="node-icon">🧠</span></div>
             <div class="node-label">Decision Making</div>
             <div class="node-desc">Weigh options &amp; choose with confidence</div>
           </div>
         </div>
+
+        <!-- Right supporting text -->
+        <div class="orbit-side-text">
+          <h4>Built into every lesson</h4>
+          <p>AI isn't a separate class — it's <span class="highlight">woven into every project</span>. Students use it for branding, financial models, research reports, and pitch decks.</p>
+          <p class="mt-4">The result: graduates who are <span class="highlight">comfortable, capable, and responsible</span> with the tools that will define their generation.</p>
+        </div>
       </div>
 
       <!-- Mobile: Clean list fallback -->
       <div class="orbit-mobile reveal mt-6">
+        <p class="text-lg text-slate-600 leading-8 mb-4">Every skill your child builds at Infinnovate is amplified by AI fluency — the ability to use modern tools responsibly, creatively, and confidently across any field.</p>
         <div class="orbit-m-item">
           <div class="orbit-m-icon">🔎</div>
           <div><div class="orbit-m-label">Research</div><div class="orbit-m-desc">Ask smarter questions, find better answers</div></div>
@@ -435,6 +448,7 @@
           <div class="orbit-m-icon">🧠</div>
           <div><div class="orbit-m-label">Decision Making</div><div class="orbit-m-desc">Weigh options &amp; choose with confidence</div></div>
         </div>
+        <p class="text-base text-slate-600 leading-7 mt-4">AI isn't a separate class — it's woven into every project. Students use it for branding, financial models, research reports, and pitch decks. The result: graduates who are comfortable, capable, and responsible with the tools that will define their generation.</p>
       </div>
 
       <p class="reveal mt-10 text-lg text-slate-700 font-semibold text-center">AI is a tool.<br>We teach students to use it wisely.</p>
@@ -460,7 +474,7 @@
   </section>
 
   <section class="bg-depth-cream py-20 lg:py-28 relative overflow-hidden">
-    <div class="float-orb" style="width:350px;height:350px;background:rgba(201,152,42,.04);top:-5%;left:-8%;animation-delay:-4s"></div>
+    <div class="float-orb" style="width:450px;height:450px;background:rgba(201,152,42,.08);top:-5%;left:-8%;animation-delay:-4s"></div>
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Choose your path</div>
@@ -496,7 +510,7 @@
   </section>
   <section class="bg-mesh-navy navy-texture text-white py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="float-orb" style="width:400px;height:400px;background:rgba(201,152,42,.03);top:-15%;right:-10%;animation-delay:-6s"></div>
+      <div class="float-orb" style="width:500px;height:500px;background:rgba(201,152,42,.07);top:-15%;right:-10%;animation-delay:-6s"></div>
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Infinnovate difference</div>
         <h2 class="font-display text-5xl mt-3">More than tutoring. This is life readiness.</h2>
@@ -509,7 +523,7 @@
     </div>
   </section>
   <section class="py-20 lg:py-28 bg-depth-cream relative overflow-hidden">
-    <div class="float-orb" style="width:450px;height:450px;background:rgba(27,107,69,.03);bottom:-15%;right:-10%;animation-delay:-3s"></div>
+    <div class="float-orb" style="width:500px;height:500px;background:rgba(27,107,69,.06);bottom:-15%;right:-10%;animation-delay:-3s"></div>
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
         <div>
@@ -553,7 +567,7 @@
   </section>
 
   <section class="py-20 bg-depth-cream relative overflow-hidden">
-    <div class="float-orb" style="width:300px;height:300px;background:rgba(201,152,42,.04);top:10%;left:-8%;animation-delay:-7s"></div>
+    <div class="float-orb" style="width:400px;height:400px;background:rgba(201,152,42,.08);top:10%;left:-8%;animation-delay:-7s"></div>
     <div class="max-w-6xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-10"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Hear about Infinnovate</div><h2 class="font-display text-5xl mt-3">Listen in your language</h2><p class="mt-4 text-slate-600 text-lg leading-8">A quick overview for families who want to hear the story before Parent Night.</p></div>
       <div class="reveal rounded-[2rem] bg-white border border-slate-200 p-8 shadow-glow">
@@ -607,7 +621,7 @@
 
   <!-- 13. CTA: Parent Night Registration Open -->
   <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white relative overflow-hidden">
-    <div class="float-orb" style="width:500px;height:500px;background:rgba(201,152,42,.04);top:-30%;left:50%;transform:translateX(-50%);animation-delay:-1s"></div>
+    <div class="float-orb" style="width:550px;height:550px;background:rgba(201,152,42,.08);top:-30%;left:50%;transform:translateX(-50%);animation-delay:-1s"></div>
     <div class="max-w-4xl mx-auto px-5 text-center reveal relative">
       <h2 class="font-display text-5xl">Parent Night Registration Open</h2>
       <p class="mt-4 text-slate-300 text-lg">Meet the academy<br>See the curriculum<br>Ask questions<br>Experience the vision</p>
@@ -620,7 +634,7 @@
 
   <!-- 14. Brand statement -->
   <section class="py-16 bg-mesh-light relative overflow-hidden">
-    <div class="float-orb" style="width:250px;height:250px;background:rgba(201,152,42,.03);top:-20%;left:50%;transform:translateX(-50%);animation-delay:-2s"></div>
+    <div class="float-orb" style="width:350px;height:350px;background:rgba(201,152,42,.06);top:-20%;left:50%;transform:translateX(-50%);animation-delay:-2s"></div>
     <div class="max-w-5xl mx-auto px-5 text-center relative">
       <img src="images/logo_black.png" alt="Infinnovate" class="mx-auto h-8 w-auto">
       <h3 class="font-display text-3xl mt-4">Infinnovate, Inc.</h3>
