@@ -56,7 +56,74 @@
   @keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,152,42,.5)}50%{box-shadow:0 0 24px 8px rgba(201,152,42,.35)}}
   .pulse-gold{animation:pulse-gold 2.2s ease-in-out infinite}
   @media (max-width:767px){.masonry{columns:1}.hero-slide{animation:none;transform:none}}
-.font-display { font-family: 'Halyard Display', sans-serif; }
+  .font-display { font-family: 'Halyard Display', sans-serif; }
+
+  /* === Premium Background Treatments === */
+  .bg-mesh-light{background:linear-gradient(135deg,#f8f6f1 0%,#fff 40%,#f0ede6 70%,#f8f6f1 100%)}
+  .bg-mesh-navy{background:linear-gradient(160deg,#0A1628 0%,#0f2240 35%,#0A1628 60%,#0d1d38 100%)}
+  .bg-depth-cream{background:linear-gradient(180deg,#f8f6f1 0%,#fff 30%,#f8f6f1 70%,#f0ede6 100%)}
+  .bg-accent-glow{position:relative;overflow:hidden}
+  .bg-accent-glow::before{content:'';position:absolute;top:-40%;right:-20%;width:60%;height:80%;background:radial-gradient(ellipse,rgba(201,152,42,.06) 0%,transparent 70%);pointer-events:none}
+  .bg-accent-glow::after{content:'';position:absolute;bottom:-30%;left:-15%;width:50%;height:70%;background:radial-gradient(ellipse,rgba(27,107,69,.04) 0%,transparent 70%);pointer-events:none}
+  .section-divider{position:relative}
+  .section-divider::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:2px;background:linear-gradient(90deg,transparent,#C9982A,transparent)}
+
+  /* Navy sections: subtle grid texture */
+  .navy-texture{position:relative;overflow:hidden}
+  .navy-texture::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:24px 24px;pointer-events:none}
+  .navy-texture::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,152,42,.2),transparent)}
+
+  /* Soft floating orbs for depth */
+  @keyframes float-slow{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.02)}}
+  .float-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:float-slow 8s ease-in-out infinite}
+
+  /* === AI Capability Orbit (Future Proof) === */
+  .orbit-container{position:relative;width:100%;max-width:680px;margin:0 auto;aspect-ratio:1/1}
+  .orbit-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,#0A1628,#1a3050);border:2px solid rgba(201,152,42,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;box-shadow:0 0 60px rgba(201,152,42,.15),0 0 120px rgba(10,22,40,.3)}
+  .orbit-hub .hub-icon{font-size:2rem;line-height:1}
+  .orbit-hub .hub-label{color:#C9982A;font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-top:4px}
+  .orbit-ring{position:absolute;top:50%;left:50%;border:1px dashed rgba(201,152,42,.15);border-radius:50%;transform:translate(-50%,-50%)}
+  .orbit-ring-1{width:72%;height:72%}
+  .orbit-ring-2{width:100%;height:100%}
+  .orbit-node{position:absolute;transform:translate(-50%,-50%);z-index:5;text-align:center;transition:transform .4s ease}
+  .orbit-node:hover{transform:translate(-50%,-50%) scale(1.08)}
+  .orbit-node .node-circle{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#fff,#f8f6f1);border:2px solid rgba(201,152,42,.25);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 8px 30px rgba(10,22,40,.08);transition:border-color .3s,box-shadow .3s}
+  .orbit-node:hover .node-circle{border-color:#C9982A;box-shadow:0 8px 30px rgba(201,152,42,.2)}
+  .orbit-node .node-icon{font-size:1.6rem}
+  .orbit-node .node-label{margin-top:6px;font-size:.8rem;font-weight:700;color:#0A1628;white-space:nowrap}
+  .orbit-node .node-desc{font-size:.65rem;color:#64748b;max-width:120px;margin:2px auto 0;line-height:1.3}
+  .orbit-line{position:absolute;top:50%;left:50%;transform-origin:0 0;height:1px;background:linear-gradient(90deg,rgba(201,152,42,.25),rgba(201,152,42,.05));z-index:1}
+
+  /* Orbit: mobile fallback */
+  .orbit-mobile{display:none}
+  .orbit-mobile .orbit-m-item{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:1rem;background:rgba(255,255,255,.7);border:1px solid rgba(201,152,42,.15);backdrop-filter:blur(8px);transition:transform .3s,box-shadow .3s}
+  .orbit-mobile .orbit-m-item:hover{transform:translateX(4px);box-shadow:0 8px 24px rgba(201,152,42,.1)}
+  .orbit-mobile .orbit-m-icon{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#fff,#f8f6f1);border:2px solid rgba(201,152,42,.2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+  .orbit-mobile .orbit-m-label{font-weight:700;font-size:.9rem}
+  .orbit-mobile .orbit-m-desc{font-size:.78rem;color:#64748b;line-height:1.35;margin-top:2px}
+  @media (max-width:767px){.orbit-container{display:none}.orbit-mobile{display:flex;flex-direction:column;gap:.75rem}}
+
+  /* === Stagger reveal animation === */
+  .reveal-stagger > *{opacity:0;transform:translateY(20px);transition:all .6s ease}
+  .reveal-stagger.show > *:nth-child(1){transition-delay:.05s}
+  .reveal-stagger.show > *:nth-child(2){transition-delay:.1s}
+  .reveal-stagger.show > *:nth-child(3){transition-delay:.15s}
+  .reveal-stagger.show > *:nth-child(4){transition-delay:.2s}
+  .reveal-stagger.show > *:nth-child(5){transition-delay:.25s}
+  .reveal-stagger.show > *:nth-child(6){transition-delay:.3s}
+  .reveal-stagger.show > *:nth-child(7){transition-delay:.35s}
+  .reveal-stagger.show > *:nth-child(8){transition-delay:.4s}
+  .reveal-stagger.show > *{opacity:1;transform:translateY(0)}
+
+  /* Pillar cards hover glow */
+  .pillar-card{transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden}
+  .pillar-card::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(201,152,42,.06) 0%,transparent 70%);opacity:0;transition:opacity .4s}
+  .pillar-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(10,22,40,.08)}
+  .pillar-card:hover::before{opacity:1}
+
+  /* Smooth count-box pulse on hero */
+  .count-box{transition:background .3s}
+  .count-box:hover{background:rgba(255,255,255,.12)}
 
 </style>
 
@@ -149,8 +216,9 @@
 </section>
 
   <!-- 3. Why Infinnovate -->
-  <section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="py-20 lg:py-28 bg-mesh-light bg-accent-glow section-divider">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="float-orb" style="width:300px;height:300px;background:rgba(201,152,42,.04);top:-10%;right:-5%"></div>
       <div class="grid gap-10 lg:grid-cols-2 items-start">
         <div class="reveal max-w-3xl lg:max-w-none">
           <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Why Infinnovate</div>
@@ -168,7 +236,7 @@
             <img src="images/IMG_6506.webp" alt="Students collaborating" class="rounded-[1.6rem] shadow-glow w-full h-56 object-cover">
             <img src="images/IMG_7097.webp" alt="Presentation practice" class="rounded-[1.6rem] shadow-glow w-full h-56 object-cover md:translate-y-6">
             <img src="images/IMG_9010.webp" alt="Hands-on learning" class="rounded-[1.6rem] shadow-glow w-full h-56 object-cover">
-            <div class="rounded-[1.6rem] bg-cream border border-slate-200 p-6 flex items-center justify-center text-center">
+            <div class="rounded-[1.6rem] bg-white/80 backdrop-blur border border-slate-200 p-6 flex items-center justify-center text-center">
               <div>
                 <div class="text-gold text-xs font-bold uppercase tracking-[0.22em]">Real experience</div>
                 <div class="font-display text-2xl mt-2">Business • Money • Leadership • AI</div>
@@ -181,29 +249,30 @@
   </section>
 
   <!-- 4. Not tutoring: Academy -->
-  <section class="py-20 lg:py-28 bg-navy text-white">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="float-orb" style="width:400px;height:400px;background:rgba(201,152,42,.03);bottom:-20%;left:-10%;animation-delay:-3s"></div>
       <div class="reveal max-w-3xl mb-10">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The difference</div>
         <h2 class="font-display text-5xl mt-3">This Is Not Tutoring.<br>This Is an Academy.</h2>
       </div>
-      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">Project-based learning</div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">Business simulations</div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">Financial literacy</div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">AI fluency</div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">Leadership training</div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">Presentations</div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">Team challenges</div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-6">Real responsibility</div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4 reveal-stagger reveal">
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">Project-based learning</div>
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">Business simulations</div>
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">Financial literacy</div>
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">AI fluency</div>
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">Leadership training</div>
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">Presentations</div>
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">Team challenges</div>
+        <div class="rounded-[2rem] bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300">Real responsibility</div>
       </div>
       <p class="reveal mt-8 text-xl text-slate-200">Students don't just learn.<br>They become capable.</p>
     </div>
   </section>
 
   <!-- 5. ESBIE model / Journey -->
-  <section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="py-20 lg:py-28 bg-mesh-light bg-accent-glow section-divider">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Infinnovate Journey</div>
         <h2 class="font-display text-5xl mt-3">The Infinnovate Journey</h2>
@@ -263,68 +332,136 @@
     </div>
   </section>
 
-  <!-- 6. AI will change every career -->
-  <section class="py-20 lg:py-28 bg-cream">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
-      <div class="reveal max-w-3xl mb-8">
+  <!-- 6. AI will change every career — Capability Orbit -->
+  <section class="py-20 lg:py-28 bg-depth-cream bg-accent-glow section-divider relative overflow-hidden">
+    <div class="float-orb" style="width:500px;height:500px;background:rgba(201,152,42,.04);top:10%;right:-15%;animation-delay:-2s"></div>
+    <div class="float-orb" style="width:350px;height:350px;background:rgba(27,107,69,.03);bottom:5%;left:-10%;animation-delay:-5s"></div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal max-w-3xl mb-4">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Future-proof</div>
         <h2 class="font-display text-5xl mt-3">AI Will Change Every Career.</h2>
         <p class="mt-4 text-xl text-slate-700">Our students are ready.</p>
       </div>
-      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4 text-slate-700">
-        <div class="card-lift rounded-[1.6rem] bg-white border border-slate-200 p-6 shadow-sm hover:shadow-glow transition">
-          <div class="text-3xl">🔎</div>
-          <div class="mt-3 text-xl font-semibold">Research</div>
-        </div>
-        <div class="card-lift rounded-[1.6rem] bg-white border border-slate-200 p-6 shadow-sm hover:shadow-glow transition">
-          <div class="text-3xl">✍️</div>
-          <div class="mt-3 text-xl font-semibold">Writing</div>
-        </div>
-        <div class="card-lift rounded-[1.6rem] bg-white border border-slate-200 p-6 shadow-sm hover:shadow-glow transition">
-          <div class="text-3xl">💻</div>
-          <div class="mt-3 text-xl font-semibold">Coding</div>
-        </div>
-        <div class="card-lift rounded-[1.6rem] bg-white border border-slate-200 p-6 shadow-sm hover:shadow-glow transition">
-          <div class="text-3xl">📊</div>
-          <div class="mt-3 text-xl font-semibold">Business planning</div>
-        </div>
-        <div class="card-lift rounded-[1.6rem] bg-white border border-slate-200 p-6 shadow-sm hover:shadow-glow transition">
-          <div class="text-3xl">🎨</div>
-          <div class="mt-3 text-xl font-semibold">Design</div>
-        </div>
-        <div class="card-lift rounded-[1.6rem] bg-white border border-slate-200 p-6 shadow-sm hover:shadow-glow transition">
-          <div class="text-3xl">🧩</div>
-          <div class="mt-3 text-xl font-semibold">Problem solving</div>
-        </div>
-        <div class="card-lift rounded-[1.6rem] bg-white border border-slate-200 p-6 shadow-sm hover:shadow-glow transition md:col-span-2 xl:col-span-2">
-          <div class="text-3xl">🧠</div>
-          <div class="mt-3 text-xl font-semibold">Decision making</div>
+
+      <!-- Desktop: Radial Orbit -->
+      <div class="reveal mt-8">
+        <div class="orbit-container">
+          <!-- Rings -->
+          <div class="orbit-ring orbit-ring-1"></div>
+          <div class="orbit-ring orbit-ring-2"></div>
+
+          <!-- Connecting lines drawn by JS -->
+
+          <!-- Center hub -->
+          <div class="orbit-hub">
+            <div class="hub-icon">🤖</div>
+            <div class="hub-label">AI</div>
+            <div style="color:#94a3b8;font-size:.6rem;margin-top:2px;text-align:center;line-height:1.2">Fluency</div>
+          </div>
+
+          <!-- 7 nodes positioned around the orbit -->
+          <!-- Research — top -->
+          <div class="orbit-node" style="top:3%;left:50%">
+            <div class="node-circle"><span class="node-icon">🔎</span></div>
+            <div class="node-label">Research</div>
+            <div class="node-desc">Ask smarter questions, find better answers</div>
+          </div>
+          <!-- Writing — top-right -->
+          <div class="orbit-node" style="top:18%;left:88%">
+            <div class="node-circle"><span class="node-icon">✍️</span></div>
+            <div class="node-label">Writing</div>
+            <div class="node-desc">Draft, edit &amp; polish with AI as your co-writer</div>
+          </div>
+          <!-- Coding — right -->
+          <div class="orbit-node" style="top:55%;left:96%">
+            <div class="node-circle"><span class="node-icon">💻</span></div>
+            <div class="node-label">Coding</div>
+            <div class="node-desc">Build apps &amp; automate ideas — no experience needed</div>
+          </div>
+          <!-- Business Planning — bottom-right -->
+          <div class="orbit-node" style="top:85%;left:78%">
+            <div class="node-circle"><span class="node-icon">📊</span></div>
+            <div class="node-label">Business Planning</div>
+            <div class="node-desc">Turn an idea into a real plan, step by step</div>
+          </div>
+          <!-- Design — bottom-left -->
+          <div class="orbit-node" style="top:85%;left:22%">
+            <div class="node-circle"><span class="node-icon">🎨</span></div>
+            <div class="node-label">Design</div>
+            <div class="node-desc">Create logos, posters &amp; visuals with AI tools</div>
+          </div>
+          <!-- Problem Solving — left -->
+          <div class="orbit-node" style="top:55%;left:4%">
+            <div class="node-circle"><span class="node-icon">🧩</span></div>
+            <div class="node-label">Problem Solving</div>
+            <div class="node-desc">Break big challenges into solvable pieces</div>
+          </div>
+          <!-- Decision Making — top-left -->
+          <div class="orbit-node" style="top:18%;left:12%">
+            <div class="node-circle"><span class="node-icon">🧠</span></div>
+            <div class="node-label">Decision Making</div>
+            <div class="node-desc">Weigh options &amp; choose with confidence</div>
+          </div>
         </div>
       </div>
-      <p class="reveal mt-8 text-lg text-slate-700 font-semibold">AI is a tool.<br>We teach students to use it wisely.</p>
+
+      <!-- Mobile: Clean list fallback -->
+      <div class="orbit-mobile reveal mt-6">
+        <div class="orbit-m-item">
+          <div class="orbit-m-icon">🔎</div>
+          <div><div class="orbit-m-label">Research</div><div class="orbit-m-desc">Ask smarter questions, find better answers</div></div>
+        </div>
+        <div class="orbit-m-item">
+          <div class="orbit-m-icon">✍️</div>
+          <div><div class="orbit-m-label">Writing</div><div class="orbit-m-desc">Draft, edit &amp; polish with AI as your co-writer</div></div>
+        </div>
+        <div class="orbit-m-item">
+          <div class="orbit-m-icon">💻</div>
+          <div><div class="orbit-m-label">Coding</div><div class="orbit-m-desc">Build apps &amp; automate ideas — no experience needed</div></div>
+        </div>
+        <div class="orbit-m-item">
+          <div class="orbit-m-icon">📊</div>
+          <div><div class="orbit-m-label">Business Planning</div><div class="orbit-m-desc">Turn an idea into a real plan, step by step</div></div>
+        </div>
+        <div class="orbit-m-item">
+          <div class="orbit-m-icon">🎨</div>
+          <div><div class="orbit-m-label">Design</div><div class="orbit-m-desc">Create logos, posters &amp; visuals with AI tools</div></div>
+        </div>
+        <div class="orbit-m-item">
+          <div class="orbit-m-icon">🧩</div>
+          <div><div class="orbit-m-label">Problem Solving</div><div class="orbit-m-desc">Break big challenges into solvable pieces</div></div>
+        </div>
+        <div class="orbit-m-item">
+          <div class="orbit-m-icon">🧠</div>
+          <div><div class="orbit-m-label">Decision Making</div><div class="orbit-m-desc">Weigh options &amp; choose with confidence</div></div>
+        </div>
+      </div>
+
+      <p class="reveal mt-10 text-lg text-slate-700 font-semibold text-center">AI is a tool.<br>We teach students to use it wisely.</p>
     </div>
   </section>
 
   <!-- Six Pillars with Alice icons -->
-  <section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="py-20 lg:py-28 bg-mesh-light bg-accent-glow">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal flex items-center gap-4 mb-10">
         <img src="images/logo_black.png" alt="Infinnovate" class="h-8 w-auto">
         <h2 class="font-display text-4xl">Six Pillars of Growth</h2>
       </div>
-      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <div class="rounded-2xl bg-cream p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-12 w-12"><div><div class="font-semibold text-lg">Spiritual</div><p class="mt-2 text-slate-600 leading-7">Character, values, identity, and purpose.</p></div></div></div>
-        <div class="rounded-2xl bg-cream p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/academics.png" alt="Academics" class="h-12 w-12"><div><div class="font-semibold text-lg">Academics</div><p class="mt-2 text-slate-600 leading-7">Strong learning habits, discipline, focus, and intellectual growth.</p></div></div></div>
-        <div class="rounded-2xl bg-cream p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/health.png" alt="Health" class="h-12 w-12"><div><div class="font-semibold text-lg">Health</div><p class="mt-2 text-slate-600 leading-7">Physical wellness, energy, resilience, and healthy routines.</p></div></div></div>
-        <div class="rounded-2xl bg-cream p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/finances.png" alt="Finances" class="h-12 w-12"><div><div class="font-semibold text-lg">Finances</div><p class="mt-2 text-slate-600 leading-7">Money management, saving, budgeting, and financial literacy.</p></div></div></div>
-        <div class="rounded-2xl bg-cream p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/social.png" alt="Social" class="h-12 w-12"><div><div class="font-semibold text-lg">Social</div><p class="mt-2 text-slate-600 leading-7">Communication, relationships, teamwork, and confidence with others.</p></div></div></div>
-        <div class="rounded-2xl bg-cream p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/career.png" alt="Career" class="h-12 w-12"><div><div class="font-semibold text-lg">Career</div><p class="mt-2 text-slate-600 leading-7">Exposure to business, leadership, entrepreneurship, and future pathways.</p></div></div></div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3 reveal-stagger reveal">
+        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-12 w-12"><div><div class="font-semibold text-lg">Spiritual</div><p class="mt-2 text-slate-600 leading-7">Character, values, identity, and purpose.</p></div></div></div>
+        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/academics.png" alt="Academics" class="h-12 w-12"><div><div class="font-semibold text-lg">Academics</div><p class="mt-2 text-slate-600 leading-7">Strong learning habits, discipline, focus, and intellectual growth.</p></div></div></div>
+        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/health.png" alt="Health" class="h-12 w-12"><div><div class="font-semibold text-lg">Health</div><p class="mt-2 text-slate-600 leading-7">Physical wellness, energy, resilience, and healthy routines.</p></div></div></div>
+        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/finances.png" alt="Finances" class="h-12 w-12"><div><div class="font-semibold text-lg">Finances</div><p class="mt-2 text-slate-600 leading-7">Money management, saving, budgeting, and financial literacy.</p></div></div></div>
+        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/social.png" alt="Social" class="h-12 w-12"><div><div class="font-semibold text-lg">Social</div><p class="mt-2 text-slate-600 leading-7">Communication, relationships, teamwork, and confidence with others.</p></div></div></div>
+        <div class="pillar-card rounded-2xl bg-white/80 backdrop-blur p-6 border border-slate-200"><div class="flex items-start gap-4"><img src="images/pillars/career.png" alt="Career" class="h-12 w-12"><div><div class="font-semibold text-lg">Career</div><p class="mt-2 text-slate-600 leading-7">Exposure to business, leadership, entrepreneurship, and future pathways.</p></div></div></div>
       </div>
     </div>
   </section>
 
-  <section class="bg-cream py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="bg-depth-cream py-20 lg:py-28 relative overflow-hidden">
+    <div class="float-orb" style="width:350px;height:350px;background:rgba(201,152,42,.04);top:-5%;left:-8%;animation-delay:-4s"></div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Choose your path</div>
         <h2 class="font-display text-5xl mt-3">One Academy.<br>Four Paths.</h2>
@@ -340,7 +477,7 @@
       </div>
     </div>
   </section>
-  <section class="py-20 lg:py-28 bg-white">
+  <section class="py-20 lg:py-28 bg-mesh-light section-divider">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-2 items-center">
       <div class="reveal">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our new home</div>
@@ -357,8 +494,9 @@
       </div>
     </div>
   </section>
-  <section class="bg-navy text-white py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="bg-mesh-navy navy-texture text-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="float-orb" style="width:400px;height:400px;background:rgba(201,152,42,.03);top:-15%;right:-10%;animation-delay:-6s"></div>
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Infinnovate difference</div>
         <h2 class="font-display text-5xl mt-3">More than tutoring. This is life readiness.</h2>
@@ -370,8 +508,9 @@
       </div>
     </div>
   </section>
-  <section class="py-20 lg:py-28 bg-cream">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="py-20 lg:py-28 bg-depth-cream relative overflow-hidden">
+    <div class="float-orb" style="width:450px;height:450px;background:rgba(27,107,69,.03);bottom:-15%;right:-10%;animation-delay:-3s"></div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
         <div>
           <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Real students. Real energy.</div>
@@ -391,14 +530,14 @@
       </div>
     </div>
   </section>
-  <section class="py-20 lg:py-28 bg-white">
+  <section class="py-20 lg:py-28 bg-mesh-light section-divider">
     <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center reveal">
       <div class="text-lg leading-8 text-slate-700">Serving students in Orange County<br>Partnered with local schools<br>Encore program pilot<br>Expanded learning aligned<br>Live cohorts active<br>Parent nights running</div>
       <div class="mt-6 text-lg font-semibold text-slate-800">Built by a business transformation leader.</div>
     </div>
   </section>
   <!-- 11. Founded by Jimmy Kim -->
-  <section class="py-20 lg:py-28 bg-white">
+  <section class="py-20 lg:py-28 bg-mesh-light section-divider">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
       <div class="reveal grid gap-8 lg:grid-cols-3 lg:items-center rounded-[2rem] border border-slate-200 bg-cream p-8">
         <div class="lg:col-span-2">
@@ -413,8 +552,9 @@
     </div>
   </section>
 
-  <section class="py-20 bg-cream">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8">
+  <section class="py-20 bg-depth-cream relative overflow-hidden">
+    <div class="float-orb" style="width:300px;height:300px;background:rgba(201,152,42,.04);top:10%;left:-8%;animation-delay:-7s"></div>
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-10"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Hear about Infinnovate</div><h2 class="font-display text-5xl mt-3">Listen in your language</h2><p class="mt-4 text-slate-600 text-lg leading-8">A quick overview for families who want to hear the story before Parent Night.</p></div>
       <div class="reveal rounded-[2rem] bg-white border border-slate-200 p-8 shadow-glow">
         <div class="flex flex-wrap gap-3 mb-6">
@@ -437,7 +577,7 @@
       </div>
     </div>
   </section>
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-mesh-light">
     <div class="max-w-6xl mx-auto px-5 lg:px-8 text-center reveal">
       <h2 class="font-display text-5xl">Download our brochure</h2>
       <p class="mt-4 text-slate-600 text-lg max-w-2xl mx-auto">Take the Infinnovate story home. Share it with family, friends, or anyone who wants to see what's possible for the next generation.</p>
@@ -447,9 +587,9 @@
       </div>
     </div>
   </section>
-  <section class="bg-navy text-white py-20">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
-      <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:p-12">
+  <section class="bg-mesh-navy navy-texture text-white py-20">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:p-12 backdrop-blur-sm">
         <div class="grid gap-8 lg:grid-cols-3 lg:items-center">
           <div>
             <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Your timeline</div>
@@ -466,8 +606,9 @@
   </section>
 
   <!-- 13. CTA: Parent Night Registration Open -->
-  <section class="py-20 lg:py-28 bg-navy text-white">
-    <div class="max-w-4xl mx-auto px-5 text-center reveal">
+  <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white relative overflow-hidden">
+    <div class="float-orb" style="width:500px;height:500px;background:rgba(201,152,42,.04);top:-30%;left:50%;transform:translateX(-50%);animation-delay:-1s"></div>
+    <div class="max-w-4xl mx-auto px-5 text-center reveal relative">
       <h2 class="font-display text-5xl">Parent Night Registration Open</h2>
       <p class="mt-4 text-slate-300 text-lg">Meet the academy<br>See the curriculum<br>Ask questions<br>Experience the vision</p>
       <div class="mt-7 flex flex-col sm:flex-row gap-4 justify-center">
@@ -478,8 +619,9 @@
   </section>
 
   <!-- 14. Brand statement -->
-  <section class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-5 text-center">
+  <section class="py-16 bg-mesh-light relative overflow-hidden">
+    <div class="float-orb" style="width:250px;height:250px;background:rgba(201,152,42,.03);top:-20%;left:50%;transform:translateX(-50%);animation-delay:-2s"></div>
+    <div class="max-w-5xl mx-auto px-5 text-center relative">
       <img src="images/logo_black.png" alt="Infinnovate" class="mx-auto h-8 w-auto">
       <h3 class="font-display text-3xl mt-4">Infinnovate, Inc.</h3>
       <p class="mt-3 text-slate-600">A modern academy for business, financial, and AI literacy.<br><br>Helping students develop confidence,<br>discipline,<br>and real-world capability.<br><br>Believe in Being Infinite™</p>
@@ -488,7 +630,7 @@
 </main>
 
 
-<footer class="bg-navy text-white">
+<footer class="bg-mesh-navy navy-texture text-white">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
     <div class="grid gap-10 lg:grid-cols-4">
       <div class="lg:col-span-2">
@@ -531,7 +673,7 @@
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
   }, {threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>observer.observe(el));
 
   document.querySelectorAll('[data-counter]').forEach(el => {
     const target = Number(el.dataset.counter);
