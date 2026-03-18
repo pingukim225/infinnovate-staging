@@ -86,6 +86,21 @@ body { font-family: Inter, sans-serif; background: #fff; color: #0A1628 }
 .nav-link:after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background: #C9982A; transition: width .25s ease }
 .nav-link:hover:after, .nav-link.active:after { width: 100% }
 
+/* === Dropdown Navigation === */
+.nav-dropdown { position: relative }
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.dropdown-menu {
+  transform: translateY(-8px);
+  z-index: 100;
+}
+
+/* === Mobile Accordion Nav === */
+.mobile-accordion-panel { max-height: 0; overflow: hidden; transition: max-height .3s ease }
+.mobile-accordion-panel.open { max-height: 400px }
+
 /* === Countdown === */
 .count-box { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); transition: background .3s }
 .count-box:hover { background: rgba(255,255,255,.12) }
@@ -342,3 +357,8 @@ body { font-family: Inter, sans-serif; background: #fff; color: #0A1628 }
 
 /* === Future-Proof Card depth === */
 .fp-card { min-height: 140px }
+
+/* === Not/Real Matrix Slide Animations === */
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+.animate-left, .animate-right { opacity: 0; }

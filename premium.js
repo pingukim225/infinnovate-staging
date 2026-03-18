@@ -7,8 +7,20 @@ if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hi
 
 // Scroll reveal (supports .reveal and .reveal-stagger)
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-}, { threshold: .12 });
+  entries.forEach(entry => { 
+    if (entry.isIntersecting) { 
+      entry.target.classList.add('show'); 
+      // Trigger not-real animation
+      const grid = entry.target.closest('.not-real-grid');
+      if (grid) {
+        grid.querySelectorAll('.animate-left, .animate-right').forEach((el, i) => {
+          el.style.animation = i % 2 === 0 ? 'slideInLeft 0.8s ease forwards' : 'slideInRight 0.8s ease forwards';
+          el.style.animationDelay = `${(Math.floor(i/2)) * 0.3}s`;
+        });
+      }
+    } 
+  });
+}, { threshold: .15 });
 document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
 
 // Animated counters
@@ -78,6 +90,14 @@ if (registerForm) {
     window.location.href = `mailto:info@infinnovateinc.com?subject=${subject}&body=${body}`;
   });
 }
+
+// Mobile accordion nav
+document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const panel = btn.nextElementSibling;
+    if (panel) panel.classList.toggle('open');
+  });
+});
 
 // Sticky header scroll effect (for transparent headers)
 const hdr = document.getElementById('site-header');

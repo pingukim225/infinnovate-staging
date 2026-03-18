@@ -138,26 +138,101 @@
       </a>
       <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white">
         <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="parent.html">I'm a Parent</a>
-        <a class="nav-link" href="programs.html">Programs</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="enrollment.html">Get Started</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+        <div class="nav-dropdown relative">
+          <button class="nav-link flex items-center gap-1">Connect <span class="text-[10px] opacity-70">▾</span></button>
+          <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
+            <a href="student.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a Student</a>
+            <a href="parent.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a Parent</a>
+            <a href="school.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a School</a>
+            <a href="business.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a Business</a>
+          </div>
+        </div>
+        <div class="nav-dropdown relative">
+          <button class="nav-link flex items-center gap-1">What We Do <span class="text-[10px] opacity-70">▾</span></button>
+          <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
+            <a href="about.html#why" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Why Infinnovate</a>
+            <a href="programs.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Capabilities</a>
+          </div>
+        </div>
+        <div class="nav-dropdown relative">
+          <button class="nav-link flex items-center gap-1">Who We Are <span class="text-[10px] opacity-70">▾</span></button>
+          <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
+            <a href="about.html#vision" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Vision &amp; Mission</a>
+            <a href="about.html#pillars" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our 6 Pillars</a>
+            <a href="about.html#leadership" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Leadership</a>
+            <a href="about.html#expertise" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Expertise</a>
+            <a href="about.html#awards" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Awards &amp; Recognition</a>
+          </div>
+        </div>
+        <div class="nav-dropdown relative">
+          <button class="nav-link flex items-center gap-1">How We Serve <span class="text-[10px] opacity-70">▾</span></button>
+          <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
+            <a href="programs.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Programs</a>
+            <a href="student.html#journey" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">The Student Journey</a>
+            <div class="border-t border-white/10 my-1.5"></div>
+            <div class="px-4 py-1 text-[10px] text-slate-500 font-bold uppercase tracking-wider">Locations</div>
+            <a href="contact.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors pl-6">Fullerton Innovation Hub</a>
+            <a href="contact.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors pl-6">Parks Jr High Conservatory</a>
+            <a href="contact.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors pl-6">Irvine Elite Academy</a>
+          </div>
+        </div>
+        <a class="nav-link" href="contact.html">Contact Us</a>
       </nav>
-      <a href="enrollment.html#register" class="hidden lg:inline-flex items-center rounded-full bg-gold px-5 py-3 text-sm font-bold text-white shadow-lg shadow-gold/20">Register for Parent Night — March 31</a>
+      <div class="hidden lg:flex items-center gap-4">
+        <!-- Search toggle -->
+        <button id="search-toggle" class="text-white hover:text-gold transition" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <!-- Language selector (placeholder) -->
+        <button class="text-white hover:text-gold transition flex items-center gap-1 text-sm font-medium" aria-label="Language selector">
+          🌐 <span>USA</span> <span class="text-xs">▾</span>
+        </button>
+      </div>
+      
       <button id="menuBtn" class="lg:hidden rounded-lg border border-white/30 px-3 py-2 text-sm font-semibold text-white">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
       <div class="grid gap-3 text-sm font-semibold text-white/90">
         <a href="index.html">Home</a>
-        <a href="parent.html">I'm a Parent</a>
-        <a href="student.html">I'm a Student</a>
-        <a href="school.html">I'm a School</a>
-        <a href="business.html">I'm a Small Business</a>
-        <a href="programs.html">Programs</a>
-        <a href="about.html">About</a>
-        <a href="enrollment.html">Get Started</a>
-        <a href="contact.html">Contact</a>
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">Connect <span class="text-xs opacity-70">▾</span></button>
+          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
+            <a href="student.html">I'm a Student</a>
+            <a href="parent.html">I'm a Parent</a>
+            <a href="school.html">I'm a School</a>
+            <a href="business.html">I'm a Business</a>
+          </div>
+        </div>
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">What We Do <span class="text-xs opacity-70">▾</span></button>
+          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
+            <a href="about.html#why">Why Infinnovate</a>
+            <a href="programs.html">Our Capabilities</a>
+          </div>
+        </div>
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">Who We Are <span class="text-xs opacity-70">▾</span></button>
+          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
+            <a href="about.html#vision">Our Vision &amp; Mission</a>
+            <a href="about.html#pillars">Our 6 Pillars</a>
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#expertise">Expertise</a>
+            <a href="about.html#awards">Awards &amp; Recognition</a>
+          </div>
+        </div>
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">How We Serve <span class="text-xs opacity-70">▾</span></button>
+          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
+            <a href="programs.html">Our Programs</a>
+            <a href="student.html#journey">The Student Journey</a>
+            <a href="contact.html">Fullerton Innovation Hub</a>
+            <a href="contact.html">Parks Jr High Conservatory</a>
+            <a href="contact.html">Irvine Elite Academy</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact Us</a>
       </div>
     </div>
   </div>
@@ -173,26 +248,36 @@
     <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/45"></div>
     <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-36 pb-24 lg:pt-44 lg:pb-32">
       <div class="max-w-3xl reveal">
-        <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-gold">Parent Night • March 31 • Fullerton</div>
+        </div>
+</xai:function_call ><xai:function_call name="edit">
+<parameter name="path">~/AI_Team_Shared/projects/Infinnovate/infinnovate-staging/index.html
         <h1 class="mt-6 font-display text-6xl sm:text-7xl lg:text-8xl leading-[.95]">Believe in Being Infinite™</h1>
         <p class="mt-6 max-w-3xl text-xl md:text-2xl leading-8 text-slate-200">Education Was Designed for the Past.<br>We Build for the Future.</p>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Infinnovate is a next-generation academy where students learn<br>business, finance, leadership, and AI through real-world experience.</p>
 
         <!-- 3×2 Matrix: "Not…" vs "Real…" -->
-        <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-0 max-w-lg" role="table" aria-label="What we are not vs what we are">
-          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium">Not tutoring.</div>
-          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold">Real skills.</div>
-          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium">Not test prep.</div>
-          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold">Real confidence.</div>
-          <div class="py-2 text-lg text-slate-400 font-medium">Not theory.</div>
-          <div class="py-2 text-lg text-gold font-bold">Real life readiness.</div>
+        <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-0 max-w-lg not-real-grid reveal" role="table" aria-label="What we are not vs what we are">
+          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium animate-left">Not tutoring.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold animate-right">Real skills.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium animate-left delay-1">Not test prep.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold animate-right delay-1">Real confidence.</div>
+          <div class="py-2 text-lg text-slate-400 font-medium animate-left delay-2">Not theory.</div>
+          <div class="py-2 text-lg text-gold font-bold animate-right delay-2">Real life readiness.</div>
         </div>
 
-<div class="grid grid-cols-4 gap-3 max-w-xl pt-6">
-  <div class="count-box rounded-2xl p-4 text-center"><div id="days" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Days</div></div>
-  <div class="count-box rounded-2xl p-4 text-center"><div id="hours" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Hours</div></div>
-  <div class="count-box rounded-2xl p-4 text-center"><div id="minutes" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Minutes</div></div>
-  <div class="count-box rounded-2xl p-4 text-center"><div id="seconds" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Seconds</div></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl pt-12 metrics-grid">
+  <div class="text-center">
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">190+</div>
+    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Students reached through district-aligned programming.</div>
+  </div>
+  <div class="text-center">
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">19+</div>
+    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Entrepreneurship and financial literacy events delivered.</div>
+  </div>
+  <div class="text-center">
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">20–25+</div>
+    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Years of leadership and instructional experience guiding the academy vision.</div>
+  </div>
 </div>
 
         <div class="mt-8 flex flex-col sm:flex-row gap-4">
@@ -202,7 +287,16 @@
       </div>
     </div>
   </section>
-  
+
+  <section class="bg-cream py-16 text-center">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-3">You're Invited</div>
+      <h2 class="font-display text-4xl lg:text-5xl text-navy">Parent Night — March 31</h2>
+      <p class="mt-4 text-lg text-slate-600">Fullerton Innovation Center · 6:30 PM PT</p>
+      <a href="enrollment.html#register" class="mt-6 inline-flex rounded-full bg-gold px-8 py-4 text-sm font-bold text-white shadow-lg">Register Now</a>
+    </div>
+  </section>
+
 <section class="bg-navy text-white py-5 border-y border-white/10">
   <div class="ticker text-sm font-semibold uppercase tracking-[0.22em] text-gold/90">
     <div class="ticker-track">
@@ -396,39 +490,39 @@
       </div>
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3 reveal-stagger reveal">
         <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex items-start gap-5">
-            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-9 w-9"></div>
-            <div><div class="font-semibold text-lg text-navy">Spiritual</div><p class="mt-2 text-slate-600 leading-7">Character, values, identity, and purpose.</p></div>
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Spiritual</div><p class="mt-2 text-slate-600 leading-7">In God we trust.</p></div>
           </div>
         </div>
         <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex items-start gap-5">
-            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/academics.png" alt="Academics" class="h-9 w-9"></div>
-            <div><div class="font-semibold text-lg text-navy">Academics</div><p class="mt-2 text-slate-600 leading-7">Strong learning habits, discipline, focus, and intellectual growth.</p></div>
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/academics.png" alt="Academics" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Academics</div><p class="mt-2 text-slate-600 leading-7">We foster a love of learning, creating opportunities for intellectual growth and achievement.</p></div>
           </div>
         </div>
         <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex items-start gap-5">
-            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/health.png" alt="Health" class="h-9 w-9"></div>
-            <div><div class="font-semibold text-lg text-navy">Health</div><p class="mt-2 text-slate-600 leading-7">Physical wellness, energy, resilience, and healthy routines.</p></div>
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/health.png" alt="Health" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Health</div><p class="mt-2 text-slate-600 leading-7">We champion well-being, encouraging healthy habits and a balanced lifestyle.</p></div>
           </div>
         </div>
         <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex items-start gap-5">
-            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/finances.png" alt="Finances" class="h-9 w-9"></div>
-            <div><div class="font-semibold text-lg text-navy">Finances</div><p class="mt-2 text-slate-600 leading-7">Money management, saving, budgeting, and financial literacy.</p></div>
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/finances.png" alt="Finances" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Finances</div><p class="mt-2 text-slate-600 leading-7">We promote financial literacy, empowering individuals on their path to financial freedom.</p></div>
           </div>
         </div>
         <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex items-start gap-5">
-            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/social.png" alt="Social" class="h-9 w-9"></div>
-            <div><div class="font-semibold text-lg text-navy">Social</div><p class="mt-2 text-slate-600 leading-7">Communication, relationships, teamwork, and confidence with others.</p></div>
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/social.png" alt="Social" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Social</div><p class="mt-2 text-slate-600 leading-7">We cultivate a supportive and inclusive community, fostering collaboration and respect.</p></div>
           </div>
         </div>
         <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex items-start gap-5">
-            <div class="pillar-icon-wrap flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/10 to-gold/5 border border-gold/20 flex items-center justify-center shadow-sm"><img src="images/pillars/career.png" alt="Career" class="h-9 w-9"></div>
-            <div><div class="font-semibold text-lg text-navy">Career</div><p class="mt-2 text-slate-600 leading-7">Exposure to business, leadership, entrepreneurship, and future pathways.</p></div>
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/career.png" alt="Career" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Career</div><p class="mt-2 text-slate-600 leading-7">We inspire a relentless pursuit of purpose-driven careers that ignite passion and ambition to create meaningful impact.</p></div>
           </div>
         </div>
       </div>
@@ -617,34 +711,81 @@
 
 
 <footer class="bg-mesh-navy navy-texture text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
-    <div class="grid gap-10 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5">
-          <img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-10 w-auto">
-          <div>
-            <div class="font-display text-3xl font-semibold">Infinnovate</div>
-            <div class="text-sm text-slate-300">Believe in Being Infinite™</div>
-          </div>
-        </div>
-        <p class="max-w-xl text-slate-300 leading-7">Programs for Students | Parents | Schools | Businesses</p>
-      </div>
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-16 pb-10">
+    <!-- Logo row -->
+    <div class="mb-12">
+      <img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto">
+    </div>
+    <!-- 6-column sitemap -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
+      <!-- Home -->
       <div>
-        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3>
-        <p class="text-slate-300 leading-7">Fullerton, California</p>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Home</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-slate-300 hover:text-white text-sm transition-colors">Home</a></li>
+        </ul>
       </div>
+      <!-- Connect -->
       <div>
-        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3>
-        <a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a>
-        <a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Connect</h3>
+        <ul class="space-y-2">
+          <li><a href="student.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Student</a></li>
+          <li><a href="parent.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Parent</a></li>
+          <li><a href="school.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a School</a></li>
+          <li><a href="business.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Business</a></li>
+        </ul>
+      </div>
+      <!-- What We Do -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">What We Do</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html#why" class="text-slate-300 hover:text-white text-sm transition-colors">Why Infinnovate</a></li>
+          <li><a href="programs.html" class="text-slate-300 hover:text-white text-sm transition-colors">Our Capabilities</a></li>
+        </ul>
+      </div>
+      <!-- Who We Are -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Who We Are</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html#vision" class="text-slate-300 hover:text-white text-sm transition-colors">Our Vision &amp; Mission</a></li>
+          <li><a href="about.html#pillars" class="text-slate-300 hover:text-white text-sm transition-colors">Our 6 Pillars</a></li>
+          <li><a href="about.html#leadership" class="text-slate-300 hover:text-white text-sm transition-colors">Leadership</a></li>
+          <li><a href="about.html#expertise" class="text-slate-300 hover:text-white text-sm transition-colors">Expertise</a></li>
+          <li><a href="about.html#awards" class="text-slate-300 hover:text-white text-sm transition-colors">Awards &amp; Recognition</a></li>
+        </ul>
+      </div>
+      <!-- How We Serve -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">How We Serve</h3>
+        <ul class="space-y-2">
+          <li><a href="programs.html" class="text-slate-300 hover:text-white text-sm transition-colors">Our Programs</a></li>
+          <li><a href="student.html#journey" class="text-slate-300 hover:text-white text-sm transition-colors">The Student Journey</a></li>
+          <li class="pt-2 text-xs text-slate-400 font-semibold uppercase tracking-wider">Locations</li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Fullerton Innovation Hub</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Parks Jr High Conservatory</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Irvine Elite Academy</a></li>
+        </ul>
+      </div>
+      <!-- Contact Us -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Contact Us</h3>
+        <ul class="space-y-2">
+          <li><a href="contact.html#careers" class="text-slate-300 hover:text-white text-sm transition-colors">Careers</a></li>
+          <li><a href="enrollment.html#register" class="text-slate-300 hover:text-white text-sm transition-colors">Register / Contact Us</a></li>
+          <li class="pt-2 text-xs text-slate-400 font-semibold uppercase tracking-wider">Locations</li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Fullerton Innovation Hub</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Parks Jr High Conservatory</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Irvine Elite Academy</a></li>
+        </ul>
       </div>
     </div>
-    <div class="mt-10 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
-      <div>© 2026 Infinnovate, Inc.</div>
-      <div class="flex gap-5">
-        <a href="parent.html">Parents</a>
-        <a href="programs.html">Programs</a>
-        <a href="enrollment.html">Enrollment</a>
+    <!-- Legal bar -->
+    <div class="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
+      <div>© 2026 Infinnovate, Inc. All rights reserved.</div>
+      <div class="flex flex-wrap gap-5">
+        <a href="#" class="hover:text-white transition-colors">Privacy Statement</a>
+        <a href="#" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="#" class="hover:text-white transition-colors">Accessibility Statement</a>
       </div>
     </div>
   </div>
@@ -781,6 +922,16 @@ Message: ${fd.get('message')}`);
 
   // Auto-advance every 4s
   setInterval(() => goTo((current+1)%pool.length), 4000);
+})();
+</script>
+
+</body>
+</html>rval(() => goTo((current+1)%pool.length), 4000);
+})();
+</script>
+
+</body>
+</html>nt+1)%pool.length), 4000);
 })();
 </script>
 
