@@ -56,12 +56,76 @@
   @keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,152,42,.5)}50%{box-shadow:0 0 24px 8px rgba(201,152,42,.35)}}
   .pulse-gold{animation:pulse-gold 2.2s ease-in-out infinite}
   @media (max-width:767px){.masonry{columns:1}.hero-slide{animation:none;transform:none}}
-.font-display { font-family: 'Halyard Display', sans-serif; }
+  .font-display { font-family: 'Halyard Display', sans-serif; }
+
+  /* === Premium Background Treatments (v2 — visually rich) === */
+  .bg-mesh-light{background:linear-gradient(135deg,#f3efe7 0%,#faf8f4 25%,#edeae2 50%,#f8f6f0 75%,#f0ece3 100%);position:relative}
+  .bg-mesh-light::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(201,152,42,.07),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 70%,rgba(27,107,69,.05),transparent 60%);pointer-events:none}
+  .bg-mesh-navy{background:linear-gradient(160deg,#060e1c 0%,#0f2240 25%,#0A1628 50%,#132c52 75%,#0A1628 100%);position:relative}
+  .bg-mesh-navy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 20%,rgba(201,152,42,.06),transparent 60%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(27,107,69,.04),transparent 60%);pointer-events:none}
+  .bg-depth-cream{background:linear-gradient(180deg,#f0ece3 0%,#faf8f4 20%,#ede8dd 45%,#f8f6f1 65%,#e8e3d8 100%);position:relative}
+  .bg-depth-cream::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 75% 40%,rgba(201,152,42,.08),transparent 55%),radial-gradient(ellipse 50% 40% at 15% 60%,rgba(27,107,69,.05),transparent 55%);pointer-events:none}
+  .bg-accent-glow{position:relative;overflow:hidden}
+  .bg-accent-glow::before{content:'';position:absolute;top:-30%;right:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(201,152,42,.1) 0%,transparent 65%);pointer-events:none}
+  .bg-accent-glow::after{content:'';position:absolute;bottom:-20%;left:-10%;width:45%;height:60%;background:radial-gradient(ellipse,rgba(27,107,69,.07) 0%,transparent 65%);pointer-events:none}
+  .section-divider{position:relative}
+  .section-divider::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:2px;background:linear-gradient(90deg,transparent,#C9982A,transparent)}
+
+  /* Navy sections: visible dot grid + gold accent line */
+  .navy-texture{position:relative;overflow:hidden}
+  .navy-texture::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+  .navy-texture::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 10%,rgba(201,152,42,.35) 50%,transparent 90%)}
+
+  /* Soft floating orbs for depth — larger, more visible */
+  @keyframes float-slow{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.04)}}
+  .float-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:float-slow 8s ease-in-out infinite}
+
+  /* (Orbit styles removed — replaced with clean grid layout) */
+
+  /* === Stagger reveal animation === */
+  .reveal-stagger > *{opacity:0;transform:translateY(20px);transition:all .6s ease}
+  .reveal-stagger.show > *:nth-child(1){transition-delay:.05s}
+  .reveal-stagger.show > *:nth-child(2){transition-delay:.1s}
+  .reveal-stagger.show > *:nth-child(3){transition-delay:.15s}
+  .reveal-stagger.show > *:nth-child(4){transition-delay:.2s}
+  .reveal-stagger.show > *:nth-child(5){transition-delay:.25s}
+  .reveal-stagger.show > *:nth-child(6){transition-delay:.3s}
+  .reveal-stagger.show > *:nth-child(7){transition-delay:.35s}
+  .reveal-stagger.show > *:nth-child(8){transition-delay:.4s}
+  .reveal-stagger.show > *{opacity:1;transform:translateY(0)}
+
+  /* Pillar cards hover glow */
+  .pillar-card{transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden}
+  .pillar-card::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(201,152,42,.06) 0%,transparent 70%);opacity:0;transition:opacity .4s}
+  .pillar-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(10,22,40,.08)}
+  .pillar-card:hover::before{opacity:1}
+
+  /* Smooth count-box pulse on hero */
+  .count-box{transition:background .3s}
+  .count-box:hover{background:rgba(255,255,255,.12)}
+
+  /* === Premium Pillar Cards v2 === */
+  .pillar-card-v2{transition:transform .4s cubic-bezier(.25,.46,.45,.94),box-shadow .4s ease,border-color .4s ease}
+  .pillar-card-v2:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(10,22,40,.1);border-color:rgba(201,152,42,.3)}
+  .pillar-icon-wrap{transition:transform .3s,box-shadow .3s}
+  .pillar-card-v2:hover .pillar-icon-wrap{transform:scale(1.08);box-shadow:0 8px 20px rgba(201,152,42,.15)}
+
+  /* === Future-Proof Cards === */
+  .fp-card{min-height:140px;display:flex;flex-direction:column;justify-content:flex-start}
+
+  /* === Journey card connector arrows (desktop) === */
+  @media(min-width:768px){
+    .journey-card{position:relative}
+    .journey-card:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:#C9982A;font-size:1.2rem;font-weight:700;z-index:2}
+  }
+
+  /* === Why Slideshow cells === */
+  .why-slide-cell{background:#f0ede6}
 
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Halyard+Display:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="premium.css?v=20260317b">
 </head>
 <body>
 
@@ -69,7 +133,7 @@
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="flex items-center justify-between py-4">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="images/WHITE LOGO_bold (1).png" alt="Infinnovate logo" class="h-14 w-auto">
+        <img src="images/logo_white.png" alt="Infinnovate logo" class="h-14 w-auto">
         
       </a>
       <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white">
@@ -80,11 +144,23 @@
         <a class="nav-link" href="enrollment.html">Get Started</a>
         <a class="nav-link" href="contact.html">Contact</a>
       </nav>
-      <a href="enrollment.html#register" class="hidden lg:inline-flex items-center rounded-full bg-gold px-5 py-3 text-sm font-bold text-white shadow-lg shadow-gold/20">Register for Parent Night — March 31</a>
-      <button id="menuBtn" class="lg:hidden rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold">Menu</button>
+      <div class="hidden lg:flex items-center gap-4">
+        <!-- Search toggle -->
+        <button id="search-toggle" class="text-white hover:text-gold transition" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <!-- Language selector (placeholder) -->
+        <button class="text-white hover:text-gold transition flex items-center gap-1 text-sm font-medium" aria-label="Language selector">
+          🌐 <span>USA</span> <span class="text-xs">▾</span>
+        </button>
+      </div>
+      
+      <button id="menuBtn" class="lg:hidden rounded-lg border border-white/30 px-3 py-2 text-sm font-semibold text-white">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
-      <div class="grid gap-3 text-sm font-semibold text-slate-700">
+      <div class="grid gap-3 text-sm font-semibold text-white/90">
         <a href="index.html">Home</a>
         <a href="parent.html">I'm a Parent</a>
         <a href="student.html">I'm a Student</a>
@@ -109,48 +185,293 @@
     <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/45"></div>
     <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-36 pb-24 lg:pt-44 lg:pb-32">
       <div class="max-w-3xl reveal">
-        <div class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-gold">Parent Night • March 31 • Fullerton</div>
+        </div>
+</xai:function_call ><xai:function_call name="edit">
+<parameter name="path">~/AI_Team_Shared/projects/Infinnovate/infinnovate-staging/index.html
         <h1 class="mt-6 font-display text-6xl sm:text-7xl lg:text-8xl leading-[.95]">Believe in Being Infinite™</h1>
-        <p class="mt-6 max-w-2xl text-lg md:text-xl leading-8 text-slate-200">Where students become leaders, entrepreneurs, and innovators through financial literacy, AI fluency, and real-world business experiences.</p>
-        
-<div class="grid grid-cols-4 gap-3 max-w-xl pt-6">
-  <div class="count-box rounded-2xl p-4 text-center"><div id="days" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Days</div></div>
-  <div class="count-box rounded-2xl p-4 text-center"><div id="hours" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Hours</div></div>
-  <div class="count-box rounded-2xl p-4 text-center"><div id="minutes" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Minutes</div></div>
-  <div class="count-box rounded-2xl p-4 text-center"><div id="seconds" class="font-display text-4xl font-bold">00</div><div class="text-xs uppercase tracking-[0.2em] text-slate-300 mt-1">Seconds</div></div>
+        <p class="mt-6 max-w-3xl text-xl md:text-2xl leading-8 text-slate-200">Education Was Designed for the Past.<br>We Build for the Future.</p>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Infinnovate is a next-generation academy where students learn<br>business, finance, leadership, and AI through real-world experience.</p>
+
+        <!-- 3×2 Matrix: "Not…" vs "Real…" -->
+        <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-0 max-w-lg not-real-grid reveal" role="table" aria-label="What we are not vs what we are">
+          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium animate-left">Not tutoring.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold animate-right">Real skills.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium animate-left delay-1">Not test prep.</div>
+          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold animate-right delay-1">Real confidence.</div>
+          <div class="py-2 text-lg text-slate-400 font-medium animate-left delay-2">Not theory.</div>
+          <div class="py-2 text-lg text-gold font-bold animate-right delay-2">Real life readiness.</div>
+        </div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl pt-12 metrics-grid">
+  <div class="text-center">
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">190+</div>
+    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Students reached through district-aligned programming.</div>
+  </div>
+  <div class="text-center">
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">19+</div>
+    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Entrepreneurship and financial literacy events delivered.</div>
+  </div>
+  <div class="text-center">
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">20–25+</div>
+    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Years of leadership and instructional experience guiding the academy vision.</div>
+  </div>
 </div>
 
         <div class="mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="enrollment.html#register" class="pulse-gold rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg shadow-gold/30">Register for Parent Night — March 31</a>
-          <a href="parent.html" class="rounded-full border border-white/20 glass px-7 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white">Explore the Parent Experience</a>
+          <a href="enrollment.html#register" class="pulse-gold rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg shadow-gold/30">Join Parent Night</a>
+          <a href="parent.html" class="rounded-full border border-white/20 glass px-7 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white">Explore the Academy</a>
         </div>
       </div>
     </div>
   </section>
-  
+
+  <section class="bg-cream py-16 text-center">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-3">You're Invited</div>
+      <h2 class="font-display text-4xl lg:text-5xl text-navy">Parent Night — March 31</h2>
+      <p class="mt-4 text-lg text-slate-600">Fullerton Innovation Center · 6:30 PM PT</p>
+      <a href="enrollment.html#register" class="mt-6 inline-flex rounded-full bg-gold px-8 py-4 text-sm font-bold text-white shadow-lg">Register Now</a>
+    </div>
+  </section>
+
 <section class="bg-navy text-white py-5 border-y border-white/10">
   <div class="ticker text-sm font-semibold uppercase tracking-[0.22em] text-gold/90">
     <div class="ticker-track">
-      <span>190+ Students Served</span>
-      <span>19+ Events Delivered</span>
-      <span>75% Confidence Increase</span>
-      <span>32 Active Students in Pilot</span>
-      <span>Fullerton School District Partner</span>
-      <span>190+ Students Served</span>
-      <span>19+ Events Delivered</span>
-      <span>75% Confidence Increase</span>
-      <span>32 Active Students in Pilot</span>
-      <span>Fullerton School District Partner</span>
+      <span>Built for Students</span>
+      <span>Trusted by Parents</span>
+      <span>Partnered with Schools</span>
+      <span>Driven by Real-World Experience</span>
+      <span>Built for Students</span>
+      <span>Trusted by Parents</span>
+      <span>Partnered with Schools</span>
+      <span>Driven by Real-World Experience</span>
     </div>
   </div>
 </section>
 
-  <section class="bg-cream py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <!-- 3. Why Infinnovate -->
+  <section class="py-20 lg:py-28 bg-mesh-light section-divider">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="grid gap-10 lg:grid-cols-2 items-start">
+        <div class="reveal max-w-3xl lg:max-w-none">
+          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Why Infinnovate</div>
+          <h2 class="font-display text-5xl mt-3">School teaches academics.<br>Life requires capability.</h2>
+          <div class="mt-6 space-y-5 text-lg text-slate-600 leading-8">
+            <p>Students graduate knowing formulas<br>but not money.</p>
+            <p>They write essays<br>but don't know business.</p>
+            <p>They memorize answers<br>but never learn how to think.</p>
+            <p>Infinnovate closes the gap.</p>
+            <p>We teach how to think.<br>How to lead.<br>How to build.<br>How to decide.<br>How to create a future.</p>
+          </div>
+        </div>
+        <div class="reveal">
+          <!-- Premium image slideshow with uniform grid -->
+          <div class="grid grid-cols-2 gap-4" id="whySlideshow">
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_6506.webp" alt="Students collaborating" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            </div>
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_7097.webp" alt="Presentation practice" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            </div>
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_9010.webp" alt="Hands-on learning" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            </div>
+            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
+              <img src="images/IMG_7625.webp" alt="Student engagement" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+            </div>
+          </div>
+          <!-- Slideshow dots -->
+          <div class="flex justify-center gap-2 mt-4" id="whyDots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Not tutoring: Academy -->
+  <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal max-w-3xl mb-10">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The difference</div>
+        <h2 class="font-display text-5xl mt-3">This Is Not Tutoring.<br>This Is an Academy.</h2>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4 reveal-stagger reveal">
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🏗️</div><div class="text-lg font-semibold">Project-based learning</div><p class="text-sm text-slate-400 mt-1">Build real things, not worksheets</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">📈</div><div class="text-lg font-semibold">Business simulations</div><p class="text-sm text-slate-400 mt-1">Run companies, make decisions</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">💰</div><div class="text-lg font-semibold">Financial literacy</div><p class="text-sm text-slate-400 mt-1">Money, budgets, and real economics</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🤖</div><div class="text-lg font-semibold">AI fluency</div><p class="text-sm text-slate-400 mt-1">Modern tools, used responsibly</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🧭</div><div class="text-lg font-semibold">Leadership training</div><p class="text-sm text-slate-400 mt-1">Confidence to lead from day one</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🎤</div><div class="text-lg font-semibold">Presentations</div><p class="text-sm text-slate-400 mt-1">Communicate ideas with clarity</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🤝</div><div class="text-lg font-semibold">Team challenges</div><p class="text-sm text-slate-400 mt-1">Collaborate, negotiate, deliver</p></div>
+        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">⚡</div><div class="text-lg font-semibold">Real responsibility</div><p class="text-sm text-slate-400 mt-1">Ownership that builds character</p></div>
+      </div>
+      <p class="reveal mt-8 text-xl text-slate-200">Students don't just learn.<br>They become capable.</p>
+    </div>
+  </section>
+
+  <!-- 5. ESBIE model / Journey -->
+  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal mb-12">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Journey</div>
+        <h2 class="font-display text-5xl mt-3">How Students Grow</h2>
+        <div class="mt-4 flex flex-wrap gap-2.5">
+          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Employee</span>
+          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Start-Up</span>
+          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Big Business</span>
+          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Investor</span>
+          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Entrepreneur</span>
+        </div>
+        <p class="mt-6 text-lg text-slate-600 leading-8 max-w-4xl">Students progress through real stages of the business world.</p>
+        <div class="mt-4 flex flex-wrap gap-2.5 max-w-4xl">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">💬 Communication</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🧭 Strategy</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">💰 Money</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🏅 Leadership</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">✨ Innovation</span>
+          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🧠 Decisions</span>
+        </div>
+        <p class="mt-4 text-lg text-slate-700 font-semibold">They learn how the world works.</p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-5 reveal-stagger reveal">
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Employee</div><p class="mt-3 text-slate-600 leading-7">Learn responsibility, teamwork, communication, and what it means to contribute inside a real organization.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">S</div><div class="mt-3 text-xl font-semibold">Start-Up</div><p class="mt-3 text-slate-600 leading-7">Learn creativity, initiative, problem solving, and how to build something new from the ground up.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">B</div><div class="mt-3 text-xl font-semibold">Big Business</div><p class="mt-3 text-slate-600 leading-7">Learn systems, scale, leadership, structure, and how larger organizations make decisions and deliver results.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">I</div><div class="mt-3 text-xl font-semibold">Investor</div><p class="mt-3 text-slate-600 leading-7">Learn money, risk, opportunity, and how to evaluate ideas, businesses, and long-term value.</p></div>
+        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Entrepreneur</div><p class="mt-3 text-slate-600 leading-7">Bring it all together — leadership, initiative, resilience, and execution — to create, launch, and lead.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. AI will change every career — Future Proof -->
+  <section class="py-20 lg:py-28 bg-mesh-light section-divider relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal max-w-3xl mb-12">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Future-proof</div>
+        <h2 class="font-display text-5xl mt-3">AI Will Change Every Career.</h2>
+        <p class="mt-4 text-xl text-slate-700">Our students are ready.</p>
+        <p class="mt-3 text-lg text-slate-600 leading-8 max-w-2xl">Every skill your child builds at Infinnovate is amplified by AI fluency — the ability to use modern tools responsibly, creatively, and confidently across any field.</p>
+      </div>
+
+      <!-- Two-column: supporting context + capability grid -->
+      <div class="reveal grid gap-10 lg:grid-cols-2 items-start">
+        <!-- Left: context -->
+        <div class="space-y-6">
+          <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-6">
+            <h4 class="text-lg font-semibold text-navy mb-2">Why AI fluency matters</h4>
+            <p class="text-slate-600 leading-7">By the time today's students enter the workforce, <span class="text-gold font-semibold">AI will be embedded in every career</span> — from medicine to marketing, engineering to entrepreneurship.</p>
+            <p class="text-slate-600 leading-7 mt-3">Infinnovate doesn't just teach students about AI. We teach them to <span class="text-gold font-semibold">think with it</span> — using it as a partner for research, writing, design, and problem solving.</p>
+          </div>
+          <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-6">
+            <h4 class="text-lg font-semibold text-navy mb-2">Built into every lesson</h4>
+            <p class="text-slate-600 leading-7">AI isn't a separate class — it's <span class="text-gold font-semibold">woven into every project</span>. Students use it for branding, financial models, research reports, and pitch decks.</p>
+            <p class="text-slate-600 leading-7 mt-3">The result: graduates who are <span class="text-gold font-semibold">comfortable, capable, and responsible</span> with the tools that will define their generation.</p>
+          </div>
+        </div>
+
+        <!-- Right: AI capability cards grid — aligned 2-col with depth -->
+        <div class="grid grid-cols-2 gap-4 reveal-stagger reveal">
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">🔎</div>
+            <div class="font-semibold text-navy">Research</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Ask smarter questions, find better answers</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">✍️</div>
+            <div class="font-semibold text-navy">Writing</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Draft, edit &amp; polish with AI as your co-writer</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">💻</div>
+            <div class="font-semibold text-navy">Coding</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Build apps &amp; automate ideas — no experience needed</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">📊</div>
+            <div class="font-semibold text-navy">Business Planning</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Turn an idea into a real plan, step by step</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">🎨</div>
+            <div class="font-semibold text-navy">Design</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Create logos, posters &amp; visuals with AI tools</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">🧩</div>
+            <div class="font-semibold text-navy">Problem Solving</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Break big challenges into solvable pieces</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">🛡️</div>
+            <div class="font-semibold text-navy">AI is a Tool</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">We teach students to use it wisely</p>
+          </div>
+          <div class="fp-card card-premium rounded-2xl p-5">
+            <div class="text-2xl mb-2">🧠</div>
+            <div class="font-semibold text-navy">Decision Making</div>
+            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Weigh options &amp; choose with confidence</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="reveal mt-12 text-lg text-slate-700 font-semibold text-center">Every skill your child builds here is amplified by AI fluency.</p>
+    </div>
+  </section>
+
+  <!-- Six Pillars with Alice icons -->
+  <section class="py-20 lg:py-28 bg-depth-cream">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal flex items-center gap-4 mb-10">
+        <img src="images/logo_black.png" alt="Infinnovate" class="h-8 w-auto">
+        <h2 class="font-display text-4xl">Six Pillars of Growth</h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3 reveal-stagger reveal">
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Spiritual</div><p class="mt-2 text-slate-600 leading-7">In God we trust.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/academics.png" alt="Academics" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Academics</div><p class="mt-2 text-slate-600 leading-7">We foster a love of learning, creating opportunities for intellectual growth and achievement.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/health.png" alt="Health" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Health</div><p class="mt-2 text-slate-600 leading-7">We champion well-being, encouraging healthy habits and a balanced lifestyle.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/finances.png" alt="Finances" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Finances</div><p class="mt-2 text-slate-600 leading-7">We promote financial literacy, empowering individuals on their path to financial freedom.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/social.png" alt="Social" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Social</div><p class="mt-2 text-slate-600 leading-7">We cultivate a supportive and inclusive community, fostering collaboration and respect.</p></div>
+          </div>
+        </div>
+        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
+          <div class="flex flex-col items-center text-center">
+            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/career.png" alt="Career" class="h-20 w-20"></div>
+            <div class="mt-4"><div class="font-semibold text-lg text-navy">Career</div><p class="mt-2 text-slate-600 leading-7">We inspire a relentless pursuit of purpose-driven careers that ignite passion and ambition to create meaningful impact.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-mesh-light py-20 lg:py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Choose your path</div>
-        <h2 class="font-display text-5xl mt-3">One academy. Four ways in.</h2>
-        <p class="mt-4 text-slate-600 text-lg leading-8">Infinnovate serves families, students, schools, and community partners — but right now the Parent journey is the main event.</p>
+        <h2 class="font-display text-5xl mt-3">One Academy.<br>Four Paths.</h2>
+        <p class="mt-4 text-slate-600 text-lg leading-8">Infinnovate connects all four.</p>
       </div>
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         <a href="parent.html" class="card-lift reveal rounded-[2rem] border-2 border-gold bg-white p-8 shadow-glow">
@@ -162,15 +483,15 @@
       </div>
     </div>
   </section>
-  <section class="py-20 lg:py-28 bg-white">
+  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-2 items-center">
       <div class="reveal">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our new home</div>
-        <h2 class="font-display text-5xl mt-3">Purpose-built for the next generation</h2>
-        <p class="mt-5 text-lg text-slate-600 leading-8">A dedicated Fullerton space designed for hands-on learning, team problem-solving, parent transparency, and a premium academy feel.</p>
+        <h2 class="font-display text-5xl mt-3">Built for the Next Generation</h2>
+        <p class="mt-5 text-lg text-slate-600 leading-8">Our new center features state-of-the-art design — a purpose-built innovation academy.<br><br>Collaboration spaces<br>Innovation lab environment<br>Presentation areas<br>Team tables<br>Parent-visible classrooms<br>Real-world simulations</p>
         <div class="mt-8 rounded-3xl bg-navy text-white p-7 shadow-glow">
-          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Visit us</div>
-          <div class="mt-3 text-2xl font-semibold">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</div>
+          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Location</div>
+          <div class="mt-3 text-2xl font-semibold">Fullerton, California</div>
         </div>
       </div>
       <div class="grid md:grid-cols-2 gap-5 reveal">
@@ -179,8 +500,8 @@
       </div>
     </div>
   </section>
-  <section class="bg-navy text-white py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="bg-mesh-navy navy-texture text-white py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-12">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Infinnovate difference</div>
         <h2 class="font-display text-5xl mt-3">More than tutoring. This is life readiness.</h2>
@@ -192,14 +513,14 @@
       </div>
     </div>
   </section>
-  <section class="py-20 lg:py-28 bg-cream">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <section class="py-20 lg:py-28 bg-depth-cream relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
         <div>
           <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Real students. Real energy.</div>
-          <h2 class="font-display text-5xl mt-3">A program parents can actually picture their child in.</h2>
+          <h2 class="font-display text-5xl mt-3">Students Don't Just Learn.<br>They Do.</h2>
         </div>
-        <p class="max-w-2xl text-slate-600 text-lg leading-8">From classroom collaboration to Parkchella-style showcases, the visual proof matters. This is a real academy with real engagement.</p>
+        <p class="max-w-2xl text-slate-600 text-lg leading-8">Business challenges<br>Live events<br>Student storefronts<br>Presentations<br>Competitions<br>Entrepreneurship labs<br>Leadership roles<br><br>Confidence comes from experience.</p>
       </div>
       <div class="masonry reveal">
         <img src="images/IMG_7097.webp" alt="Students doing hands-on activity" class="rounded-[1.6rem] shadow-lg w-full">
@@ -213,19 +534,46 @@
       </div>
     </div>
   </section>
-  <section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-6 md:grid-cols-3">
-      <div class="reveal rounded-[2rem] border border-slate-200 p-8 text-center"><div class="font-display text-6xl text-gold font-bold" data-counter="190" data-suffix="+">0+</div><div class="mt-2 font-semibold">Students Served</div></div>
-      <div class="reveal rounded-[2rem] border border-slate-200 p-8 text-center"><div class="font-display text-6xl text-gold font-bold" data-counter="19" data-suffix="+">0+</div><div class="mt-2 font-semibold">Events Delivered</div></div>
-      <div class="reveal rounded-[2rem] border border-slate-200 p-8 text-center"><div class="font-display text-6xl text-gold font-bold" data-counter="32">0</div><div class="mt-2 font-semibold">Active Students in Pilot</div></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-16 grid gap-6 lg:grid-cols-2">
-      <div class="reveal rounded-[2rem] bg-cream p-8 border border-slate-200"><p class="text-lg leading-8 text-slate-700">“I’m glad my daughter is getting real-world, practical experience.”</p><div class="mt-5 text-sm font-bold uppercase tracking-[0.2em] text-gold">Parent perspective</div></div>
-      <div class="reveal rounded-[2rem] bg-cream p-8 border border-slate-200"><p class="text-lg leading-8 text-slate-700">“I love how the program is structured. There’s a clear learning path.”</p><div class="mt-5 text-sm font-bold uppercase tracking-[0.2em] text-gold">Student perspective</div></div>
+  <section class="py-16 lg:py-20 bg-mesh-light section-divider">
+    <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div>
+          <div class="font-display text-4xl text-gold font-bold">OC</div>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Serving students<br>in Orange County</p>
+        </div>
+        <div>
+          <div class="font-display text-4xl text-gold font-bold">K–12</div>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Partnered with<br>local schools</p>
+        </div>
+        <div>
+          <div class="font-display text-4xl text-gold font-bold">Live</div>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Active cohorts<br>&amp; parent nights</p>
+        </div>
+        <div>
+          <div class="font-display text-4xl text-gold font-bold">20+</div>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Years of business<br>transformation expertise</p>
+        </div>
+      </div>
     </div>
   </section>
-  <section class="py-20 bg-cream">
+  <!-- 11. Founded by Jimmy Kim -->
+  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
     <div class="max-w-6xl mx-auto px-5 lg:px-8">
+      <div class="reveal grid gap-8 lg:grid-cols-3 lg:items-center rounded-[2rem] border border-slate-200 bg-cream p-8">
+        <div class="lg:col-span-2">
+          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Founded by</div>
+          <h3 class="font-display text-4xl mt-2">Jimmy Kim</h3>
+          <p class="mt-4 text-slate-700 text-lg leading-8">Business Turnaround & Transformation Leader<br>Founder of Infinnovate<br><br>After 20+ years helping organizations improve performance, he created Infinnovate to bring real-world thinking into education.<br><br>Students deserve capability.</p>
+        </div>
+        <div class="justify-self-center">
+          <img src="images/jimmy_headshot.webp" alt="Jimmy Kim" class="rounded-2xl w-56 h-56 object-cover object-top shadow-glow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-mesh-light relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-10"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Hear about Infinnovate</div><h2 class="font-display text-5xl mt-3">Listen in your language</h2><p class="mt-4 text-slate-600 text-lg leading-8">A quick overview for families who want to hear the story before Parent Night.</p></div>
       <div class="reveal rounded-[2rem] bg-white border border-slate-200 p-8 shadow-glow">
         <div class="flex flex-wrap gap-3 mb-6">
@@ -248,7 +596,7 @@
       </div>
     </div>
   </section>
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-depth-cream">
     <div class="max-w-6xl mx-auto px-5 lg:px-8 text-center reveal">
       <h2 class="font-display text-5xl">Download our brochure</h2>
       <p class="mt-4 text-slate-600 text-lg max-w-2xl mx-auto">Take the Infinnovate story home. Share it with family, friends, or anyone who wants to see what's possible for the next generation.</p>
@@ -258,9 +606,9 @@
       </div>
     </div>
   </section>
-  <section class="bg-navy text-white py-20">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
-      <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:p-12">
+  <section class="bg-mesh-navy navy-texture text-white py-20">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:p-12 backdrop-blur-sm">
         <div class="grid gap-8 lg:grid-cols-3 lg:items-center">
           <div>
             <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Your timeline</div>
@@ -275,38 +623,106 @@
       </div>
     </div>
   </section>
+
+  <!-- 13. CTA: Parent Night Registration Open -->
+  <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white relative overflow-hidden border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-5 text-center reveal relative">
+      <h2 class="font-display text-5xl">Parent Night Registration Open</h2>
+      <p class="mt-4 text-slate-300 text-lg">Meet the academy<br>See the curriculum<br>Ask questions<br>Experience the vision</p>
+      <div class="mt-7 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="enrollment.html#register" class="rounded-full bg-gold px-8 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg">Register now</a>
+        <a href="parent.html" class="rounded-full border border-white/20 glass px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white">Explore the Academy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Brand statement -->
+  <section class="py-16 bg-mesh-light">
+    <div class="max-w-5xl mx-auto px-5 text-center">
+      <img src="images/logo_black.png" alt="Infinnovate" class="mx-auto h-8 w-auto">
+      <h3 class="font-display text-3xl mt-4">Infinnovate, Inc.</h3>
+      <p class="mt-3 text-slate-600">A modern academy for business, financial, and AI literacy.<br><br>Helping students develop confidence,<br>discipline,<br>and real-world capability.<br><br>Believe in Being Infinite™</p>
+    </div>
+  </section>
 </main>
 
 
-<footer class="bg-navy text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
-    <div class="grid gap-10 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5">
-          <img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-10 w-auto">
-          <div>
-            <div class="font-display text-3xl font-semibold">Infinnovate</div>
-            <div class="text-sm text-slate-300">Believe in Being Infinite™</div>
-          </div>
-        </div>
-        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
-      </div>
+<footer class="bg-mesh-navy navy-texture text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-16 pb-10">
+    <!-- Logo row -->
+    <div class="mb-12">
+      <img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto">
+    </div>
+    <!-- 6-column sitemap -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
+      <!-- Home -->
       <div>
-        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3>
-        <p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Home</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-slate-300 hover:text-white text-sm transition-colors">Home</a></li>
+        </ul>
       </div>
+      <!-- Connect -->
       <div>
-        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3>
-        <a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a>
-        <a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Connect</h3>
+        <ul class="space-y-2">
+          <li><a href="student.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Student</a></li>
+          <li><a href="parent.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Parent</a></li>
+          <li><a href="school.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a School</a></li>
+          <li><a href="business.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Business</a></li>
+        </ul>
+      </div>
+      <!-- What We Do -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">What We Do</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html#why" class="text-slate-300 hover:text-white text-sm transition-colors">Why Infinnovate</a></li>
+          <li><a href="programs.html" class="text-slate-300 hover:text-white text-sm transition-colors">Our Capabilities</a></li>
+        </ul>
+      </div>
+      <!-- Who We Are -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Who We Are</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html#vision" class="text-slate-300 hover:text-white text-sm transition-colors">Our Vision &amp; Mission</a></li>
+          <li><a href="about.html#pillars" class="text-slate-300 hover:text-white text-sm transition-colors">Our 6 Pillars</a></li>
+          <li><a href="about.html#leadership" class="text-slate-300 hover:text-white text-sm transition-colors">Leadership</a></li>
+          <li><a href="about.html#expertise" class="text-slate-300 hover:text-white text-sm transition-colors">Expertise</a></li>
+          <li><a href="about.html#awards" class="text-slate-300 hover:text-white text-sm transition-colors">Awards &amp; Recognition</a></li>
+        </ul>
+      </div>
+      <!-- How We Serve -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">How We Serve</h3>
+        <ul class="space-y-2">
+          <li><a href="programs.html" class="text-slate-300 hover:text-white text-sm transition-colors">Our Programs</a></li>
+          <li><a href="student.html#journey" class="text-slate-300 hover:text-white text-sm transition-colors">The Student Journey</a></li>
+          <li class="pt-2 text-xs text-slate-400 font-semibold uppercase tracking-wider">Locations</li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Fullerton Innovation Hub</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Parks Jr High Conservatory</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Irvine Elite Academy</a></li>
+        </ul>
+      </div>
+      <!-- Contact Us -->
+      <div>
+        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Contact Us</h3>
+        <ul class="space-y-2">
+          <li><a href="contact.html#careers" class="text-slate-300 hover:text-white text-sm transition-colors">Careers</a></li>
+          <li><a href="enrollment.html#register" class="text-slate-300 hover:text-white text-sm transition-colors">Register / Contact Us</a></li>
+          <li class="pt-2 text-xs text-slate-400 font-semibold uppercase tracking-wider">Locations</li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Fullerton Innovation Hub</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Parks Jr High Conservatory</a></li>
+          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Irvine Elite Academy</a></li>
+        </ul>
       </div>
     </div>
-    <div class="mt-10 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
-      <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
-      <div class="flex gap-5">
-        <a href="parent.html">Parents</a>
-        <a href="programs.html">Programs</a>
-        <a href="enrollment.html">Enrollment</a>
+    <!-- Legal bar -->
+    <div class="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
+      <div>© 2026 Infinnovate, Inc. All rights reserved.</div>
+      <div class="flex flex-wrap gap-5">
+        <a href="#" class="hover:text-white transition-colors">Privacy Statement</a>
+        <a href="#" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="#" class="hover:text-white transition-colors">Accessibility Statement</a>
       </div>
     </div>
   </div>
@@ -321,7 +737,7 @@
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
   }, {threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>observer.observe(el));
 
   document.querySelectorAll('[data-counter]').forEach(el => {
     const target = Number(el.dataset.counter);
@@ -393,6 +809,68 @@ Message: ${fd.get('message')}`);
 
 
 <script>(function(){ const hdr = document.getElementById('site-header'); window.addEventListener('scroll', function(){ if(window.scrollY > 80){ hdr.classList.add('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.remove('bg-transparent'); } else { hdr.classList.remove('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.add('bg-transparent'); } }, {passive:true}); })();</script>
+
+<!-- Why Infinnovate: Image Slideshow (cycles groups of 4 from pool of images) -->
+<script>
+(function(){
+  const pool = [
+    ['images/IMG_6506.webp','images/IMG_7097.webp','images/IMG_9010.webp','images/IMG_7625.webp'],
+    ['images/IMG_7041.webp','images/IMG_6564.webp','images/IMG_7478.webp','images/IMG_7569.webp'],
+    ['images/IMG_6508.webp','images/IMG_7081.webp','images/IMG_7445.webp','images/IMG_6065.webp'],
+    ['images/IMG_7732.webp','images/IMG_6359.webp','images/IMG_7643.webp','images/IMG_0987.webp']
+  ];
+  const cells = document.querySelectorAll('#whySlideshow .why-slide-cell');
+  const dotsContainer = document.getElementById('whyDots');
+  if(!cells.length || !dotsContainer) return;
+
+  // Build dots
+  pool.forEach((_,i) => {
+    const dot = document.createElement('button');
+    dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (i===0?'bg-gold scale-110':'bg-slate-300');
+    dot.setAttribute('aria-label','Slide group '+(i+1));
+    dotsContainer.appendChild(dot);
+    dot.addEventListener('click', () => goTo(i));
+  });
+
+  let current = 0;
+  function goTo(idx){
+    current = idx;
+    cells.forEach((cell,ci) => {
+      const img = cell.querySelector('img');
+      if(!img) return;
+      img.style.opacity = '0';
+      img.style.transform = 'scale(1.08)';
+      setTimeout(() => {
+        img.src = pool[current][ci];
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      }, 250);
+    });
+    dotsContainer.querySelectorAll('button').forEach((d,di) => {
+      d.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (di===current?'bg-gold scale-110':'bg-slate-300');
+    });
+  }
+
+  // Add transition styles to images
+  cells.forEach(cell => {
+    const img = cell.querySelector('img');
+    if(img) img.style.transition = 'opacity .5s ease, transform .7s ease';
+  });
+
+  // Auto-advance every 4s
+  setInterval(() => goTo((current+1)%pool.length), 4000);
+})();
+</script>
+
+</body>
+</html>rval(() => goTo((current+1)%pool.length), 4000);
+})();
+</script>
+
+</body>
+</html>nt+1)%pool.length), 4000);
+})();
+</script>
 
 </body>
 </html>

@@ -3,7 +3,6 @@
 <head>
 <title>I'm a School — Infinnovate</title>
 <meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -12,219 +11,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
   tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: '#0A1628',
-          gold: '#C9982A',
-          coral: '#E8703A',
-          cream: '#F8F6F1',
-          sage: '#1B6B45'
-        },
-        fontFamily: {
-          display: ['Cormorant Garamond', 'serif'],
-          sans: ['Inter', 'sans-serif']
-        },
-        boxShadow: {
-          glow: '0 24px 60px rgba(10,22,40,.18)'
-        }
-      }
-    }
+    theme: { extend: {
+      colors: { navy: '#0A1628', gold: '#C9982A', coral: '#E8703A', cream: '#F8F6F1', sage: '#1B6B45' },
+      fontFamily: { display: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
+      boxShadow: { glow: '0 24px 60px rgba(10,22,40,.18)' }
+    }}
   }
 </script>
-<style>
-  html{scroll-behavior:smooth}
-  body{font-family:Inter,sans-serif;background:#fff;color:#0A1628}
-  .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center;transform:scale(1.05);animation:kenburns 18s ease-in-out infinite alternate}
-  .hero-slide.active{opacity:1}
-  @keyframes kenburns{0%{transform:scale(1.03) translate3d(0,0,0)}100%{transform:scale(1.12) translate3d(-1%, -1%, 0)}}
-  .glass{backdrop-filter: blur(12px); background: rgba(255,255,255,.1)}
-  .reveal{opacity:0; transform:translateY(28px); transition:all .8s ease}
-  .reveal.show{opacity:1; transform:translateY(0)}
-  .card-lift{transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease}
-  .card-lift:hover{transform:translateY(-8px); box-shadow:0 24px 50px rgba(10,22,40,.12); border-color:#C9982A}
-  .nav-link{position:relative}
-  .nav-link:after{content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#C9982A; transition:width .25s ease}
-  .nav-link:hover:after,.nav-link.active:after{width:100%}
-  .count-box{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16)}
-  .ticker{overflow:hidden;white-space:nowrap}
-  .ticker-track{display:inline-flex;gap:2.5rem; padding-left:100%; animation:ticker 22s linear infinite}
-  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
-  .masonry{columns:2; column-gap:1rem}
-  .masonry img{break-inside:avoid; margin-bottom:1rem}
-  @media (min-width:1024px){.masonry{columns:4}}
-  @keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,152,42,.5)}50%{box-shadow:0 0 24px 8px rgba(201,152,42,.35)}}
-  .pulse-gold{animation:pulse-gold 2.2s ease-in-out infinite}
-  @media (max-width:767px){.masonry{columns:1}.hero-slide{animation:none;transform:none}}
-</style>
-
+<link rel="stylesheet" href="premium.css?v=20260317b">
 </head>
 <body>
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="flex items-center justify-between py-4">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="images/WHITE LOGO_bold (1).png" alt="Infinnovate logo" class="h-14 w-auto">
-        
-      </a>
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="parent.html">I'm a Parent</a>
-        <a class="nav-link" href="programs.html">Programs</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="enrollment.html">Get Started</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+      <a href="index.html" class="flex items-center gap-3"><img src="images/logo_black.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-navy">
+        <a class="nav-link" href="index.html">Home</a><a class="nav-link" href="parent.html">I'm a Parent</a><a class="nav-link" href="programs.html">Programs</a><a class="nav-link" href="about.html">About</a><a class="nav-link" href="enrollment.html">Get Started</a><a class="nav-link" href="contact.html">Contact</a>
       </nav>
       <a href="enrollment.html#register" class="hidden lg:inline-flex items-center rounded-full bg-gold px-5 py-3 text-sm font-bold text-white shadow-lg shadow-gold/20">Register for Parent Night — March 31</a>
       <button id="menuBtn" class="lg:hidden rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold">Menu</button>
     </div>
-    <div id="mobileNav" class="hidden lg:hidden pb-4">
-      <div class="grid gap-3 text-sm font-semibold text-slate-700">
-        <a href="index.html">Home</a>
-        <a href="parent.html">I'm a Parent</a>
-        <a href="student.html">I'm a Student</a>
-        <a href="school.html">I'm a School</a>
-        <a href="business.html">I'm a Small Business</a>
-        <a href="programs.html">Programs</a>
-        <a href="about.html">About</a>
-        <a href="enrollment.html">Get Started</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
+    <div id="mobileNav" class="hidden lg:hidden pb-4"><div class="grid gap-3 text-sm font-semibold text-slate-700"><a href="index.html">Home</a><a href="parent.html">I'm a Parent</a><a href="student.html">I'm a Student</a><a href="school.html">I'm a School</a><a href="business.html">I'm a Small Business</a><a href="programs.html">Programs</a><a href="about.html">About</a><a href="enrollment.html">Get Started</a><a href="contact.html">Contact</a></div></div>
   </div>
 </header>
 
-
 <main>
-  <section class="bg-navy text-white py-24">
-    <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center reveal">
-      <div class="text-6xl">🏫</div>
-      <h1 class="font-display text-6xl mt-6">I'm a School</h1>
-      <p class="mt-6 text-xl text-slate-200 leading-8 max-w-3xl mx-auto">Partner with Infinnovate to bring AI-powered enrichment, practical finance learning, and real-world leadership experiences to your campus. Details coming soon.</p>
-      <a href="enrollment.html#register" class="mt-8 inline-flex rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white">Partner With Us</a>
-      <div class="mt-10 rounded-[2rem] border border-white/10 bg-white/5 p-8 text-left max-w-3xl mx-auto">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Coming soon</div>
-        <p class="mt-4 text-slate-300 leading-8">This page is being expanded next. For now, Parent Night is the best place to get the full overview and ask questions in person.</p>
+  <section class="hero-overlay bg-mesh-navy navy-texture text-white py-32 lg:py-44 relative">
+    <div class="hero-bg" style="background-image:url('images/IMG_7097.webp')"></div>
+    <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center relative z-10">
+      <div class="reveal">
+        <div class="text-6xl">🏫</div>
+        <h1 class="font-display text-6xl mt-6">I'm a School</h1>
+        <p class="mt-6 text-xl text-slate-200 leading-8 max-w-3xl mx-auto">Partner with Infinnovate to bring AI-powered enrichment, practical finance learning, and real-world leadership experiences to your campus. Details coming soon.</p>
+        <div class="mt-8"><a href="enrollment.html#register" class="btn-gold">Partner With Us</a></div>
+        <div class="mt-10 card-dark rounded-[2rem] p-8 text-left max-w-3xl mx-auto">
+          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Coming soon</div>
+          <p class="mt-4 text-slate-300 leading-8">This page is being expanded next. For now, Parent Night is the best place to get the full overview and ask questions in person.</p>
+        </div>
       </div>
-      <div class="mt-8 text-sm text-slate-400">Meet your Infinnovate AI Assistant — launching soon.</div>
     </div>
   </section>
 </main>
 
-
-<footer class="bg-navy text-white">
+<footer class="bg-mesh-navy navy-texture text-white">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
     <div class="grid gap-10 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5">
-          <img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-10 w-auto">
-          <div>
-            <div class="font-display text-3xl font-semibold">Infinnovate</div>
-            <div class="text-sm text-slate-300">Believe in Being Infinite™</div>
-          </div>
-        </div>
-        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
-      </div>
-      <div>
-        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3>
-        <p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p>
-      </div>
-      <div>
-        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3>
-        <a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a>
-        <a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a>
-      </div>
+      <div class="lg:col-span-2"><div class="flex items-center gap-3 mb-5"><img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div><p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p></div>
+      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
+      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a><a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a></div>
     </div>
     <div class="mt-10 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
       <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
-      <div class="flex gap-5">
-        <a href="parent.html">Parents</a>
-        <a href="programs.html">Programs</a>
-        <a href="enrollment.html">Enrollment</a>
-      </div>
+      <div class="flex gap-5"><a href="parent.html">Parents</a><a href="programs.html">Programs</a><a href="enrollment.html">Enrollment</a></div>
     </div>
   </div>
 </footer>
 
-
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
-
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
-  }, {threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-  document.querySelectorAll('[data-counter]').forEach(el => {
-    const target = Number(el.dataset.counter);
-    const suffix = el.dataset.suffix || '';
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        let start = 0; const dur = 1600; const startTime = performance.now();
-        function tick(now){
-          const progress = Math.min((now-startTime)/dur,1);
-          const value = Math.floor(progress*target);
-          el.textContent = value + suffix;
-          if(progress < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
-        }
-        requestAnimationFrame(tick); io.disconnect();
-      });
-    }, {threshold:.4});
-    io.observe(el);
-  });
-
-  const deadline = new Date('2026-03-31T18:30:00-07:00').getTime();
-  function paintCountdown(){
-    const now = new Date().getTime();
-    const dist = deadline - now;
-    const ids = ['days','hours','minutes','seconds'];
-    if (dist <= 0){ ids.forEach(id=>{ const el = document.getElementById(id); if(el) el.textContent='0'; }); return; }
-    const d = Math.floor(dist / (1000*60*60*24));
-    const h = Math.floor((dist % (1000*60*60*24))/(1000*60*60));
-    const m = Math.floor((dist % (1000*60*60))/(1000*60));
-    const s = Math.floor((dist % (1000*60))/1000);
-    [['days',d],['hours',h],['minutes',m],['seconds',s]].forEach(([id,val])=>{ const el=document.getElementById(id); if(el) el.textContent = String(val).padStart(2,'0'); });
-  }
-  paintCountdown(); setInterval(paintCountdown,1000);
-
-  const slides = document.querySelectorAll('.hero-slide');
-  if (slides.length) {
-    let idx = 0; slides[0].classList.add('active');
-    setInterval(()=>{ slides[idx].classList.remove('active'); idx = (idx + 1) % slides.length; slides[idx].classList.add('active'); }, 5000);
-  }
-
-  const audioButtons = document.querySelectorAll('[data-audio-btn]');
-  const audioEl = document.getElementById('audioPlayer');
-  const audioTitle = document.getElementById('audioTitle');
-  const audioStatus = document.getElementById('audioStatus');
-  audioButtons.forEach(btn => btn.addEventListener('click', () => {
-    if (btn.dataset.disabled === 'true') return;
-    audioButtons.forEach(b=>b.classList.remove('ring-2','ring-gold'));
-    btn.classList.add('ring-2','ring-gold');
-    if (audioEl) audioEl.src = btn.dataset.src;
-    if (audioTitle) audioTitle.textContent = btn.dataset.label;
-    if (audioStatus) audioStatus.textContent = 'Ready to play';
-  }));
-  if (audioEl && audioStatus){ audioEl.addEventListener('play', ()=> audioStatus.textContent='Playing'); audioEl.addEventListener('pause', ()=> audioStatus.textContent='Paused'); }
-
-  const registerForm = document.getElementById('registerForm');
-  if (registerForm){
-    registerForm.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const fd = new FormData(registerForm);
-      const subject = encodeURIComponent('Parent Night Registration Inquiry');
-      const body = encodeURIComponent(`Name: ${fd.get('name')}
-Email: ${fd.get('email')}
-Student Age/Grade: ${fd.get('student')}
-Message: ${fd.get('message')}`);
-      window.location.href = `mailto:info@infinnovateinc.com?subject=${subject}&body=${body}`;
-    });
-  }
-</script>
-
+<script src="premium.js?v=20260317b"></script>
 </body>
 </html>

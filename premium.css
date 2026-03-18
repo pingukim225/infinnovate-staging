@@ -1,0 +1,349 @@
+/* ============================================================
+   Infinnovate Premium Design System — Squarespace-style
+   Shared across all pages for visual consistency
+   ============================================================ */
+
+/* === Base === */
+html { scroll-behavior: smooth }
+body { font-family: Inter, sans-serif; background: #fff; color: #0A1628 }
+
+/* === Hero Slideshow === */
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; background-size: cover; background-position: center; transform: scale(1.05); animation: kenburns 18s ease-in-out infinite alternate }
+.hero-slide.active { opacity: 1 }
+@keyframes kenburns { 0% { transform: scale(1.03) translate3d(0,0,0) } 100% { transform: scale(1.12) translate3d(-1%,-1%,0) } }
+
+/* === Glass === */
+.glass { backdrop-filter: blur(12px); background: rgba(255,255,255,.1) }
+
+/* === Scroll Reveal === */
+.reveal { opacity: 0; transform: translateY(28px); transition: all .8s cubic-bezier(.25,.46,.45,.94) }
+.reveal.show { opacity: 1; transform: translateY(0) }
+
+/* === Stagger reveal === */
+.reveal-stagger > * { opacity: 0; transform: translateY(20px); transition: all .6s cubic-bezier(.25,.46,.45,.94) }
+.reveal-stagger.show > *:nth-child(1) { transition-delay: .05s }
+.reveal-stagger.show > *:nth-child(2) { transition-delay: .1s }
+.reveal-stagger.show > *:nth-child(3) { transition-delay: .15s }
+.reveal-stagger.show > *:nth-child(4) { transition-delay: .2s }
+.reveal-stagger.show > *:nth-child(5) { transition-delay: .25s }
+.reveal-stagger.show > *:nth-child(6) { transition-delay: .3s }
+.reveal-stagger.show > *:nth-child(7) { transition-delay: .35s }
+.reveal-stagger.show > *:nth-child(8) { transition-delay: .4s }
+.reveal-stagger.show > * { opacity: 1; transform: translateY(0) }
+
+/* === Card Systems === */
+.card-lift { transition: transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s ease, border-color .35s ease }
+.card-lift:hover { transform: translateY(-8px); box-shadow: 0 24px 50px rgba(10,22,40,.12); border-color: #C9982A }
+
+/* Premium card: glass + glow */
+.card-premium {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.85); backdrop-filter: blur(16px);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 2rem; padding: 2rem;
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s ease, border-color .4s ease;
+}
+.card-premium::before {
+  content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%;
+  background: radial-gradient(circle, rgba(201,152,42,.06) 0%, transparent 70%);
+  opacity: 0; transition: opacity .4s;
+}
+.card-premium:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(10,22,40,.1); border-color: rgba(201,152,42,.3) }
+.card-premium:hover::before { opacity: 1 }
+
+/* Dark card variant */
+.card-dark {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.04); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 2rem; padding: 2rem;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
+}
+.card-dark:hover {
+  transform: translateY(-4px); background: rgba(255,255,255,.07);
+  border-color: rgba(201,152,42,.25); box-shadow: 0 16px 40px rgba(0,0,0,.2);
+}
+
+/* Pillar card (icon + text pattern) */
+.pillar-card { position: relative; overflow: hidden; transition: transform .3s ease, box-shadow .3s ease }
+.pillar-card::before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 100%; background: radial-gradient(circle, rgba(201,152,42,.06) 0%, transparent 70%); opacity: 0; transition: opacity .4s }
+.pillar-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(10,22,40,.08) }
+.pillar-card:hover::before { opacity: 1 }
+
+/* Image card with overlay gradient */
+.card-image { position: relative; overflow: hidden; border-radius: 2rem }
+.card-image img { transition: transform .6s cubic-bezier(.25,.46,.45,.94) }
+.card-image:hover img { transform: scale(1.04) }
+.card-image::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(to top, rgba(10,22,40,.6), transparent);
+  pointer-events: none; opacity: 0; transition: opacity .4s;
+}
+.card-image:hover::after { opacity: 1 }
+
+/* === Navigation === */
+.nav-link { position: relative }
+.nav-link:after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background: #C9982A; transition: width .25s ease }
+.nav-link:hover:after, .nav-link.active:after { width: 100% }
+
+/* === Countdown === */
+.count-box { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); transition: background .3s }
+.count-box:hover { background: rgba(255,255,255,.12) }
+
+/* === Ticker === */
+.ticker { overflow: hidden; white-space: nowrap }
+.ticker-track { display: inline-flex; gap: 2.5rem; padding-left: 100%; animation: ticker 22s linear infinite }
+@keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-100%) } }
+
+/* === Masonry === */
+.masonry { columns: 2; column-gap: 1rem }
+.masonry img { break-inside: avoid; margin-bottom: 1rem }
+@media (min-width: 1024px) { .masonry { columns: 4 } }
+
+/* === Pulse Gold (CTA) === */
+@keyframes pulse-gold { 0%, 100% { box-shadow: 0 0 0 0 rgba(201,152,42,.5) } 50% { box-shadow: 0 0 24px 8px rgba(201,152,42,.35) } }
+.pulse-gold { animation: pulse-gold 2.2s ease-in-out infinite }
+
+/* === Mobile === */
+@media (max-width: 767px) {
+  .masonry { columns: 1 }
+  .hero-slide { animation: none; transform: none }
+}
+
+/* === PREMIUM BACKGROUND SYSTEM === */
+
+/* Light mesh gradient with subtle warmth */
+.bg-mesh-light { background: linear-gradient(135deg, #f8f6f1 0%, #fff 40%, #f0ede6 70%, #f8f6f1 100%) }
+
+/* Navy mesh with depth */
+.bg-mesh-navy { background: linear-gradient(160deg, #0A1628 0%, #0f2240 35%, #0A1628 60%, #0d1d38 100%) }
+
+/* Cream depth with vertical flow */
+.bg-depth-cream { background: linear-gradient(180deg, #f8f6f1 0%, #fff 30%, #f8f6f1 70%, #f0ede6 100%) }
+
+/* Accent glow: subtle gold + sage radials */
+.bg-accent-glow { position: relative; overflow: hidden }
+.bg-accent-glow::before {
+  content: ''; position: absolute; top: -40%; right: -20%; width: 60%; height: 80%;
+  background: radial-gradient(ellipse, rgba(201,152,42,.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.bg-accent-glow::after {
+  content: ''; position: absolute; bottom: -30%; left: -15%; width: 50%; height: 70%;
+  background: radial-gradient(ellipse, rgba(27,107,69,.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Section gold divider line */
+.section-divider { position: relative }
+.section-divider::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 2px;
+  background: linear-gradient(90deg, transparent, #C9982A, transparent);
+}
+
+/* Navy dot-grid texture + gold top line */
+.navy-texture { position: relative; overflow: hidden }
+.navy-texture::before {
+  content: ''; position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size: 24px 24px; pointer-events: none;
+}
+.navy-texture::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,152,42,.2), transparent);
+}
+
+/* === Floating Orbs === */
+@keyframes float-slow { 0%, 100% { transform: translateY(0) scale(1) } 50% { transform: translateY(-12px) scale(1.02) } }
+.float-orb {
+  position: absolute; border-radius: 50%; filter: blur(80px);
+  pointer-events: none; animation: float-slow 8s ease-in-out infinite;
+}
+
+/* === Premium Hero Overlay (for secondary pages) === */
+.hero-overlay {
+  position: relative; overflow: hidden;
+}
+.hero-overlay::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,22,40,.92) 0%, rgba(10,22,40,.7) 50%, rgba(10,22,40,.5) 100%);
+  z-index: 1;
+}
+.hero-overlay::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
+  background: linear-gradient(to top, rgba(10,22,40,1), transparent);
+  z-index: 1;
+}
+.hero-overlay > * { position: relative; z-index: 2 }
+
+/* Hero background image layer */
+.hero-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  opacity: .2; transform: scale(1.05);
+  animation: kenburns 18s ease-in-out infinite alternate;
+}
+
+/* === Form Premium Styling === */
+.input-premium {
+  border-radius: 1rem; border: 1.5px solid rgba(0,0,0,.08);
+  padding: 1rem 1.25rem; background: rgba(255,255,255,.9); backdrop-filter: blur(8px);
+  transition: border-color .3s, box-shadow .3s;
+  font-family: Inter, sans-serif; font-size: .95rem;
+}
+.input-premium:focus {
+  outline: none; border-color: #C9982A;
+  box-shadow: 0 0 0 3px rgba(201,152,42,.12);
+}
+.input-premium::placeholder { color: #94a3b8 }
+
+/* === Button System === */
+.btn-gold {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 9999px; background: #C9982A;
+  padding: 1rem 2rem; font-size: .875rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .16em; color: #fff;
+  box-shadow: 0 8px 24px rgba(201,152,42,.25);
+  transition: transform .25s, box-shadow .25s, background .25s;
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,152,42,.35); background: #d4a430 }
+
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 9999px; border: 1.5px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(12px); background: rgba(255,255,255,.08);
+  padding: 1rem 2rem; font-size: .875rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .16em; color: #fff;
+  transition: transform .25s, border-color .25s, background .25s;
+}
+.btn-outline:hover { transform: translateY(-2px); border-color: rgba(201,152,42,.4); background: rgba(255,255,255,.12) }
+
+/* === Quote Card === */
+.quote-card {
+  position: relative; border-radius: 2rem; padding: 2.5rem;
+  background: rgba(255,255,255,.9); backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.quote-card::before {
+  content: '"'; position: absolute; top: .5rem; left: 1.5rem;
+  font-family: 'Cormorant Garamond', serif; font-size: 5rem; line-height: 1;
+  color: rgba(201,152,42,.15); pointer-events: none;
+}
+.quote-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,22,40,.08) }
+
+/* === Stat Card === */
+.stat-card {
+  border-radius: 2rem; padding: 2rem;
+  background: rgba(255,255,255,.9); backdrop-filter: blur(16px);
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .3s, box-shadow .3s;
+}
+.stat-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(10,22,40,.08) }
+
+/* === Safety Badge === */
+.safety-badge {
+  border-radius: 2rem; padding: 1.5rem;
+  background: rgba(255,255,255,.9); backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,.06);
+  text-align: center;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
+}
+.safety-badge:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(10,22,40,.08); border-color: rgba(201,152,42,.2) }
+
+/* === Event Card (image + content) === */
+.event-card {
+  border-radius: 2rem; overflow: hidden;
+  background: rgba(255,255,255,.9); backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 8px 30px rgba(10,22,40,.06);
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s;
+}
+.event-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(10,22,40,.12) }
+.event-card img { transition: transform .6s cubic-bezier(.25,.46,.45,.94) }
+.event-card:hover img { transform: scale(1.05) }
+
+/* === Gold accent line for sections === */
+.gold-accent-top { position: relative }
+.gold-accent-top::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 3px; border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #C9982A, transparent);
+}
+
+/* === Team Card === */
+.team-card {
+  border-radius: 2rem; overflow: hidden;
+  background: rgba(255,255,255,.9); backdrop-filter: blur(12px);
+  border: 1px solid rgba(0,0,0,.06);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.team-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(10,22,40,.1) }
+
+/* === Orbit CSS (index.html Future Proof) === */
+.orbit-container { position: relative; width: 100%; max-width: 680px; margin: 0 auto; aspect-ratio: 1/1 }
+.orbit-hub { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 140px; height: 140px; border-radius: 50%; background: linear-gradient(135deg,#0A1628,#1a3050); border: 2px solid rgba(201,152,42,.4); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 0 60px rgba(201,152,42,.15), 0 0 120px rgba(10,22,40,.3) }
+.orbit-hub .hub-icon { font-size: 2rem; line-height: 1 }
+.orbit-hub .hub-label { color: #C9982A; font-size: .75rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; margin-top: 4px }
+.orbit-ring { position: absolute; top: 50%; left: 50%; border: 1px dashed rgba(201,152,42,.15); border-radius: 50%; transform: translate(-50%,-50%) }
+.orbit-ring-1 { width: 72%; height: 72% }
+.orbit-ring-2 { width: 100%; height: 100% }
+.orbit-node { position: absolute; transform: translate(-50%,-50%); z-index: 5; text-align: center; transition: transform .4s ease }
+.orbit-node:hover { transform: translate(-50%,-50%) scale(1.08) }
+.orbit-node .node-circle { width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg,#fff,#f8f6f1); border: 2px solid rgba(201,152,42,.25); display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 8px 30px rgba(10,22,40,.08); transition: border-color .3s, box-shadow .3s }
+.orbit-node:hover .node-circle { border-color: #C9982A; box-shadow: 0 8px 30px rgba(201,152,42,.2) }
+.orbit-node .node-icon { font-size: 1.6rem }
+.orbit-node .node-label { margin-top: 6px; font-size: .8rem; font-weight: 700; color: #0A1628; white-space: nowrap }
+.orbit-node .node-desc { font-size: .65rem; color: #64748b; max-width: 120px; margin: 2px auto 0; line-height: 1.3 }
+.orbit-mobile { display: none }
+.orbit-mobile .orbit-m-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: 1rem; background: rgba(255,255,255,.7); border: 1px solid rgba(201,152,42,.15); backdrop-filter: blur(8px); transition: transform .3s, box-shadow .3s }
+.orbit-mobile .orbit-m-item:hover { transform: translateX(4px); box-shadow: 0 8px 24px rgba(201,152,42,.1) }
+.orbit-mobile .orbit-m-icon { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg,#fff,#f8f6f1); border: 2px solid rgba(201,152,42,.2); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0 }
+.orbit-mobile .orbit-m-label { font-weight: 700; font-size: .9rem }
+.orbit-mobile .orbit-m-desc { font-size: .78rem; color: #64748b; line-height: 1.35; margin-top: 2px }
+@media (max-width: 767px) { .orbit-container { display: none } .orbit-mobile { display: flex; flex-direction: column; gap: .75rem } }
+
+/* === Subtle horizontal rule === */
+.hr-gold {
+  border: none; height: 1px; margin: 0;
+  background: linear-gradient(90deg, transparent, rgba(201,152,42,.2), transparent);
+}
+
+/* === Font Display === */
+.font-display { font-family: 'Cormorant Garamond', serif }
+
+/* === Enhanced Card Depth (v2 — Squarespace-inspired) === */
+.card-premium {
+  box-shadow: 0 1px 3px rgba(10,22,40,.04), 0 8px 24px rgba(10,22,40,.06);
+}
+.card-premium:hover {
+  box-shadow: 0 4px 12px rgba(10,22,40,.06), 0 20px 50px rgba(10,22,40,.1), 0 0 0 1px rgba(201,152,42,.12);
+}
+
+/* === Pillar Cards v2 === */
+.pillar-card-v2 {
+  box-shadow: 0 1px 3px rgba(10,22,40,.04), 0 8px 24px rgba(10,22,40,.06);
+  transition: transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s ease, border-color .4s ease;
+}
+.pillar-card-v2:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(10,22,40,.1);
+  border-color: rgba(201,152,42,.3);
+}
+
+/* === Journey Card Arrows (desktop) === */
+@media (min-width: 768px) {
+  .journey-card { position: relative }
+  .journey-card:not(:last-child)::after {
+    content: '→'; position: absolute; right: -14px; top: 50%; transform: translateY(-50%);
+    color: #C9982A; font-size: 1.2rem; font-weight: 700; z-index: 2;
+  }
+}
+
+/* === Future-Proof Card depth === */
+.fp-card { min-height: 140px }
+
+/* === Not/Real Matrix Slide Animations === */
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+.animate-left, .animate-right { opacity: 0; }
