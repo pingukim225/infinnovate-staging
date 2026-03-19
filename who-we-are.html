@@ -10,112 +10,275 @@
 <script>
   tailwind.config = {
     theme: { extend: {
-      colors: { navy: '#0A1628', gold: '#C9982A', coral: '#E8703A', cream: '#F8F6F1', sage: '#1B6B45' },
+      colors: { navy: '#0A1628', gold: '#C9982A', cream: '#F8F6F1' },
       fontFamily: { display: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
-      boxShadow: { glow: '0 24px 60px rgba(10,22,40,.18)' }
     }}
   }
 </script>
-<link rel="stylesheet" href="premium.css?v=20260319a">
-<style>
-body { font-family: Inter, sans-serif; }
-.subnav-link{position:relative}
-.subnav-link:after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#C9982A;transition:width .25s}
-.subnav-link:hover:after,.subnav-link.active:after{width:100%}
-.site-search{display:none}
-.site-search.open{display:flex}
-.hero-wordmark{font-family:'Cormorant Garamond',serif;letter-spacing:-.03em}
-.metric-number{font-family:'Cormorant Garamond',serif}
-.impact-card{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
-.persona-card{transition:transform .3s ease, box-shadow .3s ease}
-.persona-card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(10,22,40,.12)}
-.search-input{background:rgba(255,255,255,.9); border:1px solid rgba(0,0,0,.08)}
-</style>
+<link rel="stylesheet" href="premium.css?v=20260319b">
 <title>Who We Are — Infinnovate</title>
-<meta name="description" content="Vision, mission, pillars, leadership, and expertise.">
 </head>
-<body>
-<header class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
+<body class="bg-white text-navy font-sans">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur border-b border-white/10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="flex items-center justify-between py-4 gap-4">
-      <a href="index.html" class="flex items-center gap-3 shrink-0"><img src="images/logo_black.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-navy">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="shrink-0"><img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto"></a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-white">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="connect.html">Connect</a>
         <a class="nav-link" href="what-we-do.html">What We Do</a>
-        <a class="nav-link" href="who-we-are.html">Who We Are</a>
+        <a class="nav-link active" href="who-we-are.html">Who We Are</a>
         <a class="nav-link" href="how-we-serve.html">How We Serve</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-4 text-navy">
-        <button class="text-navy hover:text-gold" onclick="window.location.href='site-search.html'" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        </button>
-        <button class="text-navy hover:text-gold flex items-center gap-1 text-sm font-medium" aria-label="Language selector">🌐 <span>USA</span> <span class="text-xs">▾</span></button>
-        <a href="portal-select.html" class="text-navy hover:text-gold text-sm font-semibold">Log-in</a>
+      <div class="hidden lg:flex items-center gap-5 text-white text-sm">
+        <a href="site-search.html" class="hover:text-gold"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></a>
+        <button class="hover:text-gold flex items-center gap-1 font-medium">🌐 <span class="text-xs">▾</span></button>
+        <a href="portal-select.html" class="font-semibold hover:text-gold">Log-in</a>
       </div>
-      <button id="menuBtn" class="lg:hidden rounded-lg border px-3 py-2 text-sm font-semibold border-slate-300 text-navy">Menu</button>
+      <button id="menuBtn" class="lg:hidden text-white border border-white/30 rounded-lg px-3 py-2 text-sm font-semibold">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
-      <div class="grid gap-3 text-sm font-semibold text-slate-700">
-        <a href="index.html">Home</a>
-        <a href="connect.html">Connect</a>
-        <a href="what-we-do.html">What We Do</a>
-        <a href="who-we-are.html">Who We Are</a>
-        <a href="how-we-serve.html">How We Serve</a>
-        <a href="contact.html">Contact Us</a>
-        <div class="pt-2 border-t border-white/10 flex gap-4 text-sm">
-          <button onclick="window.location.href='site-search.html'">Search</button>
-          <span>🌐 USA ▾</span>
-          <a href="portal-select.html">Log-in</a>
-        </div>
+      <div class="grid gap-3 text-sm font-semibold text-white/90">
+        <a href="index.html">Home</a><a href="connect.html">Connect</a><a href="what-we-do.html">What We Do</a>
+        <a href="who-we-are.html">Who We Are</a><a href="how-we-serve.html">How We Serve</a><a href="contact.html">Contact Us</a>
+        <div class="pt-2 border-t border-white/10 flex gap-4 text-sm"><a href="site-search.html">Search</a><span>🌐 ▾</span><a href="portal-select.html">Log-in</a></div>
       </div>
     </div>
   </div>
 </header>
-<div id="siteSearch" class="site-search fixed inset-0 z-[60] bg-navy/70 backdrop-blur items-start justify-center p-6">
-  <div class="w-full max-w-2xl rounded-3xl bg-white shadow-2xl p-5 mt-16">
-    <div class="flex items-center gap-3">
-      <input id="siteSearchInput" type="text" placeholder="Search this page..." class="search-input flex-1 rounded-2xl px-4 py-3 text-navy" />
-      <button onclick="runSearch()" class="btn-gold">Search</button>
-      <button onclick="window.location.href='site-search.html'" class="rounded-2xl px-4 py-3 border border-slate-200 text-slate-600">Close</button>
+
+<main>
+
+<!-- Page Title + Sub-nav (per Slide 4) -->
+<section class="bg-navy text-white py-6">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <h1 class="text-3xl font-display font-bold">Who We Are</h1>
+    <div class="mt-3 flex flex-wrap gap-4 text-sm font-medium text-white/70">
+      <a href="#vision" class="subnav-link hover:text-white">Our Vision &amp; Mission</a>
+      <span class="text-white/30">|</span>
+      <a href="#pillars" class="subnav-link hover:text-white">Our 6 Pillars</a>
+      <span class="text-white/30">|</span>
+      <a href="#leadership" class="subnav-link hover:text-white">Leadership</a>
+      <span class="text-white/30">|</span>
+      <a href="#stories" class="subnav-link hover:text-white">Stories &amp; Impact</a>
     </div>
-    <p class="text-sm text-slate-500 mt-3">Quick on-page search for this staging page.</p>
   </div>
-</div>
-<main><section class="hero-overlay bg-mesh-navy navy-texture text-white py-24 lg:py-32"><div class="hero-bg" style="background-image:url('images/IMG_7625.webp')"></div><div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10"><div class="reveal max-w-5xl"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Who We Are</div><h1 class="font-display text-6xl mt-3">Who We Are</h1><div class="mt-8 flex flex-wrap gap-5 text-sm uppercase tracking-[0.18em] text-slate-200"><a class="subnav-link" href="#vision">Our Vision &amp; Mission</a><a class="subnav-link" href="#pillars">Our 6 Pillars</a><a class="subnav-link" href="#leadership">Leadership</a><a class="subnav-link" href="#expertise">Expertise</a><a class="subnav-link" href="#awards">Awards &amp; Recognition</a></div></div></div></section><section id="vision" class="py-24 bg-mesh-light"><div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-8 lg:grid-cols-2"><div class="card-premium reveal"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our Vision</div><p class="mt-4 text-lg text-slate-600 leading-8">Our vision is to redefine what education can be by building an innovation-driven learning model where students develop real-world capability in business, financial literacy, leadership, and technology, empowering the next generation to think independently, act responsibly, and create the future.</p></div><div class="card-premium reveal"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our Mission</div><p class="mt-4 text-lg text-slate-600 leading-8">To drive value around the world — one purpose, one idea, one entrepreneur at a time.</p><p class="mt-4 text-slate-500">Our Values are expressed through our 6 Pillars below.</p></div></div></section><section id="pillars" class="py-24 bg-depth-cream section-divider"><div class="max-w-7xl mx-auto px-5 lg:px-8"><div class="reveal max-w-3xl"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our 6 Pillars</div><h2 class="font-display text-5xl mt-3">Our 6 Pillars</h2></div><div class="mt-10 reveal card-image"><img src="images/alice_values_graphic.png" alt="Values graphic from Alice's design deck" class="rounded-[2rem] shadow-glow w-full object-cover"></div><div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3 reveal-stagger reveal"><div class='pillar-card-v2 card-premium text-center'><div class='pillar-icon-wrap mx-auto h-24 w-24 rounded-full bg-cream flex items-center justify-center'><img src='images/pillars/spiritual.png' alt='Spiritual' class='h-14 w-14 object-contain'></div><h3 class='font-display text-3xl mt-5'>Spiritual</h3><p class='mt-3 text-slate-600 leading-7'>In God we trust.</p></div><div class='pillar-card-v2 card-premium text-center'><div class='pillar-icon-wrap mx-auto h-24 w-24 rounded-full bg-cream flex items-center justify-center'><img src='images/pillars/academics.png' alt='Academics' class='h-14 w-14 object-contain'></div><h3 class='font-display text-3xl mt-5'>Academics</h3><p class='mt-3 text-slate-600 leading-7'>We foster a love of learning, creating opportunities for intellectual growth and achievement.</p></div><div class='pillar-card-v2 card-premium text-center'><div class='pillar-icon-wrap mx-auto h-24 w-24 rounded-full bg-cream flex items-center justify-center'><img src='images/pillars/health.png' alt='Health' class='h-14 w-14 object-contain'></div><h3 class='font-display text-3xl mt-5'>Health</h3><p class='mt-3 text-slate-600 leading-7'>We champion well-being, encouraging healthy habits and a balanced lifestyle.</p></div><div class='pillar-card-v2 card-premium text-center'><div class='pillar-icon-wrap mx-auto h-24 w-24 rounded-full bg-cream flex items-center justify-center'><img src='images/pillars/finances.png' alt='Finances' class='h-14 w-14 object-contain'></div><h3 class='font-display text-3xl mt-5'>Finances</h3><p class='mt-3 text-slate-600 leading-7'>We promote financial literacy, empowering individuals on their path to financial freedom.</p></div><div class='pillar-card-v2 card-premium text-center'><div class='pillar-icon-wrap mx-auto h-24 w-24 rounded-full bg-cream flex items-center justify-center'><img src='images/pillars/social.png' alt='Social' class='h-14 w-14 object-contain'></div><h3 class='font-display text-3xl mt-5'>Social</h3><p class='mt-3 text-slate-600 leading-7'>We cultivate a supportive and inclusive community, fostering collaboration and respect.</p></div><div class='pillar-card-v2 card-premium text-center'><div class='pillar-icon-wrap mx-auto h-24 w-24 rounded-full bg-cream flex items-center justify-center'><img src='images/pillars/career.png' alt='Career' class='h-14 w-14 object-contain'></div><h3 class='font-display text-3xl mt-5'>Career</h3><p class='mt-3 text-slate-600 leading-7'>We inspire a relentless pursuit of purpose-driven careers that ignite passion and ambition to create meaningful impact.</p></div></div></div></section><section id="leadership" class="py-24 bg-mesh-light"><div class="max-w-7xl mx-auto px-5 lg:px-8"><div class="reveal max-w-3xl"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Leadership</div><h2 class="font-display text-5xl mt-3">Meet the team behind Infinnovate.</h2></div><div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4 reveal-stagger reveal"><div class="team-card card-premium text-center"><img src="images/IMG_7081.webp" alt="Jimmy Kim" class="h-72 w-full object-cover rounded-[1.5rem]"><div class="p-4"><div class="font-display text-3xl">Jimmy Kim</div><div class="text-gold font-semibold mt-1">Founder</div></div></div><div class="team-card card-premium text-center p-8"><div class="h-28 w-28 mx-auto rounded-full bg-gradient-to-br from-navy to-navy/80 text-white flex items-center justify-center text-3xl font-bold">AK</div><div class="font-display text-3xl mt-5">Alice Kim</div><div class="text-gold font-semibold">Coach Alice</div></div><div class="team-card card-premium text-center p-8"><div class="h-28 w-28 mx-auto rounded-full bg-gradient-to-br from-navy to-navy/80 text-white flex items-center justify-center text-3xl font-bold">KK</div><div class="font-display text-3xl mt-5">Kenneth Kim</div><div class="text-gold font-semibold">Senior Advisor</div></div><div class="team-card card-premium text-center p-8"><div class="h-28 w-28 mx-auto rounded-full bg-gradient-to-br from-navy to-navy/80 text-white flex items-center justify-center text-3xl font-bold">SK</div><div class="font-display text-3xl mt-5">Sophia Kim</div><div class="text-gold font-semibold">Coach Sophia</div></div></div></div></section><section id="expertise" class="py-24 bg-depth-cream"><div class="max-w-7xl mx-auto px-5 lg:px-8"><div class="reveal max-w-3xl"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Expertise</div><h2 class="font-display text-5xl mt-3">Deep experience across education, business, technology, and finance.</h2></div><div class="mt-10 card-premium reveal"><p class="text-lg text-slate-600 leading-8">Our team brings decades of experience across education, business, technology, and finance.</p></div></div></section><section id="awards" class="py-24 bg-mesh-light"><div class="max-w-7xl mx-auto px-5 lg:px-8"><div class="reveal max-w-3xl"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Awards &amp; Recognition</div><h2 class="font-display text-5xl mt-3">Awards &amp; Recognition</h2></div><div class="mt-10 card-premium reveal"><p class="text-lg text-slate-600 leading-8">Coming soon.</p></div></div></section><section id="stories" class="py-24 bg-depth-cream"><div class="max-w-7xl mx-auto px-5 lg:px-8"><div class="reveal max-w-3xl"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our Stories &amp; Impact</div><h2 class="font-display text-5xl mt-3">Our Stories &amp; Impact</h2><p class="mt-4 text-slate-600 leading-8">Read about the journeys of our students and partners.</p></div><div class="mt-12 grid gap-6 md:grid-cols-3 reveal-stagger reveal"><div class="card-premium">Coming Soon</div><div class="card-premium">Coming Soon</div><div class="card-premium">Coming Soon</div></div></div></section></main>
-<footer class="bg-mesh-navy navy-texture text-white">
+</section>
+
+<!-- VISION & MISSION (Slide 4 — exact text) -->
+<section id="vision" class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-5 lg:px-8">
+    <div class="space-y-10">
+      <div>
+        <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-3">Our Vision</h2>
+        <blockquote class="font-display text-2xl lg:text-3xl leading-snug text-slate-700 italic">
+          "Our vision is to redefine what education can be by building an innovation-driven learning model where students develop real-world capability in business, financial literacy, leadership, and technology, empowering the next generation to think independently, act responsibly, and create the future."
+        </blockquote>
+      </div>
+      <div>
+        <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-3">Our Mission</h2>
+        <blockquote class="font-display text-2xl lg:text-3xl leading-snug text-slate-700 italic">
+          "To drive value around the world — one purpose, one idea, one entrepreneur at a time."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR VALUES (Slide 4 — Values carousel: Spiritual, Academics, Health + more) -->
+<section class="py-16 bg-slate-800 text-white">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <h2 class="text-center text-3xl font-display font-semibold mb-10">Our Values</h2>
+    <div id="valuesCarousel" class="relative">
+      <div class="grid md:grid-cols-3 gap-8" id="valuesSlides">
+        <!-- Slide set 1 -->
+        <div class="values-slide text-center">
+          <div class="w-24 h-24 mx-auto mb-4"><img src="images/ppt_values_carousel.png" alt="Spiritual" class="w-full h-full object-contain"></div>
+          <h3 class="text-xl font-semibold mb-2">Spiritual</h3>
+          <p class="text-slate-300">In God We Trust.</p>
+        </div>
+        <div class="values-slide text-center">
+          <div class="w-24 h-24 mx-auto mb-4"><img src="images/ppt_values_carousel.png" alt="Academics" class="w-full h-full object-contain"></div>
+          <h3 class="text-xl font-semibold mb-2">Academics</h3>
+          <p class="text-slate-300">We foster a love of learning, creating opportunities for intellectual growth and achievement.</p>
+        </div>
+        <div class="values-slide text-center">
+          <div class="w-24 h-24 mx-auto mb-4"><img src="images/ppt_values_carousel.png" alt="Health" class="w-full h-full object-contain"></div>
+          <h3 class="text-xl font-semibold mb-2">Health</h3>
+          <p class="text-slate-300">We champion well-being, encouraging healthy habits and a balanced lifestyle.</p>
+        </div>
+      </div>
+      <!-- Carousel nav -->
+      <div class="flex justify-center gap-4 mt-8">
+        <button onclick="prevValues()" class="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center hover:bg-yellow-600 transition">←</button>
+        <button onclick="nextValues()" class="w-10 h-10 rounded-full bg-gold text-white flex items-center justify-center hover:bg-yellow-600 transition">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 PILLARS (Slide 4 — the values are the 6 pillars: Spiritual, Academics, Health + 3 more) -->
+<section id="pillars" class="py-16 bg-cream">
+  <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center">
+    <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-3">Our 6 Pillars</h2>
+    <p class="text-lg text-slate-600 mb-8">The values that guide everything we do at Infinnovate.</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-6 shadow-sm"><h4 class="font-bold mb-1">Spiritual</h4><p class="text-sm text-slate-600">In God We Trust.</p></div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm"><h4 class="font-bold mb-1">Academics</h4><p class="text-sm text-slate-600">We foster a love of learning, creating opportunities for intellectual growth and achievement.</p></div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm"><h4 class="font-bold mb-1">Health</h4><p class="text-sm text-slate-600">We champion well-being, encouraging healthy habits and a balanced lifestyle.</p></div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm"><h4 class="font-bold mb-1">Leadership</h4><p class="text-sm text-slate-600">Confidence to lead from day one — in teams, projects, and life.</p></div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm"><h4 class="font-bold mb-1">Community</h4><p class="text-sm text-slate-600">Building connection, collaboration, and service to others.</p></div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm"><h4 class="font-bold mb-1">Innovation</h4><p class="text-sm text-slate-600">Embracing creativity, technology, and new ways of thinking.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP (Slide 4 — team section from ppt_pillars_team image) -->
+<section id="leadership" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-2 text-center">Team</h2>
+    <h3 class="font-display text-3xl lg:text-4xl font-semibold mb-10 text-center">Leadership first. Coaches close to the students.</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="team-card rounded-2xl overflow-hidden text-center bg-white border border-slate-100 shadow-sm">
+        <div class="h-48 overflow-hidden bg-navy">
+          <img src="images/jimmy_headshot.webp" alt="Jimmy Kim" class="w-full h-full object-cover">
+        </div>
+        <div class="p-4">
+          <p class="font-bold">Jimmy Kim</p>
+          <p class="text-gold text-sm">Founder</p>
+        </div>
+      </div>
+      <div class="team-card rounded-2xl overflow-hidden text-center bg-white border border-slate-100 shadow-sm">
+        <div class="h-48 flex items-center justify-center bg-navy">
+          <span class="text-white text-4xl font-display font-bold">AK</span>
+        </div>
+        <div class="p-4">
+          <p class="font-bold">Alice Kim</p>
+          <p class="text-gold text-sm">Coach Alice</p>
+        </div>
+      </div>
+      <div class="team-card rounded-2xl overflow-hidden text-center bg-white border border-slate-100 shadow-sm">
+        <div class="h-48 flex items-center justify-center bg-navy">
+          <span class="text-white text-4xl font-display font-bold">KK</span>
+        </div>
+        <div class="p-4">
+          <p class="font-bold">Kenneth Kim</p>
+          <p class="text-gold text-sm">Senior Advisor</p>
+        </div>
+      </div>
+      <div class="team-card rounded-2xl overflow-hidden text-center bg-white border border-slate-100 shadow-sm">
+        <div class="h-48 flex items-center justify-center bg-navy">
+          <span class="text-white text-4xl font-display font-bold">SK</span>
+        </div>
+        <div class="p-4">
+          <p class="font-bold">Sophia Kim</p>
+          <p class="text-gold text-sm">Coach Sophia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES & IMPACT (Slide 4) -->
+<section id="stories" class="py-16 bg-cream">
+  <div class="max-w-5xl mx-auto px-5 lg:px-8">
+    <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-3">Our Stories &amp; Impact</h2>
+
+    <!-- Impact numbers (from ppt_impact_numbers image) -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white rounded-2xl p-6 shadow-sm text-center">
+        <div class="text-gold font-display text-5xl font-semibold">190+</div>
+        <p class="mt-2 text-slate-600 text-sm">Students reached through district-aligned programming.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm text-center">
+        <div class="text-gold font-display text-5xl font-semibold">19+</div>
+        <p class="mt-2 text-slate-600 text-sm">Entrepreneurship and financial literacy events delivered.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-sm text-center">
+        <div class="text-gold font-display text-5xl font-semibold">20–25+</div>
+        <p class="mt-2 text-slate-600 text-sm">Years of leadership and instructional experience guiding the academy vision.</p>
+      </div>
+    </div>
+
+    <!-- Blog/Stories list (per ppt_stories_list) -->
+    <h3 class="font-display text-2xl font-semibold mb-6">Stories</h3>
+    <div class="space-y-4">
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">From Home Kitchen to Heart of Business</p>
+        <p class="text-sm text-slate-500 mt-1">Jan 10, 2025</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">A Day in the Life of a Pediatric Dentist</p>
+        <p class="text-sm text-slate-500 mt-1">Sep 27, 2024</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">A Glimpse into the World of Investment</p>
+        <p class="text-sm text-slate-500 mt-1">Aug 30, 2024</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">Earnings Call Simulation</p>
+        <p class="text-sm text-slate-500 mt-1">Aug 21, 2024</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">The Pizza Storefront Challenge</p>
+        <p class="text-sm text-slate-500 mt-1">Jul 19, 2024</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">Infinnovate for Education — Elevator Pitch</p>
+        <p class="text-sm text-slate-500 mt-1">Jun 28, 2024</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">Fisler School Career Day Inspires</p>
+        <p class="text-sm text-slate-500 mt-1">May 18, 2024</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">KimBinu Studios Launch</p>
+        <p class="text-sm text-slate-500 mt-1">Apr 4, 2024</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">Infinnovate, Inc. sets sights for growth</p>
+        <p class="text-sm text-slate-500 mt-1">Feb 11, 2023</p>
+      </a>
+      <a href="#" class="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition">
+        <p class="font-semibold">Infinnovate, Inc. Expands Its Reach</p>
+        <p class="text-sm text-slate-500 mt-1">Aug 2, 2021</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-navy text-white">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
     <div class="grid gap-10 lg:grid-cols-4">
       <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5"><img src="images/logo_white.png" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div>
+        <div class="flex items-center gap-3 mb-5">
+          <img src="images/ppt_footer_logo.png" alt="Infinnovate" class="h-10 w-auto">
+          <div><div class="font-display text-2xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div>
+        </div>
         <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
       </div>
       <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a><a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a></div>
+      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a></div>
     </div>
-    <div class="text-center text-sm text-slate-400 mt-6 pt-4 border-t border-slate-700">
-      <a href="privacy.html" class="hover:text-white transition">Privacy Statement</a>
-      <span class="mx-2">·</span>
-      <a href="terms.html" class="hover:text-white transition">Terms &amp; Conditions</a>
-      <span class="mx-2">·</span>
-      <a href="accessibility.html" class="hover:text-white transition">Accessibility Statement</a>
+    <div class="text-center text-sm text-slate-400 mt-8 pt-4 border-t border-slate-700">
+      <a href="privacy.html" class="hover:text-white">Privacy Statement</a><span class="mx-2">·</span>
+      <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a><span class="mx-2">·</span>
+      <a href="accessibility.html" class="hover:text-white">Accessibility Statement</a>
     </div>
-    <div class="mt-6 pt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400 border-t border-white/10">
-      <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
-      <div class="flex gap-5"><a href="connect.html">Connect</a><a href="how-we-serve.html">How We Serve</a><a href="register.html">Register</a></div>
-    </div>
+    <div class="mt-4 text-center text-sm text-slate-500">© 2026 Infinnovate, Inc.</div>
   </div>
 </footer>
-<script src="premium.js?v=20260317b"></script>
 <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-  function toggleSearch(){ document.getElementById('siteSearch').classList.toggle('open'); }
-  function runSearch(){ const q=document.getElementById('siteSearchInput').value; if(q) window.find(q); }
-  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>{
-    new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') }),{threshold:.15}).observe(el)
-  });
+document.getElementById('menuBtn')?.addEventListener('click', () => document.getElementById('mobileNav')?.classList.toggle('hidden'));
+// Simple values carousel placeholder
+function nextValues() { /* TODO: carousel logic */ }
+function prevValues() { /* TODO: carousel logic */ }
 </script>
-</body></html>
+</body>
+</html>

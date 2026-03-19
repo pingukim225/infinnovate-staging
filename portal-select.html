@@ -1,9 +1,31 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://cdn.tailwindcss.com"></script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><script>tailwind.config={theme:{extend:{colors:{navy:'#0A1628',gold:'#C9982A',coral:'#E8703A',cream:'#F8F6F1',sage:'#1B6B45'},fontFamily:{display:['Cormorant Garamond','serif'],sans:['Inter','sans-serif']},boxShadow:{glow:'0 24px 60px rgba(10,22,40,.18)'}}}}</script><link rel="stylesheet" href="premium.css?v=20260319a"><title>Log-in — Infinnovate</title><meta name="description" content="Log-in"></head><body>
-<header class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { navy: '#0A1628', gold: '#C9982A', cream: '#F8F6F1' },
+      fontFamily: { display: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
+    }}
+  }
+</script>
+<link rel="stylesheet" href="premium.css?v=20260319b">
+<title>Log In — Infinnovate</title>
+</head>
+<body class="bg-cream text-navy font-sans min-h-screen flex flex-col">
+
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur border-b border-white/10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="flex items-center justify-between py-4 gap-4">
-      <a href="index.html" class="flex items-center gap-3 shrink-0"><img src="images/logo_black.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-navy">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="shrink-0"><img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto"></a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-white">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="connect.html">Connect</a>
         <a class="nav-link" href="what-we-do.html">What We Do</a>
@@ -11,74 +33,69 @@
         <a class="nav-link" href="how-we-serve.html">How We Serve</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-4 text-navy">
-        <button class="text-navy hover:text-gold" onclick="window.location.href='site-search.html'" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        </button>
-        <button class="text-navy hover:text-gold flex items-center gap-1 text-sm font-medium" aria-label="Language selector">🌐 <span>USA</span> <span class="text-xs">▾</span></button>
-        <a href="portal-select.html" class="text-navy hover:text-gold text-sm font-semibold">Log-in</a>
+      <div class="hidden lg:flex items-center gap-5 text-white text-sm">
+        <a href="portal-select.html" class="font-semibold text-gold">Log-in</a>
       </div>
-      <button id="menuBtn" class="lg:hidden rounded-lg border px-3 py-2 text-sm font-semibold border-slate-300 text-navy">Menu</button>
+      <button id="menuBtn" class="lg:hidden text-white border border-white/30 rounded-lg px-3 py-2 text-sm font-semibold">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
-      <div class="grid gap-3 text-sm font-semibold text-slate-700">
-        <a href="index.html">Home</a>
-        <a href="connect.html">Connect</a>
-        <a href="what-we-do.html">What We Do</a>
-        <a href="who-we-are.html">Who We Are</a>
-        <a href="how-we-serve.html">How We Serve</a>
-        <a href="contact.html">Contact Us</a>
-        <div class="pt-2 border-t border-white/10 flex gap-4 text-sm">
-          <button onclick="window.location.href='site-search.html'">Search</button>
-          <span>🌐 USA ▾</span>
-          <a href="portal-select.html">Log-in</a>
-        </div>
+      <div class="grid gap-3 text-sm font-semibold text-white/90">
+        <a href="index.html">Home</a><a href="connect.html">Connect</a><a href="what-we-do.html">What We Do</a>
+        <a href="who-we-are.html">Who We Are</a><a href="how-we-serve.html">How We Serve</a><a href="contact.html">Contact Us</a>
       </div>
     </div>
   </div>
 </header>
-<div id="siteSearch" class="site-search fixed inset-0 z-[60] bg-navy/70 backdrop-blur items-start justify-center p-6">
-  <div class="w-full max-w-2xl rounded-3xl bg-white shadow-2xl p-5 mt-16">
-    <div class="flex items-center gap-3">
-      <input id="siteSearchInput" type="text" placeholder="Search this page..." class="search-input flex-1 rounded-2xl px-4 py-3 text-navy" />
-      <button onclick="runSearch()" class="btn-gold">Search</button>
-      <button onclick="window.location.href='site-search.html'" class="rounded-2xl px-4 py-3 border border-slate-200 text-slate-600">Close</button>
+
+<main class="flex-1 flex items-center justify-center py-16 px-5">
+  <div class="max-w-lg w-full">
+    <div class="text-center mb-10">
+      <img src="images/ppt_footer_logo.png" alt="Infinnovate" class="h-16 mx-auto mb-4">
+      <h1 class="font-display text-4xl font-semibold">Log In</h1>
+      <p class="text-slate-500 mt-2">Select your portal to continue.</p>
     </div>
-    <p class="text-sm text-slate-500 mt-3">Quick on-page search for this staging page.</p>
+    <!-- Four portal types per Slide 1: parent/student/school admin/business owner -->
+    <div class="grid gap-4">
+      <a href="student-portal.html" class="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-gold hover:shadow-md transition">
+        <div class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center text-2xl shrink-0">🎓</div>
+        <div>
+          <p class="font-bold text-lg">Student</p>
+          <p class="text-sm text-slate-500">Access your profile, assignments, and AI agent.</p>
+        </div>
+      </a>
+      <a href="parent-portal.html" class="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-gold hover:shadow-md transition">
+        <div class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center text-2xl shrink-0">👨‍👩‍👧‍👦</div>
+        <div>
+          <p class="font-bold text-lg">Parent</p>
+          <p class="text-sm text-slate-500">View your child's progress and connect with coaches.</p>
+        </div>
+      </a>
+      <a href="school-portal.html" class="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-gold hover:shadow-md transition">
+        <div class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center text-2xl shrink-0">🏫</div>
+        <div>
+          <p class="font-bold text-lg">School Admin</p>
+          <p class="text-sm text-slate-500">Manage district programming and student enrollment.</p>
+        </div>
+      </a>
+      <a href="business-portal.html" class="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-gold hover:shadow-md transition">
+        <div class="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center text-2xl shrink-0">💼</div>
+        <div>
+          <p class="font-bold text-lg">Business Owner</p>
+          <p class="text-sm text-slate-500">Manage partnerships and sponsorship programs.</p>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
-<main><section class="bg-depth-cream py-24 lg:py-32"><div class="max-w-5xl mx-auto px-5 lg:px-8"><div class="reveal text-center max-w-3xl mx-auto"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Infinnovate</div><h1 class="font-display text-6xl mt-3">Log-in</h1><p class="mt-6 text-lg text-slate-600 leading-8">Choose the portal experience that matches your role. These are front-end placeholder pages only while the full authentication and account system is being defined.</p><div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4"><a class="card-premium text-center" href="student-portal.html">Student Portal</a><a class="card-premium text-center" href="parent-portal.html">Parent Portal</a><a class="card-premium text-center" href="school-portal.html">School Portal</a><a class="card-premium text-center" href="business-portal.html">Business Portal</a></div><div class="mt-10"><a href="contact.html" class="btn-gold">Contact Us</a></div></div></div></section></main><footer class="bg-mesh-navy navy-texture text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
-    <div class="grid gap-10 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5"><img src="images/logo_white.png" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div>
-        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
-      </div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a><a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a></div>
-    </div>
-    <div class="text-center text-sm text-slate-400 mt-6 pt-4 border-t border-slate-700">
-      <a href="privacy.html" class="hover:text-white transition">Privacy Statement</a>
-      <span class="mx-2">·</span>
-      <a href="terms.html" class="hover:text-white transition">Terms &amp; Conditions</a>
-      <span class="mx-2">·</span>
-      <a href="accessibility.html" class="hover:text-white transition">Accessibility Statement</a>
-    </div>
-    <div class="mt-6 pt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400 border-t border-white/10">
-      <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
-      <div class="flex gap-5"><a href="connect.html">Connect</a><a href="how-we-serve.html">How We Serve</a><a href="register.html">Register</a></div>
-    </div>
+</main>
+
+<footer class="bg-navy text-white py-6">
+  <div class="text-center text-sm text-slate-400">
+    <a href="privacy.html" class="hover:text-white">Privacy Statement</a><span class="mx-2">·</span>
+    <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a><span class="mx-2">·</span>
+    <a href="accessibility.html" class="hover:text-white">Accessibility Statement</a>
+    <div class="mt-2">© 2026 Infinnovate, Inc.</div>
   </div>
 </footer>
-<script src="premium.js?v=20260317b"></script>
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-  function toggleSearch(){ document.getElementById('siteSearch').classList.toggle('open'); }
-  function runSearch(){ const q=document.getElementById('siteSearchInput').value; if(q) window.find(q); }
-  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>{
-    new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') }),{threshold:.15}).observe(el)
-  });
-</script>
-</body></html>
+<script>document.getElementById('menuBtn')?.addEventListener('click', () => document.getElementById('mobileNav')?.classList.toggle('hidden'));</script>
+</body>
+</html>

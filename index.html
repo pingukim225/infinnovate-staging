@@ -12,34 +12,25 @@
     theme: { extend: {
       colors: { navy: '#0A1628', gold: '#C9982A', coral: '#E8703A', cream: '#F8F6F1', sage: '#1B6B45' },
       fontFamily: { display: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
-      boxShadow: { glow: '0 24px 60px rgba(10,22,40,.18)' }
     }}
   }
 </script>
-<link rel="stylesheet" href="premium.css?v=20260319a">
-<style>
-body { font-family: Inter, sans-serif; }
-.subnav-link{position:relative}
-.subnav-link:after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#C9982A;transition:width .25s}
-.subnav-link:hover:after,.subnav-link.active:after{width:100%}
-.site-search{display:none}
-.site-search.open{display:flex}
-.hero-wordmark{font-family:'Cormorant Garamond',serif;letter-spacing:-.03em}
-.metric-number{font-family:'Cormorant Garamond',serif}
-.impact-card{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
-.persona-card{transition:transform .3s ease, box-shadow .3s ease}
-.persona-card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(10,22,40,.12)}
-.search-input{background:rgba(255,255,255,.9); border:1px solid rgba(0,0,0,.08)}
-</style>
-<title>Infinnovate — Parent Night in Fullerton</title>
+<link rel="stylesheet" href="premium.css?v=20260319b">
+<title>Infinnovate — Education Was Designed for the Past. We Build for the Future.</title>
 <meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
 </head>
-<body>
-<header class="sticky top-0 z-50 border-b border-white/15 bg-navy/40 backdrop-blur">
+<body class="bg-white text-navy font-sans">
+
+<!-- ============ HEADER / NAV (per PPT slide 2 top) ============ -->
+<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur border-b border-white/10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="flex items-center justify-between py-4 gap-4">
-      <a href="index.html" class="flex items-center gap-3 shrink-0"><img src="images/logo_white.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="index.html" class="shrink-0">
+        <img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto">
+      </a>
+      <!-- Main Nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-white">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="connect.html">Connect</a>
         <a class="nav-link" href="what-we-do.html">What We Do</a>
@@ -47,14 +38,16 @@ body { font-family: Inter, sans-serif; }
         <a class="nav-link" href="how-we-serve.html">How We Serve</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-4 text-white">
-        <button class="text-white hover:text-gold" onclick="window.location.href='site-search.html'" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        </button>
-        <button class="text-white hover:text-gold flex items-center gap-1 text-sm font-medium" aria-label="Language selector">🌐 <span>USA</span> <span class="text-xs">▾</span></button>
-        <a href="portal-select.html" class="text-white hover:text-gold text-sm font-semibold">Log-in</a>
+      <!-- Right: Search, Language, Log-in -->
+      <div class="hidden lg:flex items-center gap-5 text-white text-sm">
+        <a href="site-search.html" class="hover:text-gold" aria-label="Search">
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </a>
+        <button class="hover:text-gold flex items-center gap-1 font-medium">🌐 <span class="text-xs">▾</span></button>
+        <a href="portal-select.html" class="font-semibold hover:text-gold">Log-in</a>
       </div>
-      <button id="menuBtn" class="lg:hidden rounded-lg border px-3 py-2 text-sm font-semibold border-white/30 text-white">Menu</button>
+      <!-- Mobile menu -->
+      <button id="menuBtn" class="lg:hidden text-white border border-white/30 rounded-lg px-3 py-2 text-sm font-semibold">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
       <div class="grid gap-3 text-sm font-semibold text-white/90">
@@ -65,112 +58,147 @@ body { font-family: Inter, sans-serif; }
         <a href="how-we-serve.html">How We Serve</a>
         <a href="contact.html">Contact Us</a>
         <div class="pt-2 border-t border-white/10 flex gap-4 text-sm">
-          <button onclick="window.location.href='site-search.html'">Search</button>
-          <span>🌐 USA ▾</span>
+          <a href="site-search.html">Search</a>
+          <span>🌐 ▾</span>
           <a href="portal-select.html">Log-in</a>
         </div>
       </div>
     </div>
   </div>
 </header>
-<div id="siteSearch" class="site-search fixed inset-0 z-[60] bg-navy/70 backdrop-blur items-start justify-center p-6">
-  <div class="w-full max-w-2xl rounded-3xl bg-white shadow-2xl p-5 mt-16">
-    <div class="flex items-center gap-3">
-      <input id="siteSearchInput" type="text" placeholder="Search this page..." class="search-input flex-1 rounded-2xl px-4 py-3 text-navy" />
-      <button onclick="runSearch()" class="btn-gold">Search</button>
-      <button onclick="window.location.href='site-search.html'" class="rounded-2xl px-4 py-3 border border-slate-200 text-slate-600">Close</button>
-    </div>
-    <p class="text-sm text-slate-500 mt-3">Quick on-page search for this staging page.</p>
-  </div>
-</div>
 
 <main>
-<section class="relative overflow-hidden bg-mesh-navy navy-texture text-white min-h-[88vh]">
-  <div class="hero-slide active" style="background-image:url('images/IMG_7625.webp')"></div>
-  <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/75 to-navy/50"></div>
-  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-24 pb-20 lg:pt-32 lg:pb-28 grid gap-12 lg:grid-cols-[1.1fr_.9fr] items-center">
-    <div class="reveal max-w-3xl">
-      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Infinnovate for Education</div>
-      <h1 class="hero-wordmark text-6xl sm:text-7xl lg:text-8xl leading-[.92] mt-4">Believe in Being Infinite™</h1>
-      <p class="mt-6 text-2xl text-slate-100 leading-9">Education Was Designed for the Past. We Build for the Future.</p>
-      <p class="mt-5 text-lg text-slate-200 leading-8 max-w-2xl">Infinnovate is a next-generation academy where students build real-world capability in business, financial literacy, leadership, and responsible AI.</p>
-      <div class="mt-8 grid gap-4 sm:grid-cols-3">
-        <div class="impact-card rounded-[1.75rem] p-5"><div class="metric-number text-gold text-5xl font-semibold">190+</div><p class="text-slate-700 mt-2 text-sm leading-6">Students reached through district-aligned programming.</p></div>
-        <div class="impact-card rounded-[1.75rem] p-5"><div class="metric-number text-gold text-5xl font-semibold">19+</div><p class="text-slate-700 mt-2 text-sm leading-6">Entrepreneurship and financial literacy events delivered.</p></div>
-        <div class="impact-card rounded-[1.75rem] p-5"><div class="metric-number text-gold text-5xl font-semibold">20–25+</div><p class="text-slate-700 mt-2 text-sm leading-6">Years of leadership and instructional experience guiding the academy vision.</p></div>
-      </div>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="register.html" class="btn-gold pulse-gold">Register</a>
-        <a href="connect.html" class="btn-outline">Explore Pathways</a>
-      </div>
-      <div class="mt-10 grid gap-4 max-w-2xl">
-        <div class="grid sm:grid-cols-2 gap-4 text-base">
-          <div class="card-dark rounded-[1.5rem] p-4 reveal">Not tutoring.</div>
-          <div class="card-dark rounded-[1.5rem] p-4 reveal">Real skills.</div>
-          <div class="card-dark rounded-[1.5rem] p-4 reveal">Not test prep.</div>
-          <div class="card-dark rounded-[1.5rem] p-4 reveal">Real confidence.</div>
-          <div class="card-dark rounded-[1.5rem] p-4 reveal">Not theory.</div>
-          <div class="card-dark rounded-[1.5rem] p-4 reveal">Real life readiness.</div>
-        </div>
-      </div>
+
+<!-- ============ HERO SECTION (Slide 2 top) ============ -->
+<!-- Background: tug-of-war photo, overlay with buttons + tagline -->
+<section class="relative overflow-hidden min-h-[90vh] flex items-center" style="background:url('images/ppt_hero_bg.png') center/cover no-repeat">
+  <div class="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy/80"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 w-full py-20 lg:py-28 text-center">
+    <!-- Wordmark -->
+    <img src="images/ppt_wordmark.png" alt="Believe in being infinite" class="mx-auto max-w-md lg:max-w-lg w-full mb-6">
+    <!-- Four Persona Buttons (per Boss's explicit directive) -->
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <a href="student.html" class="bg-gold hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-sm uppercase tracking-wider transition shadow-lg">I'm a Student</a>
+      <a href="school.html" class="bg-gold hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-sm uppercase tracking-wider transition shadow-lg">I'm a School</a>
+      <a href="connect.html#teachers" class="bg-gold hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-sm uppercase tracking-wider transition shadow-lg">I'm a Teacher</a>
+      <a href="business.html" class="bg-gold hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full text-sm uppercase tracking-wider transition shadow-lg">I'm a Business</a>
     </div>
-    <div class="reveal">
-      <div class="card-image"><img src="images/IMG_6506.webp" alt="Students collaborating" class="rounded-[2rem] shadow-glow w-full object-cover max-h-[620px]"></div>
+    <!-- Tagline (exact from PPT + Boss directive) -->
+    <p class="text-white text-2xl lg:text-3xl font-display leading-snug max-w-2xl mx-auto">Education Was Designed for the Past.&nbsp; We Build for the Future.</p>
+  </div>
+</section>
+
+<!-- ============ OUR ECOSYSTEM (Slide 2 middle) ============ -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center mb-6">
+      <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our Ecosystem</h2>
+    </div>
+    <p class="max-w-3xl mx-auto text-lg text-slate-700 leading-8 text-center mb-6">
+      Infinnovate, Inc. was founded to bridge the gap between traditional education and the real world. Through our flagship program, Infinnovate for Education, we provide interactive, impact-driven learning that develops real-world experience in business leadership, financial literacy, and responsible AI.
+    </p>
+    <!-- Your Journey sub-section -->
+    <div class="mt-12 text-center">
+      <h3 class="font-display text-4xl lg:text-5xl font-semibold mb-2">Your Journey</h3>
+      <p class="text-xl text-slate-600 mb-1">One Academy.&nbsp; Five Personas.</p>
+      <p class="text-lg text-slate-500">Infinnovate connects all five.</p>
+    </div>
+    <!-- Five Persona Cards (carousel) -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-5 gap-6">
+      <div class="bg-cream rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition text-center">
+        <div class="h-40 overflow-hidden"><img src="images/ppt_persona_employee.jpg" alt="The Employee Experience" class="w-full h-full object-cover"></div>
+        <div class="p-4"><p class="font-bold text-sm">The Employee Experience</p></div>
+      </div>
+      <div class="bg-cream rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition text-center">
+        <div class="h-40 overflow-hidden"><img src="images/ppt_persona_startup.jpg" alt="The Small Business" class="w-full h-full object-cover"></div>
+        <div class="p-4"><p class="font-bold text-sm">The Small Business</p></div>
+      </div>
+      <div class="bg-cream rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition text-center">
+        <div class="h-40 overflow-hidden"><img src="images/ppt_persona_bigbiz.jpg" alt="The Big Business" class="w-full h-full object-cover"></div>
+        <div class="p-4"><p class="font-bold text-sm">The Big Business</p></div>
+      </div>
+      <div class="bg-cream rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition text-center">
+        <div class="h-40 overflow-hidden"><img src="images/ppt_ecosystem_video.png" alt="The Investor" class="w-full h-full object-cover"></div>
+        <div class="p-4"><p class="font-bold text-sm">The Investor</p></div>
+      </div>
+      <div class="bg-cream rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition text-center col-span-2 md:col-span-1">
+        <div class="h-40 overflow-hidden"><img src="images/ppt_girl_pizza.jpg" alt="The Entrepreneur" class="w-full h-full object-cover"></div>
+        <div class="p-4"><p class="font-bold text-sm">The Entrepreneur</p></div>
+      </div>
     </div>
   </div>
 </section>
-<section class="py-20 bg-mesh-light section-divider">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-[1.15fr_.85fr] items-center">
-    <div class="reveal">
-      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Parent Night</div>
-      <h2 class="font-display text-5xl mt-3">See the academy in person.</h2>
-      <p class="mt-5 text-lg text-slate-600 leading-8">Join us for Parent Night to tour the space, meet the team, and understand how Infinnovate turns school learning into real-world capability.</p>
-      <div class="mt-6 grid gap-3 text-slate-700">
-        <div><strong>Date:</strong> March 31</div>
-        <div><strong>Location:</strong> 2251 Stern Goodman St. Suite A, Fullerton, CA 92833</div>
-      </div>
-      <div class="mt-8"><a href="register.html" class="btn-gold">Register for Parent Night</a></div>
-    </div>
-    <div class="reveal card-premium">
-      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">What makes it different</div>
-      <p class="mt-4 text-lg leading-8 text-slate-600">School teaches academics. Life requires capability. Infinnovate closes the gap with business simulations, project-based learning, financial literacy, leadership development, and responsible AI fluency.</p>
-    </div>
+
+<!-- ============ STUDENTS DON'T JUST LEARN (Slide 2: ppt_students_dont_just_learn) ============ -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <img src="images/ppt_students_dont_just_learn.png" alt="Real Students. Real Energy. Students Don't Just Learn. They Do." class="w-full rounded-2xl shadow-lg">
   </div>
 </section>
+
+<!-- ============ LISTEN IN YOUR LANGUAGE (Slide 2: ppt_listen_languages) ============ -->
+<section class="py-16 bg-cream">
+  <div class="max-w-4xl mx-auto px-5 lg:px-8">
+    <img src="images/ppt_listen_languages.png" alt="Listen in your language — English, Korean, Spanish, Chinese" class="w-full rounded-2xl shadow-md">
+  </div>
+</section>
+
+<!-- ============ AI WILL CHANGE EVERY CAREER (Slide 2: ppt_ai_careers) ============ -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <img src="images/ppt_ai_careers.png" alt="AI Will Change Every Career. Our students are ready." class="w-full rounded-2xl shadow-lg">
+  </div>
+</section>
+
+<!-- ============ IMPACT STATS + CTAs (Slide 2: ppt_impact_stats) ============ -->
+<section class="py-20 bg-navy text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <img src="images/ppt_impact_stats.png" alt="190+ Students reached, 19+ Events, 20-25+ Years of leadership" class="w-full rounded-2xl">
+  </div>
+</section>
+
 </main>
 
-<footer class="bg-mesh-navy navy-texture text-white">
+<!-- ============ FOOTER (per PPT slide 1 annotations + slide 2 bottom) ============ -->
+<footer class="bg-navy text-white">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
     <div class="grid gap-10 lg:grid-cols-4">
       <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5"><img src="images/logo_white.png" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div>
+        <div class="flex items-center gap-3 mb-5">
+          <img src="images/ppt_footer_logo.png" alt="Infinnovate" class="h-10 w-auto">
+          <div>
+            <div class="font-display text-2xl font-semibold">Infinnovate</div>
+            <div class="text-sm text-slate-300">Believe in Being Infinite™</div>
+          </div>
+        </div>
         <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
       </div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a><a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a></div>
+      <div>
+        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3>
+        <p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p>
+      </div>
+      <div>
+        <h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3>
+        <a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a>
+        <a href="contact.html" class="mt-3 inline-flex text-white font-semibold hover:text-gold">Get in touch →</a>
+      </div>
     </div>
-    <div class="text-center text-sm text-slate-400 mt-6 pt-4 border-t border-slate-700">
-      <a href="privacy.html" class="hover:text-white transition">Privacy Statement</a>
+    <!-- Footer links per slide 1 -->
+    <div class="text-center text-sm text-slate-400 mt-8 pt-4 border-t border-slate-700">
+      <a href="privacy.html" class="hover:text-white">Privacy Statement</a>
       <span class="mx-2">·</span>
-      <a href="terms.html" class="hover:text-white transition">Terms &amp; Conditions</a>
+      <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a>
       <span class="mx-2">·</span>
-      <a href="accessibility.html" class="hover:text-white transition">Accessibility Statement</a>
+      <a href="accessibility.html" class="hover:text-white">Accessibility Statement</a>
     </div>
-    <div class="mt-6 pt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400 border-t border-white/10">
-      <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
-      <div class="flex gap-5"><a href="connect.html">Connect</a><a href="how-we-serve.html">How We Serve</a><a href="register.html">Register</a></div>
-    </div>
+    <div class="mt-4 text-center text-sm text-slate-500">© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
   </div>
 </footer>
-<script src="premium.js?v=20260317b"></script>
+
 <script>
   const menuBtn = document.getElementById('menuBtn');
   const mobileNav = document.getElementById('mobileNav');
   if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-  function toggleSearch(){ document.getElementById('siteSearch').classList.toggle('open'); }
-  function runSearch(){ const q=document.getElementById('siteSearchInput').value; if(q) window.find(q); }
-  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>{
-    new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') }),{threshold:.15}).observe(el)
-  });
 </script>
-</body></html>
+</body>
+</html>
