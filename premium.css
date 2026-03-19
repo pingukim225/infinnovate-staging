@@ -369,3 +369,24 @@ body { font-family: Inter, sans-serif; background: #fff; color: #0A1628 }
 .pillar-card-v2:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(10,22,40,.1);border-color:rgba(201,152,42,.3)}
 .pillar-icon-wrap{transition:transform .3s,box-shadow .3s}
 .pillar-card-v2:hover .pillar-icon-wrap{transform:scale(1.06);box-shadow:0 8px 20px rgba(201,152,42,.15)}
+
+/* 2026-03-20 Mobile responsive fixes (QA B1) */
+@media (max-width: 480px) {
+  img { max-width: 100%; height: auto; }
+  .flex-wrap { flex-wrap: wrap; }
+  section { overflow-x: hidden; }
+  body { overflow-x: hidden; }
+  footer a { word-break: break-all; }
+  .grid { gap: 1rem; }
+  .text-3xl { font-size: 1.5rem; }
+  .text-4xl { font-size: 1.75rem; }
+  .text-5xl { font-size: 2rem; }
+  h1 { font-size: 2rem !important; line-height: 1.1 !important; }
+  h2 { font-size: 1.5rem !important; }
+  h3 { font-size: 1.25rem !important; }
+  .py-16 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .py-20 { padding-top: 3rem; padding-bottom: 3rem; }
+  .grid.md\:grid-cols-3, .grid.md\:grid-cols-5, .grid.md\:grid-cols-4,
+  .grid.sm\:grid-cols-2 { grid-template-columns: 1fr !important; }
+  .max-w-md, .max-w-lg { max-width: 100% !important; }
+}
