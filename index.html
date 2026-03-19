@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Infinnovate — Parent Night in Fullerton</title>
-<meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -12,928 +9,168 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>
   tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: '#0A1628',
-          gold: '#C9982A',
-          coral: '#E8703A',
-          cream: '#F8F6F1',
-          sage: '#1B6B45'
-        },
-        fontFamily: {
-          display: ['Cormorant Garamond', 'serif'],
-          sans: ['Inter', 'sans-serif']
-        },
-        boxShadow: {
-          glow: '0 24px 60px rgba(10,22,40,.18)'
-        }
-      }
-    }
+    theme: { extend: {
+      colors: { navy: '#0A1628', gold: '#C9982A', coral: '#E8703A', cream: '#F8F6F1', sage: '#1B6B45' },
+      fontFamily: { display: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
+      boxShadow: { glow: '0 24px 60px rgba(10,22,40,.18)' }
+    }}
   }
 </script>
+<link rel="stylesheet" href="premium.css?v=20260319a">
 <style>
-  html{scroll-behavior:smooth}
-  body{font-family:Inter,sans-serif;background:#fff;color:#0A1628}
-  .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center;transform:scale(1.05);animation:kenburns 18s ease-in-out infinite alternate}
-  .hero-slide.active{opacity:1}
-  @keyframes kenburns{0%{transform:scale(1.03) translate3d(0,0,0)}100%{transform:scale(1.12) translate3d(-1%, -1%, 0)}}
-  .glass{backdrop-filter: blur(12px); background: rgba(255,255,255,.1)}
-  .reveal{opacity:0; transform:translateY(28px); transition:all .8s ease}
-  .reveal.show{opacity:1; transform:translateY(0)}
-  .card-lift{transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease}
-  .card-lift:hover{transform:translateY(-8px); box-shadow:0 24px 50px rgba(10,22,40,.12); border-color:#C9982A}
-  .nav-link{position:relative}
-  .nav-link:after{content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:#C9982A; transition:width .25s ease}
-  .nav-link:hover:after,.nav-link.active:after{width:100%}
-  .count-box{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16)}
-  .ticker{overflow:hidden;white-space:nowrap}
-  .ticker-track{display:inline-flex;gap:2.5rem; padding-left:100%; animation:ticker 22s linear infinite}
-  @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
-  .masonry{columns:2; column-gap:1rem}
-  .masonry img{break-inside:avoid; margin-bottom:1rem}
-  @media (min-width:1024px){.masonry{columns:4}}
-  @keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,152,42,.5)}50%{box-shadow:0 0 24px 8px rgba(201,152,42,.35)}}
-  .pulse-gold{animation:pulse-gold 2.2s ease-in-out infinite}
-  @media (max-width:767px){.masonry{columns:1}.hero-slide{animation:none;transform:none}}
-  .font-display { font-family: 'Halyard Display', sans-serif; }
-
-  /* === Premium Background Treatments (v2 — visually rich) === */
-  .bg-mesh-light{background:linear-gradient(135deg,#f3efe7 0%,#faf8f4 25%,#edeae2 50%,#f8f6f0 75%,#f0ece3 100%);position:relative}
-  .bg-mesh-light::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 30%,rgba(201,152,42,.07),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 70%,rgba(27,107,69,.05),transparent 60%);pointer-events:none}
-  .bg-mesh-navy{background:linear-gradient(160deg,#060e1c 0%,#0f2240 25%,#0A1628 50%,#132c52 75%,#0A1628 100%);position:relative}
-  .bg-mesh-navy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 20%,rgba(201,152,42,.06),transparent 60%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(27,107,69,.04),transparent 60%);pointer-events:none}
-  .bg-depth-cream{background:linear-gradient(180deg,#f0ece3 0%,#faf8f4 20%,#ede8dd 45%,#f8f6f1 65%,#e8e3d8 100%);position:relative}
-  .bg-depth-cream::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 75% 40%,rgba(201,152,42,.08),transparent 55%),radial-gradient(ellipse 50% 40% at 15% 60%,rgba(27,107,69,.05),transparent 55%);pointer-events:none}
-  .bg-accent-glow{position:relative;overflow:hidden}
-  .bg-accent-glow::before{content:'';position:absolute;top:-30%;right:-10%;width:55%;height:70%;background:radial-gradient(ellipse,rgba(201,152,42,.1) 0%,transparent 65%);pointer-events:none}
-  .bg-accent-glow::after{content:'';position:absolute;bottom:-20%;left:-10%;width:45%;height:60%;background:radial-gradient(ellipse,rgba(27,107,69,.07) 0%,transparent 65%);pointer-events:none}
-  .section-divider{position:relative}
-  .section-divider::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:2px;background:linear-gradient(90deg,transparent,#C9982A,transparent)}
-
-  /* Navy sections: visible dot grid + gold accent line */
-  .navy-texture{position:relative;overflow:hidden}
-  .navy-texture::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
-  .navy-texture::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 10%,rgba(201,152,42,.35) 50%,transparent 90%)}
-
-  /* Soft floating orbs for depth — larger, more visible */
-  @keyframes float-slow{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.04)}}
-  .float-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;animation:float-slow 8s ease-in-out infinite}
-
-  /* (Orbit styles removed — replaced with clean grid layout) */
-
-  /* === Stagger reveal animation === */
-  .reveal-stagger > *{opacity:0;transform:translateY(20px);transition:all .6s ease}
-  .reveal-stagger.show > *:nth-child(1){transition-delay:.05s}
-  .reveal-stagger.show > *:nth-child(2){transition-delay:.1s}
-  .reveal-stagger.show > *:nth-child(3){transition-delay:.15s}
-  .reveal-stagger.show > *:nth-child(4){transition-delay:.2s}
-  .reveal-stagger.show > *:nth-child(5){transition-delay:.25s}
-  .reveal-stagger.show > *:nth-child(6){transition-delay:.3s}
-  .reveal-stagger.show > *:nth-child(7){transition-delay:.35s}
-  .reveal-stagger.show > *:nth-child(8){transition-delay:.4s}
-  .reveal-stagger.show > *{opacity:1;transform:translateY(0)}
-
-  /* Pillar cards hover glow */
-  .pillar-card{transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden}
-  .pillar-card::before{content:'';position:absolute;top:-50%;right:-50%;width:100%;height:100%;background:radial-gradient(circle,rgba(201,152,42,.06) 0%,transparent 70%);opacity:0;transition:opacity .4s}
-  .pillar-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(10,22,40,.08)}
-  .pillar-card:hover::before{opacity:1}
-
-  /* Smooth count-box pulse on hero */
-  .count-box{transition:background .3s}
-  .count-box:hover{background:rgba(255,255,255,.12)}
-
-  /* === Premium Pillar Cards v2 === */
-  .pillar-card-v2{transition:transform .4s cubic-bezier(.25,.46,.45,.94),box-shadow .4s ease,border-color .4s ease}
-  .pillar-card-v2:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(10,22,40,.1);border-color:rgba(201,152,42,.3)}
-  .pillar-icon-wrap{transition:transform .3s,box-shadow .3s}
-  .pillar-card-v2:hover .pillar-icon-wrap{transform:scale(1.08);box-shadow:0 8px 20px rgba(201,152,42,.15)}
-
-  /* === Future-Proof Cards === */
-  .fp-card{min-height:140px;display:flex;flex-direction:column;justify-content:flex-start}
-
-  /* === Journey card connector arrows (desktop) === */
-  @media(min-width:768px){
-    .journey-card{position:relative}
-    .journey-card:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:#C9982A;font-size:1.2rem;font-weight:700;z-index:2}
-  }
-
-  /* === Why Slideshow cells === */
-  .why-slide-cell{background:#f0ede6}
-
+body { font-family: Inter, sans-serif; }
+.subnav-link{position:relative}
+.subnav-link:after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#C9982A;transition:width .25s}
+.subnav-link:hover:after,.subnav-link.active:after{width:100%}
+.site-search{display:none}
+.site-search.open{display:flex}
+.hero-wordmark{font-family:'Cormorant Garamond',serif;letter-spacing:-.03em}
+.metric-number{font-family:'Cormorant Garamond',serif}
+.impact-card{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
+.persona-card{transition:transform .3s ease, box-shadow .3s ease}
+.persona-card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(10,22,40,.12)}
+.search-input{background:rgba(255,255,255,.9); border:1px solid rgba(0,0,0,.08)}
 </style>
-
-<link href="https://fonts.googleapis.com/css2?family=Halyard+Display:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="premium.css?v=20260317b">
+<title>Infinnovate — Parent Night in Fullerton</title>
+<meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
 </head>
 <body>
-
-<header id="site-header" class="absolute top-0 left-0 right-0 z-50 bg-transparent transition-colors duration-300">
+<header class="sticky top-0 z-50 border-b border-white/15 bg-navy/40 backdrop-blur">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="flex items-center justify-between py-4">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="images/logo_infinnovate_inc.png" alt="Infinnovate logo" class="h-14 w-auto">
-        
-      </a>
+    <div class="flex items-center justify-between py-4 gap-4">
+      <a href="index.html" class="flex items-center gap-3 shrink-0"><img src="images/logo_white.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
       <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-white">
         <a class="nav-link" href="index.html">Home</a>
-        <div class="nav-dropdown relative">
-          <button class="nav-link flex items-center gap-1">Connect <span class="text-[10px] opacity-70">▾</span></button>
-          <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
-            <a href="student.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a Student</a>
-            <a href="parent.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a Parent</a>
-            <a href="school.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a School</a>
-            <a href="business.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">I'm a Business</a>
-          </div>
-        </div>
-        <div class="nav-dropdown relative">
-          <button class="nav-link flex items-center gap-1">What We Do <span class="text-[10px] opacity-70">▾</span></button>
-          <div class="dropdown-menu absolute top-full left-0 mt-2 w-48 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
-            <a href="about.html#why" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Why Infinnovate</a>
-            <a href="programs.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Capabilities</a>
-          </div>
-        </div>
-        <div class="nav-dropdown relative">
-          <button class="nav-link flex items-center gap-1">Who We Are <span class="text-[10px] opacity-70">▾</span></button>
-          <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
-            <a href="about.html#vision" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Vision &amp; Mission</a>
-            <a href="about.html#pillars" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our 6 Pillars</a>
-            <a href="about.html#leadership" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Leadership</a>
-            <a href="about.html#expertise" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Expertise</a>
-            <a href="about.html#awards" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Awards &amp; Recognition</a>
-          </div>
-        </div>
-        <div class="nav-dropdown relative">
-          <button class="nav-link flex items-center gap-1">How We Serve <span class="text-[10px] opacity-70">▾</span></button>
-          <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-navy/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl py-2 opacity-0 invisible transition-all duration-200">
-            <a href="programs.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">Our Programs</a>
-            <a href="student.html#journey" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors">The Student Journey</a>
-            <div class="border-t border-white/10 my-1.5"></div>
-            <div class="px-4 py-1 text-[10px] text-slate-500 font-bold uppercase tracking-wider">Locations</div>
-            <a href="contact.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors pl-6">Fullerton Innovation Hub</a>
-            <a href="contact.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors pl-6">Parks Jr High Conservatory</a>
-            <a href="contact.html" class="block px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 transition-colors pl-6">Irvine Elite Academy</a>
-          </div>
-        </div>
+        <a class="nav-link" href="connect.html">Connect</a>
+        <a class="nav-link" href="what-we-do.html">What We Do</a>
+        <a class="nav-link" href="who-we-are.html">Who We Are</a>
+        <a class="nav-link" href="how-we-serve.html">How We Serve</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-4">
-        <!-- Search toggle -->
-        <button id="search-toggle" class="text-white hover:text-gold transition" aria-label="Search">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
+      <div class="hidden lg:flex items-center gap-4 text-white">
+        <button class="text-white hover:text-gold" onclick="toggleSearch()" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
-        <!-- Language selector (placeholder) -->
-        <button class="text-white hover:text-gold transition flex items-center gap-1 text-sm font-medium" aria-label="Language selector">
-          🌐 <span>USA</span> <span class="text-xs">▾</span>
-        </button>
+        <button class="text-white hover:text-gold flex items-center gap-1 text-sm font-medium" aria-label="Language selector">🌐 <span>USA</span> <span class="text-xs">▾</span></button>
+        <a href="#" class="text-white hover:text-gold text-sm font-semibold">Log-in</a>
       </div>
-      
-      <button id="menuBtn" class="lg:hidden rounded-lg border border-white/30 px-3 py-2 text-sm font-semibold text-white">Menu</button>
+      <button id="menuBtn" class="lg:hidden rounded-lg border px-3 py-2 text-sm font-semibold border-white/30 text-white">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
       <div class="grid gap-3 text-sm font-semibold text-white/90">
         <a href="index.html">Home</a>
-        <div class="mobile-accordion">
-          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">Connect <span class="text-xs opacity-70">▾</span></button>
-          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
-            <a href="student.html">I'm a Student</a>
-            <a href="parent.html">I'm a Parent</a>
-            <a href="school.html">I'm a School</a>
-            <a href="business.html">I'm a Business</a>
-          </div>
-        </div>
-        <div class="mobile-accordion">
-          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">What We Do <span class="text-xs opacity-70">▾</span></button>
-          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
-            <a href="about.html#why">Why Infinnovate</a>
-            <a href="programs.html">Our Capabilities</a>
-          </div>
-        </div>
-        <div class="mobile-accordion">
-          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">Who We Are <span class="text-xs opacity-70">▾</span></button>
-          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
-            <a href="about.html#vision">Our Vision &amp; Mission</a>
-            <a href="about.html#pillars">Our 6 Pillars</a>
-            <a href="about.html#leadership">Leadership</a>
-            <a href="about.html#expertise">Expertise</a>
-            <a href="about.html#awards">Awards &amp; Recognition</a>
-          </div>
-        </div>
-        <div class="mobile-accordion">
-          <button class="mobile-accordion-btn flex items-center justify-between w-full py-1">How We Serve <span class="text-xs opacity-70">▾</span></button>
-          <div class="mobile-accordion-panel pl-4 grid gap-2 mt-1 text-white/70">
-            <a href="programs.html">Our Programs</a>
-            <a href="student.html#journey">The Student Journey</a>
-            <a href="contact.html">Fullerton Innovation Hub</a>
-            <a href="contact.html">Parks Jr High Conservatory</a>
-            <a href="contact.html">Irvine Elite Academy</a>
-          </div>
-        </div>
+        <a href="connect.html">Connect</a>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="how-we-serve.html">How We Serve</a>
         <a href="contact.html">Contact Us</a>
+        <div class="pt-2 border-t border-white/10 flex gap-4 text-sm">
+          <button onclick="toggleSearch()">Search</button>
+          <span>🌐 USA ▾</span>
+          <a href="#">Log-in</a>
+        </div>
       </div>
     </div>
   </div>
 </header>
-
-
-<main>
-  <section class="relative min-h-screen overflow-hidden bg-navy text-white">
-    <div class="hero-slide" style="background-image:url('images/IMG_7625.webp')"></div>
-    <div class="hero-slide" style="background-image:url('images/IMG_6506.webp')"></div>
-    <div class="hero-slide" style="background-image:url('images/IMG_7097.webp')"></div>
-    <div class="hero-slide" style="background-image:url('images/IMG_9010.webp')"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/45"></div>
-    <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-36 pb-24 lg:pt-44 lg:pb-32">
-      <div class="max-w-3xl reveal">
-        </div>
-</xai:function_call ><xai:function_call name="edit">
-<parameter name="path">~/AI_Team_Shared/projects/Infinnovate/infinnovate-staging/index.html
-        <h1 class="mt-6 font-sans text-6xl sm:text-7xl lg:text-8xl leading-[.95] font-bold tracking-tight">Believe in Being Infinite™</h1>
-        <p class="mt-6 max-w-3xl text-xl md:text-2xl leading-8 text-slate-200">Education Was Designed for the Past.<br>We Build for the Future.</p>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Infinnovate is a next-generation academy where students learn<br>business, finance, leadership, and AI through real-world experience.</p>
-
-        <!-- 3×2 Matrix: "Not…" vs "Real…" -->
-        <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-0 max-w-lg not-real-grid reveal" role="table" aria-label="What we are not vs what we are">
-          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium animate-left">Not tutoring.</div>
-          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold animate-right">Real skills.</div>
-          <div class="py-2 border-b border-white/10 text-lg text-slate-400 font-medium animate-left delay-1">Not test prep.</div>
-          <div class="py-2 border-b border-white/10 text-lg text-white font-semibold animate-right delay-1">Real confidence.</div>
-          <div class="py-2 text-lg text-slate-400 font-medium animate-left delay-2">Not theory.</div>
-          <div class="py-2 text-lg text-gold font-bold animate-right delay-2">Real life readiness.</div>
-        </div>
-
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl pt-12 metrics-grid">
-  <div class="text-center">
-    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">190+</div>
-    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Students reached through district-aligned programming.</div>
-  </div>
-  <div class="text-center">
-    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">19+</div>
-    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Entrepreneurship and financial literacy events delivered.</div>
-  </div>
-  <div class="text-center">
-    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">20–25+</div>
-    <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Years of leadership and instructional experience guiding the academy vision.</div>
+<div id="siteSearch" class="site-search fixed inset-0 z-[60] bg-navy/70 backdrop-blur items-start justify-center p-6">
+  <div class="w-full max-w-2xl rounded-3xl bg-white shadow-2xl p-5 mt-16">
+    <div class="flex items-center gap-3">
+      <input id="siteSearchInput" type="text" placeholder="Search this page..." class="search-input flex-1 rounded-2xl px-4 py-3 text-navy" />
+      <button onclick="runSearch()" class="btn-gold">Search</button>
+      <button onclick="toggleSearch()" class="rounded-2xl px-4 py-3 border border-slate-200 text-slate-600">Close</button>
+    </div>
+    <p class="text-sm text-slate-500 mt-3">Quick on-page search for this staging page.</p>
   </div>
 </div>
 
-        <div class="mt-8 flex flex-col sm:flex-row gap-4">
-          <a href="enrollment.html#register" class="pulse-gold rounded-full bg-gold px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg shadow-gold/30">Join Parent Night</a>
-          <a href="parent.html" class="rounded-full border border-white/20 glass px-7 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white">Explore the Academy</a>
+<main>
+<section class="relative overflow-hidden bg-mesh-navy navy-texture text-white min-h-[88vh]">
+  <div class="hero-slide active" style="background-image:url('images/IMG_7625.webp')"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/75 to-navy/50"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-24 pb-20 lg:pt-32 lg:pb-28 grid gap-12 lg:grid-cols-[1.1fr_.9fr] items-center">
+    <div class="reveal max-w-3xl">
+      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Infinnovate for Education</div>
+      <h1 class="hero-wordmark text-6xl sm:text-7xl lg:text-8xl leading-[.92] mt-4">Believe in Being Infinite™</h1>
+      <p class="mt-6 text-2xl text-slate-100 leading-9">Education Was Designed for the Past. We Build for the Future.</p>
+      <p class="mt-5 text-lg text-slate-200 leading-8 max-w-2xl">Infinnovate is a next-generation academy where students build real-world capability in business, financial literacy, leadership, and responsible AI.</p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        <div class="impact-card rounded-[1.75rem] p-5"><div class="metric-number text-gold text-5xl font-semibold">190+</div><p class="text-slate-700 mt-2 text-sm leading-6">Students reached through district-aligned programming.</p></div>
+        <div class="impact-card rounded-[1.75rem] p-5"><div class="metric-number text-gold text-5xl font-semibold">19+</div><p class="text-slate-700 mt-2 text-sm leading-6">Entrepreneurship and financial literacy events delivered.</p></div>
+        <div class="impact-card rounded-[1.75rem] p-5"><div class="metric-number text-gold text-5xl font-semibold">20–25+</div><p class="text-slate-700 mt-2 text-sm leading-6">Years of leadership and instructional experience guiding the academy vision.</p></div>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="register.html" class="btn-gold pulse-gold">Register</a>
+        <a href="connect.html" class="btn-outline">Explore Pathways</a>
+      </div>
+      <div class="mt-10 grid gap-4 max-w-2xl">
+        <div class="grid sm:grid-cols-2 gap-4 text-base">
+          <div class="card-dark rounded-[1.5rem] p-4 reveal">Not tutoring.</div>
+          <div class="card-dark rounded-[1.5rem] p-4 reveal">Real skills.</div>
+          <div class="card-dark rounded-[1.5rem] p-4 reveal">Not test prep.</div>
+          <div class="card-dark rounded-[1.5rem] p-4 reveal">Real confidence.</div>
+          <div class="card-dark rounded-[1.5rem] p-4 reveal">Not theory.</div>
+          <div class="card-dark rounded-[1.5rem] p-4 reveal">Real life readiness.</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="bg-cream py-16 text-center">
-    <div class="max-w-3xl mx-auto px-5">
-      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-3">You're Invited</div>
-      <h2 class="font-display text-4xl lg:text-5xl text-navy">Parent Night — March 31</h2>
-      <p class="mt-4 text-lg text-slate-600">Fullerton Innovation Center · 6:30 PM PT</p>
-      <a href="enrollment.html#register" class="mt-6 inline-flex rounded-full bg-gold px-8 py-4 text-sm font-bold text-white shadow-lg">Register Now</a>
-    </div>
-  </section>
-
-<section class="bg-navy text-white py-5 border-y border-white/10">
-  <div class="ticker text-sm font-semibold uppercase tracking-[0.22em] text-gold/90">
-    <div class="ticker-track">
-      <span>Built for Students</span>
-      <span>Trusted by Parents</span>
-      <span>Partnered with Schools</span>
-      <span>Driven by Real-World Experience</span>
-      <span>Built for Students</span>
-      <span>Trusted by Parents</span>
-      <span>Partnered with Schools</span>
-      <span>Driven by Real-World Experience</span>
+    <div class="reveal">
+      <div class="card-image"><img src="images/IMG_6506.webp" alt="Students collaborating" class="rounded-[2rem] shadow-glow w-full object-cover max-h-[620px]"></div>
     </div>
   </div>
 </section>
-
-  <!-- 3. Why Infinnovate -->
-  <section class="py-20 lg:py-28 bg-mesh-light section-divider">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="grid gap-10 lg:grid-cols-2 items-start">
-        <div class="reveal max-w-3xl lg:max-w-none">
-          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Why Infinnovate</div>
-          <h2 class="font-display text-5xl mt-3">School teaches academics.<br>Life requires capability.</h2>
-          <div class="mt-6 space-y-5 text-lg text-slate-600 leading-8">
-            <p>Students graduate knowing formulas<br>but not money.</p>
-            <p>They write essays<br>but don't know business.</p>
-            <p>They memorize answers<br>but never learn how to think.</p>
-            <p>Infinnovate closes the gap.</p>
-            <p>We teach how to think.<br>How to lead.<br>How to build.<br>How to decide.<br>How to create a future.</p>
-          </div>
-        </div>
-        <div class="reveal">
-          <!-- Premium image slideshow with uniform grid -->
-          <div class="grid grid-cols-2 gap-4" id="whySlideshow">
-            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
-              <img src="images/IMG_6506.webp" alt="Students collaborating" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-            </div>
-            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
-              <img src="images/IMG_7097.webp" alt="Presentation practice" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-            </div>
-            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
-              <img src="images/IMG_9010.webp" alt="Hands-on learning" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-            </div>
-            <div class="why-slide-cell rounded-[1.6rem] shadow-glow overflow-hidden aspect-[4/3]">
-              <img src="images/IMG_7625.webp" alt="Student engagement" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
-            </div>
-          </div>
-          <!-- Slideshow dots -->
-          <div class="flex justify-center gap-2 mt-4" id="whyDots"></div>
-        </div>
+<section class="py-20 bg-mesh-light section-divider">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-[1.15fr_.85fr] items-center">
+    <div class="reveal">
+      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Parent Night</div>
+      <h2 class="font-display text-5xl mt-3">See the academy in person.</h2>
+      <p class="mt-5 text-lg text-slate-600 leading-8">Join us for Parent Night to tour the space, meet the team, and understand how Infinnovate turns school learning into real-world capability.</p>
+      <div class="mt-6 grid gap-3 text-slate-700">
+        <div><strong>Date:</strong> March 31</div>
+        <div><strong>Location:</strong> 2251 Stern Goodman St. Suite A, Fullerton, CA 92833</div>
       </div>
+      <div class="mt-8"><a href="register.html" class="btn-gold">Register for Parent Night</a></div>
     </div>
-  </section>
-
-  <!-- 4. Not tutoring: Academy -->
-  <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal max-w-3xl mb-10">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The difference</div>
-        <h2 class="font-display text-5xl mt-3">This Is Not Tutoring.<br>This Is an Academy.</h2>
-      </div>
-      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4 reveal-stagger reveal">
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🏗️</div><div class="text-lg font-semibold">Project-based learning</div><p class="text-sm text-slate-400 mt-1">Build real things, not worksheets</p></div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">📈</div><div class="text-lg font-semibold">Business simulations</div><p class="text-sm text-slate-400 mt-1">Run companies, make decisions</p></div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">💰</div><div class="text-lg font-semibold">Financial literacy</div><p class="text-sm text-slate-400 mt-1">Money, budgets, and real economics</p></div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🤖</div><div class="text-lg font-semibold">AI fluency</div><p class="text-sm text-slate-400 mt-1">Modern tools, used responsibly</p></div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🧭</div><div class="text-lg font-semibold">Leadership training</div><p class="text-sm text-slate-400 mt-1">Confidence to lead from day one</p></div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🎤</div><div class="text-lg font-semibold">Presentations</div><p class="text-sm text-slate-400 mt-1">Communicate ideas with clarity</p></div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">🤝</div><div class="text-lg font-semibold">Team challenges</div><p class="text-sm text-slate-400 mt-1">Collaborate, negotiate, deliver</p></div>
-        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 hover:bg-white/8 hover:border-gold/20 transition-all duration-300"><div class="text-2xl mb-2">⚡</div><div class="text-lg font-semibold">Real responsibility</div><p class="text-sm text-slate-400 mt-1">Ownership that builds character</p></div>
-      </div>
-      <p class="reveal mt-8 text-xl text-slate-200">Students don't just learn.<br>They become capable.</p>
+    <div class="reveal card-premium">
+      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">What makes it different</div>
+      <p class="mt-4 text-lg leading-8 text-slate-600">School teaches academics. Life requires capability. Infinnovate closes the gap with business simulations, project-based learning, financial literacy, leadership development, and responsible AI fluency.</p>
     </div>
-  </section>
-
-  <!-- 5. ESBIE model / Journey -->
-  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal mb-12">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Journey</div>
-        <h2 class="font-display text-5xl mt-3">How Students Grow</h2>
-        <div class="mt-4 flex flex-wrap gap-2.5">
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Employee</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Start-Up</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Big Business</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Investor</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Entrepreneur</span>
-        </div>
-        <p class="mt-6 text-lg text-slate-600 leading-8 max-w-4xl">Students progress through real stages of the business world.</p>
-        <div class="mt-4 flex flex-wrap gap-2.5 max-w-4xl">
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">💬 Communication</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🧭 Strategy</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">💰 Money</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🏅 Leadership</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">✨ Innovation</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🧠 Decisions</span>
-        </div>
-        <p class="mt-4 text-lg text-slate-700 font-semibold">They learn how the world works.</p>
-      </div>
-
-      <div class="grid gap-5 md:grid-cols-5 reveal-stagger reveal">
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Employee</div><p class="mt-3 text-slate-600 leading-7">Learn responsibility, teamwork, communication, and what it means to contribute inside a real organization.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">S</div><div class="mt-3 text-xl font-semibold">Start-Up</div><p class="mt-3 text-slate-600 leading-7">Learn creativity, initiative, problem solving, and how to build something new from the ground up.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">B</div><div class="mt-3 text-xl font-semibold">Big Business</div><p class="mt-3 text-slate-600 leading-7">Learn systems, scale, leadership, structure, and how larger organizations make decisions and deliver results.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">I</div><div class="mt-3 text-xl font-semibold">Investor</div><p class="mt-3 text-slate-600 leading-7">Learn money, risk, opportunity, and how to evaluate ideas, businesses, and long-term value.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Entrepreneur</div><p class="mt-3 text-slate-600 leading-7">Bring it all together — leadership, initiative, resilience, and execution — to create, launch, and lead.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. AI will change every career — Future Proof -->
-  <section class="py-20 lg:py-28 bg-mesh-light section-divider relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal max-w-3xl mb-12">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Future-proof</div>
-        <h2 class="font-display text-5xl mt-3">AI Will Change Every Career.</h2>
-        <p class="mt-4 text-xl text-slate-700">Our students are ready.</p>
-        <p class="mt-3 text-lg text-slate-600 leading-8 max-w-2xl">Every skill your child builds at Infinnovate is amplified by AI fluency — the ability to use modern tools responsibly, creatively, and confidently across any field.</p>
-      </div>
-
-      <!-- Two-column: supporting context + capability grid -->
-      <div class="reveal grid gap-10 lg:grid-cols-2 items-start">
-        <!-- Left: context -->
-        <div class="space-y-6">
-          <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-6">
-            <h4 class="text-lg font-semibold text-navy mb-2">Why AI fluency matters</h4>
-            <p class="text-slate-600 leading-7">By the time today's students enter the workforce, <span class="text-gold font-semibold">AI will be embedded in every career</span> — from medicine to marketing, engineering to entrepreneurship.</p>
-            <p class="text-slate-600 leading-7 mt-3">Infinnovate doesn't just teach students about AI. We teach them to <span class="text-gold font-semibold">think with it</span> — using it as a partner for research, writing, design, and problem solving.</p>
-          </div>
-          <div class="rounded-2xl bg-white/70 backdrop-blur border border-slate-200 p-6">
-            <h4 class="text-lg font-semibold text-navy mb-2">Built into every lesson</h4>
-            <p class="text-slate-600 leading-7">AI isn't a separate class — it's <span class="text-gold font-semibold">woven into every project</span>. Students use it for branding, financial models, research reports, and pitch decks.</p>
-            <p class="text-slate-600 leading-7 mt-3">The result: graduates who are <span class="text-gold font-semibold">comfortable, capable, and responsible</span> with the tools that will define their generation.</p>
-          </div>
-        </div>
-
-        <!-- Right: AI capability cards grid — aligned 2-col with depth -->
-        <div class="grid grid-cols-2 gap-4 reveal-stagger reveal">
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">🔎</div>
-            <div class="font-semibold text-navy">Research</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Ask smarter questions, find better answers</p>
-          </div>
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">✍️</div>
-            <div class="font-semibold text-navy">Writing</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Draft, edit &amp; polish with AI as your co-writer</p>
-          </div>
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">💻</div>
-            <div class="font-semibold text-navy">Coding</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Build apps &amp; automate ideas — no experience needed</p>
-          </div>
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">📊</div>
-            <div class="font-semibold text-navy">Business Planning</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Turn an idea into a real plan, step by step</p>
-          </div>
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">🎨</div>
-            <div class="font-semibold text-navy">Design</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Create logos, posters &amp; visuals with AI tools</p>
-          </div>
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">🧩</div>
-            <div class="font-semibold text-navy">Problem Solving</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Break big challenges into solvable pieces</p>
-          </div>
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">🛡️</div>
-            <div class="font-semibold text-navy">AI is a Tool</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">We teach students to use it wisely</p>
-          </div>
-          <div class="fp-card card-premium rounded-2xl p-5">
-            <div class="text-2xl mb-2">🧠</div>
-            <div class="font-semibold text-navy">Decision Making</div>
-            <p class="text-sm text-slate-500 mt-1 leading-relaxed">Weigh options &amp; choose with confidence</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="reveal mt-12 text-lg text-slate-700 font-semibold text-center">Every skill your child builds here is amplified by AI fluency.</p>
-    </div>
-  </section>
-
-  <!-- Six Pillars with Alice icons -->
-  <section class="py-20 lg:py-28 bg-depth-cream">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal flex items-center gap-4 mb-10">
-        <img src="images/logo_black.png" alt="Infinnovate" class="h-8 w-auto">
-        <h2 class="font-display text-4xl">Six Pillars of Growth</h2>
-      </div>
-      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3 reveal-stagger reveal">
-        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex flex-col items-center text-center">
-            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-20 w-20"></div>
-            <div class="mt-4"><div class="font-semibold text-lg text-navy">Spiritual</div><p class="mt-2 text-slate-600 leading-7">In God we trust.</p></div>
-          </div>
-        </div>
-        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex flex-col items-center text-center">
-            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/academics.png" alt="Academics" class="h-20 w-20"></div>
-            <div class="mt-4"><div class="font-semibold text-lg text-navy">Academics</div><p class="mt-2 text-slate-600 leading-7">We foster a love of learning, creating opportunities for intellectual growth and achievement.</p></div>
-          </div>
-        </div>
-        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex flex-col items-center text-center">
-            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/health.png" alt="Health" class="h-20 w-20"></div>
-            <div class="mt-4"><div class="font-semibold text-lg text-navy">Health</div><p class="mt-2 text-slate-600 leading-7">We champion well-being, encouraging healthy habits and a balanced lifestyle.</p></div>
-          </div>
-        </div>
-        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex flex-col items-center text-center">
-            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/finances.png" alt="Finances" class="h-20 w-20"></div>
-            <div class="mt-4"><div class="font-semibold text-lg text-navy">Finances</div><p class="mt-2 text-slate-600 leading-7">We promote financial literacy, empowering individuals on their path to financial freedom.</p></div>
-          </div>
-        </div>
-        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex flex-col items-center text-center">
-            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/social.png" alt="Social" class="h-20 w-20"></div>
-            <div class="mt-4"><div class="font-semibold text-lg text-navy">Social</div><p class="mt-2 text-slate-600 leading-7">We cultivate a supportive and inclusive community, fostering collaboration and respect.</p></div>
-          </div>
-        </div>
-        <div class="pillar-card-v2 card-premium rounded-[1.5rem] p-7 border border-slate-200/80">
-          <div class="flex flex-col items-center text-center">
-            <div class="pillar-icon-wrap w-28 h-28 rounded-2xl bg-slate-50 border border-slate-100 shadow-sm flex items-center justify-center"><img src="images/pillars/career.png" alt="Career" class="h-20 w-20"></div>
-            <div class="mt-4"><div class="font-semibold text-lg text-navy">Career</div><p class="mt-2 text-slate-600 leading-7">We inspire a relentless pursuit of purpose-driven careers that ignite passion and ambition to create meaningful impact.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-mesh-light py-20 lg:py-28 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal max-w-3xl mb-12">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Choose your path</div>
-        <h2 class="font-display text-5xl mt-3">One Academy.<br>Four Paths.</h2>
-        <p class="mt-4 text-slate-600 text-lg leading-8">Infinnovate connects all four.</p>
-      </div>
-      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <a href="parent.html" class="card-lift reveal rounded-[2rem] border-2 border-gold bg-white p-8 shadow-glow">
-          <div class="text-4xl">🛡️</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Parent</h3><p class="mt-3 text-slate-600 leading-7">See how Infinnovate prepares your child for life with confidence, business fluency, and practical skills.</p>
-        </a>
-        <a href="student.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🎓</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Student</h3><p class="mt-3 text-slate-600 leading-7">A polished preview of the student experience, with the full portal coming soon.</p></a>
-        <a href="school.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🏫</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a School</h3><p class="mt-3 text-slate-600 leading-7">District-aligned enrichment, partnership-ready delivery, and a clear local track record.</p></a>
-        <a href="business.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🤝</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Small Business</h3><p class="mt-3 text-slate-600 leading-7">Community partnerships, sponsorship opportunities, and AI-powered business support.</p></a>
-      </div>
-    </div>
-  </section>
-  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-2 items-center">
-      <div class="reveal">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our new home</div>
-        <h2 class="font-display text-5xl mt-3">Built for the Next Generation</h2>
-        <p class="mt-5 text-lg text-slate-600 leading-8">Our new center features state-of-the-art design — a purpose-built innovation academy.<br><br>Collaboration spaces<br>Innovation lab environment<br>Presentation areas<br>Team tables<br>Parent-visible classrooms<br>Real-world simulations</p>
-        <div class="mt-8 rounded-3xl bg-navy text-white p-7 shadow-glow">
-          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Location</div>
-          <div class="mt-3 text-2xl font-semibold">Fullerton, California</div>
-        </div>
-      </div>
-      <div class="grid md:grid-cols-2 gap-5 reveal">
-        <img src="images/View01_revised.webp" alt="Infinnovate classroom render front view" class="rounded-[2rem] shadow-glow h-full object-cover">
-        <img src="images/View02_revised.webp" alt="Infinnovate classroom render alternate angle" class="rounded-[2rem] shadow-glow h-full object-cover md:translate-y-8">
-      </div>
-    </div>
-  </section>
-  <section class="bg-mesh-navy navy-texture text-white py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal max-w-3xl mb-12">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Infinnovate difference</div>
-        <h2 class="font-display text-5xl mt-3">More than tutoring. This is life readiness.</h2>
-      </div>
-      <div class="grid gap-6 lg:grid-cols-3">
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-8"><div class="text-4xl">🎯</div><h3 class="mt-5 font-display text-3xl">Not tutoring — life readiness</h3><p class="mt-4 text-slate-300 leading-8">We bridge the gap between strong grades and the practical confidence students need to thrive in the real world.</p></div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-8"><div class="text-4xl">🧭</div><h3 class="mt-5 font-display text-3xl">The ESBIE journey</h3><p class="mt-4 text-slate-300 leading-8">Employee → Start-Up → Big Business → Investor → Entrepreneur. Students learn by moving through the real rhythm of value creation.</p></div>
-        <div class="reveal rounded-[2rem] bg-white/5 border border-white/10 p-8"><div class="text-4xl">🤖</div><h3 class="mt-5 font-display text-3xl">AI as a learning partner</h3><p class="mt-4 text-slate-300 leading-8">AI is applied to branding, research, and problem-solving so students learn modern tools with responsibility and purpose.</p></div>
-      </div>
-    </div>
-  </section>
-  <section class="py-20 lg:py-28 bg-depth-cream relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
-        <div>
-          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Real students. Real energy.</div>
-          <h2 class="font-display text-5xl mt-3">Students Don't Just Learn.<br>They Do.</h2>
-        </div>
-        <p class="max-w-2xl text-slate-600 text-lg leading-8">Business challenges<br>Live events<br>Student storefronts<br>Presentations<br>Competitions<br>Entrepreneurship labs<br>Leadership roles<br><br>Confidence comes from experience.</p>
-      </div>
-      <div class="masonry reveal">
-        <img src="images/IMG_7097.webp" alt="Students doing hands-on activity" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_9010.webp" alt="Student presenting at whiteboard" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7569.webp" alt="Students outdoors on sports field" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7041.webp" alt="Young student engaged in classroom activity" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7478.webp" alt="Students collaborating in group work" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_6564.webp" alt="Group activity inside Infinnovate" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7732.webp" alt="Obeya room and progress wall" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_6359.webp" alt="Outdoor student event with food" class="rounded-[1.6rem] shadow-lg w-full">
-      </div>
-    </div>
-  </section>
-  <section class="py-16 lg:py-20 bg-mesh-light section-divider">
-    <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center reveal">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-        <div>
-          <div class="font-display text-4xl text-gold font-bold">OC</div>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Serving students<br>in Orange County</p>
-        </div>
-        <div>
-          <div class="font-display text-4xl text-gold font-bold">K–12</div>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Partnered with<br>local schools</p>
-        </div>
-        <div>
-          <div class="font-display text-4xl text-gold font-bold">Live</div>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Active cohorts<br>&amp; parent nights</p>
-        </div>
-        <div>
-          <div class="font-display text-4xl text-gold font-bold">20+</div>
-          <p class="mt-2 text-sm text-slate-600 leading-relaxed">Years of business<br>transformation expertise</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- 11. Founded by Jimmy Kim -->
-  <section class="py-20 lg:py-28 bg-depth-cream section-divider">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8">
-      <div class="reveal grid gap-8 lg:grid-cols-3 lg:items-center rounded-[2rem] border border-slate-200 bg-cream p-8">
-        <div class="lg:col-span-2">
-          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Founded by</div>
-          <h3 class="font-display text-4xl mt-2">Jimmy Kim</h3>
-          <p class="mt-4 text-slate-700 text-lg leading-8">Business Turnaround & Transformation Leader<br>Founder of Infinnovate<br><br>After 20+ years helping organizations improve performance, he created Infinnovate to bring real-world thinking into education.<br><br>Students deserve capability.</p>
-        </div>
-        <div class="justify-self-center">
-          <img src="images/jimmy_headshot.webp" alt="Jimmy Kim" class="rounded-2xl w-56 h-56 object-cover object-top shadow-glow">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-mesh-light relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal max-w-3xl mb-10"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Hear about Infinnovate</div><h2 class="font-display text-5xl mt-3">Listen in your language</h2><p class="mt-4 text-slate-600 text-lg leading-8">A quick overview for families who want to hear the story before Parent Night.</p></div>
-      <div class="reveal rounded-[2rem] bg-white border border-slate-200 p-8 shadow-glow">
-        <div class="flex flex-wrap gap-3 mb-6">
-          <button data-audio-btn data-label="English overview" data-src="images/audio/pitch_en.m4a" class="rounded-full px-4 py-3 border bg-white text-navy border-gold font-semibold hover:bg-gold/10 transition cursor-pointer">🇺🇸 English</button>
-          <button data-audio-btn data-label="한국어 소개" data-src="images/audio/pitch_ko.m4a" class="rounded-full px-4 py-3 border bg-white text-navy border-gold font-semibold hover:bg-gold/10 transition cursor-pointer">🇰🇷 한국어</button>
-          <button data-audio-btn data-label="Resumen en español" data-src="images/audio/pitch_es.m4a" class="rounded-full px-4 py-3 border bg-white text-navy border-gold font-semibold hover:bg-gold/10 transition cursor-pointer">🇪🇸 Español</button>
-          <button data-audio-btn data-label="中文介绍" data-src="images/audio/pitch_zh.m4a" class="rounded-full px-4 py-3 border bg-white text-navy border-gold font-semibold hover:bg-gold/10 transition cursor-pointer">🇨🇳 中文</button>
-        </div>
-        <div class="rounded-[1.5rem] bg-navy p-6 text-white">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <div id="audioTitle" class="text-2xl font-display">Select a language above to listen</div>
-              <div id="audioStatus" class="text-sm text-slate-300 mt-1">A quick overview of Infinnovate for families</div>
-            </div>
-            <div class="text-gold text-3xl">🔊</div>
-          </div>
-          <audio id="audioPlayer" class="w-full mt-5" controls></audio>
-        </div>
-        <p class="mt-4 text-sm text-slate-500">Click any language to hear a brief overview of the Infinnovate experience, powered by NotebookLM.</p>
-      </div>
-    </div>
-  </section>
-  <section class="py-16 bg-depth-cream">
-    <div class="max-w-6xl mx-auto px-5 lg:px-8 text-center reveal">
-      <h2 class="font-display text-5xl">Download our brochure</h2>
-      <p class="mt-4 text-slate-600 text-lg max-w-2xl mx-auto">Take the Infinnovate story home. Share it with family, friends, or anyone who wants to see what's possible for the next generation.</p>
-      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="images/Infinnovate_Brochure_EN.pdf" class="rounded-full bg-navy px-7 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg">📥 English Brochure (PDF)</a>
-        <a href="images/Infinnovate_Brochure_KO.pdf" class="rounded-full border-2 border-navy px-7 py-4 text-sm font-bold uppercase tracking-[0.16em] text-navy">📥 한국어 Brochure (PDF)</a>
-      </div>
-    </div>
-  </section>
-  <section class="bg-mesh-navy navy-texture text-white py-20">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
-      <div class="reveal rounded-[2rem] border border-white/10 bg-white/5 p-8 lg:p-12 backdrop-blur-sm">
-        <div class="grid gap-8 lg:grid-cols-3 lg:items-center">
-          <div>
-            <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Your timeline</div>
-            <h2 class="font-display text-5xl mt-3">What happens next</h2>
-          </div>
-          <div class="lg:col-span-2 grid gap-5 md:grid-cols-3">
-            <div class="rounded-2xl bg-white/5 p-6 border border-white/10"><div class="text-gold font-bold">NOW</div><div class="mt-2 text-xl font-semibold">Parent Night registration open</div></div>
-            <div class="rounded-2xl bg-white/5 p-6 border border-white/10"><div class="text-gold font-bold">MARCH 31</div><div class="mt-2 text-xl font-semibold">Parent Night — meet the team</div></div>
-            <div class="rounded-2xl bg-white/5 p-6 border border-white/10"><div class="text-gold font-bold">MAY–SEPT 2026</div><div class="mt-2 text-xl font-semibold">Cohort #1 and Summer Academy</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 13. CTA: Parent Night Registration Open -->
-  <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white relative overflow-hidden border-t border-white/5">
-    <div class="max-w-4xl mx-auto px-5 text-center reveal relative">
-      <h2 class="font-display text-5xl">Parent Night Registration Open</h2>
-      <p class="mt-4 text-slate-300 text-lg">Meet the academy<br>See the curriculum<br>Ask questions<br>Experience the vision</p>
-      <div class="mt-7 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="enrollment.html#register" class="rounded-full bg-gold px-8 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg">Register now</a>
-        <a href="parent.html" class="rounded-full border border-white/20 glass px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white">Explore the Academy</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 14. Brand statement -->
-  <section class="py-16 bg-mesh-light">
-    <div class="max-w-5xl mx-auto px-5 text-center">
-      <img src="images/logo_black.png" alt="Infinnovate" class="mx-auto h-8 w-auto">
-      <h3 class="font-display text-3xl mt-4">Infinnovate, Inc.</h3>
-      <p class="mt-3 text-slate-600">A modern academy for business, financial, and AI literacy.<br><br>Helping students develop confidence,<br>discipline,<br>and real-world capability.<br><br>Believe in Being Infinite™</p>
-    </div>
-  </section>
+  </div>
+</section>
 </main>
 
-
 <footer class="bg-mesh-navy navy-texture text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-16 pb-10">
-    <!-- Logo row -->
-    <div class="mb-12">
-      <img src="images/logo_infinnovate_inc.png" alt="Infinnovate" class="h-12 w-auto">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+    <div class="grid gap-10 lg:grid-cols-4">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-5"><img src="images/logo_white.png" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div>
+        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
+      </div>
+      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
+      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a><a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a></div>
     </div>
-    <!-- 6-column sitemap -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
-      <!-- Home -->
-      <div>
-        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Home</h3>
-        <ul class="space-y-2">
-          <li><a href="index.html" class="text-slate-300 hover:text-white text-sm transition-colors">Home</a></li>
-        </ul>
-      </div>
-      <!-- Connect -->
-      <div>
-        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Connect</h3>
-        <ul class="space-y-2">
-          <li><a href="student.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Student</a></li>
-          <li><a href="parent.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Parent</a></li>
-          <li><a href="school.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a School</a></li>
-          <li><a href="business.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Business</a></li>
-        </ul>
-      </div>
-      <!-- What We Do -->
-      <div>
-        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">What We Do</h3>
-        <ul class="space-y-2">
-          <li><a href="about.html#why" class="text-slate-300 hover:text-white text-sm transition-colors">Why Infinnovate</a></li>
-          <li><a href="programs.html" class="text-slate-300 hover:text-white text-sm transition-colors">Our Capabilities</a></li>
-        </ul>
-      </div>
-      <!-- Who We Are -->
-      <div>
-        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Who We Are</h3>
-        <ul class="space-y-2">
-          <li><a href="about.html#vision" class="text-slate-300 hover:text-white text-sm transition-colors">Our Vision &amp; Mission</a></li>
-          <li><a href="about.html#pillars" class="text-slate-300 hover:text-white text-sm transition-colors">Our 6 Pillars</a></li>
-          <li><a href="about.html#leadership" class="text-slate-300 hover:text-white text-sm transition-colors">Leadership</a></li>
-          <li><a href="about.html#expertise" class="text-slate-300 hover:text-white text-sm transition-colors">Expertise</a></li>
-          <li><a href="about.html#awards" class="text-slate-300 hover:text-white text-sm transition-colors">Awards &amp; Recognition</a></li>
-        </ul>
-      </div>
-      <!-- How We Serve -->
-      <div>
-        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">How We Serve</h3>
-        <ul class="space-y-2">
-          <li><a href="programs.html" class="text-slate-300 hover:text-white text-sm transition-colors">Our Programs</a></li>
-          <li><a href="student.html#journey" class="text-slate-300 hover:text-white text-sm transition-colors">The Student Journey</a></li>
-          <li class="pt-2 text-xs text-slate-400 font-semibold uppercase tracking-wider">Locations</li>
-          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Fullerton Innovation Hub</a></li>
-          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Parks Jr High Conservatory</a></li>
-          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Irvine Elite Academy</a></li>
-        </ul>
-      </div>
-      <!-- Contact Us -->
-      <div>
-        <h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Contact Us</h3>
-        <ul class="space-y-2">
-          <li><a href="contact.html#careers" class="text-slate-300 hover:text-white text-sm transition-colors">Careers</a></li>
-          <li><a href="enrollment.html#register" class="text-slate-300 hover:text-white text-sm transition-colors">Register / Contact Us</a></li>
-          <li class="pt-2 text-xs text-slate-400 font-semibold uppercase tracking-wider">Locations</li>
-          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Fullerton Innovation Hub</a></li>
-          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Parks Jr High Conservatory</a></li>
-          <li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors pl-2">Irvine Elite Academy</a></li>
-        </ul>
-      </div>
+    <div class="text-center text-sm text-slate-400 mt-6 pt-4 border-t border-slate-700">
+      <a href="#" class="hover:text-white transition">Privacy Statement</a>
+      <span class="mx-2">·</span>
+      <a href="#" class="hover:text-white transition">Terms &amp; Conditions</a>
+      <span class="mx-2">·</span>
+      <a href="#" class="hover:text-white transition">Accessibility Statement</a>
     </div>
-    <!-- Legal bar -->
-    <div class="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
-      <div>© 2026 Infinnovate, Inc. All rights reserved.</div>
-      <div class="flex flex-wrap gap-5">
-        <a href="#" class="hover:text-white transition-colors">Privacy Statement</a>
-        <a href="#" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
-        <a href="#" class="hover:text-white transition-colors">Accessibility Statement</a>
-      </div>
+    <div class="mt-6 pt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400 border-t border-white/10">
+      <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
+      <div class="flex gap-5"><a href="connect.html">Connect</a><a href="how-we-serve.html">How We Serve</a><a href="register.html">Register</a></div>
     </div>
   </div>
 </footer>
-
-
+<script src="premium.js?v=20260317b"></script>
 <script>
   const menuBtn = document.getElementById('menuBtn');
   const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
-
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
-  }, {threshold:.15});
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>observer.observe(el));
-
-  document.querySelectorAll('[data-counter]').forEach(el => {
-    const target = Number(el.dataset.counter);
-    const suffix = el.dataset.suffix || '';
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        let start = 0; const dur = 1600; const startTime = performance.now();
-        function tick(now){
-          const progress = Math.min((now-startTime)/dur,1);
-          const value = Math.floor(progress*target);
-          el.textContent = value + suffix;
-          if(progress < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
-        }
-        requestAnimationFrame(tick); io.disconnect();
-      });
-    }, {threshold:.4});
-    io.observe(el);
+  if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+  function toggleSearch(){ document.getElementById('siteSearch').classList.toggle('open'); }
+  function runSearch(){ const q=document.getElementById('siteSearchInput').value; if(q) window.find(q); }
+  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>{
+    new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') }),{threshold:.15}).observe(el)
   });
-
-  const deadline = new Date('2026-03-31T18:30:00-07:00').getTime();
-  function paintCountdown(){
-    const now = new Date().getTime();
-    const dist = deadline - now;
-    const ids = ['days','hours','minutes','seconds'];
-    if (dist <= 0){ ids.forEach(id=>{ const el = document.getElementById(id); if(el) el.textContent='0'; }); return; }
-    const d = Math.floor(dist / (1000*60*60*24));
-    const h = Math.floor((dist % (1000*60*60*24))/(1000*60*60));
-    const m = Math.floor((dist % (1000*60*60))/(1000*60));
-    const s = Math.floor((dist % (1000*60))/1000);
-    [['days',d],['hours',h],['minutes',m],['seconds',s]].forEach(([id,val])=>{ const el=document.getElementById(id); if(el) el.textContent = String(val).padStart(2,'0'); });
-  }
-  paintCountdown(); setInterval(paintCountdown,1000);
-
-  const slides = document.querySelectorAll('.hero-slide');
-  if (slides.length) {
-    let idx = 0; slides[0].classList.add('active');
-    setInterval(()=>{ slides[idx].classList.remove('active'); idx = (idx + 1) % slides.length; slides[idx].classList.add('active'); }, 5000);
-  }
-
-  const audioButtons = document.querySelectorAll('[data-audio-btn]');
-  const audioEl = document.getElementById('audioPlayer');
-  const audioTitle = document.getElementById('audioTitle');
-  const audioStatus = document.getElementById('audioStatus');
-  audioButtons.forEach(btn => btn.addEventListener('click', () => {
-    if (btn.dataset.disabled === 'true') return;
-    audioButtons.forEach(b=>b.classList.remove('ring-2','ring-gold'));
-    btn.classList.add('ring-2','ring-gold');
-    if (audioEl) audioEl.src = btn.dataset.src;
-    if (audioTitle) audioTitle.textContent = btn.dataset.label;
-    if (audioStatus) audioStatus.textContent = 'Ready to play';
-  }));
-  if (audioEl && audioStatus){ audioEl.addEventListener('play', ()=> audioStatus.textContent='Playing'); audioEl.addEventListener('pause', ()=> audioStatus.textContent='Paused'); }
-
-  const registerForm = document.getElementById('registerForm');
-  if (registerForm){
-    registerForm.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const fd = new FormData(registerForm);
-      const subject = encodeURIComponent('Parent Night Registration Inquiry');
-      const body = encodeURIComponent(`Name: ${fd.get('name')}
-Email: ${fd.get('email')}
-Student Age/Grade: ${fd.get('student')}
-Message: ${fd.get('message')}`);
-      window.location.href = `mailto:info@infinnovateinc.com?subject=${subject}&body=${body}`;
-    });
-  }
 </script>
-
-
-<script>(function(){ const hdr = document.getElementById('site-header'); window.addEventListener('scroll', function(){ if(window.scrollY > 80){ hdr.classList.add('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.remove('bg-transparent'); } else { hdr.classList.remove('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.add('bg-transparent'); } }, {passive:true}); })();</script>
-
-<!-- Why Infinnovate: Image Slideshow (cycles groups of 4 from pool of images) -->
-<script>
-(function(){
-  const pool = [
-    ['images/IMG_6506.webp','images/IMG_7097.webp','images/IMG_9010.webp','images/IMG_7625.webp'],
-    ['images/IMG_7041.webp','images/IMG_6564.webp','images/IMG_7478.webp','images/IMG_7569.webp'],
-    ['images/IMG_6508.webp','images/IMG_7081.webp','images/IMG_7445.webp','images/IMG_6065.webp'],
-    ['images/IMG_7732.webp','images/IMG_6359.webp','images/IMG_7643.webp','images/IMG_0987.webp']
-  ];
-  const cells = document.querySelectorAll('#whySlideshow .why-slide-cell');
-  const dotsContainer = document.getElementById('whyDots');
-  if(!cells.length || !dotsContainer) return;
-
-  // Build dots
-  pool.forEach((_,i) => {
-    const dot = document.createElement('button');
-    dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (i===0?'bg-gold scale-110':'bg-slate-300');
-    dot.setAttribute('aria-label','Slide group '+(i+1));
-    dotsContainer.appendChild(dot);
-    dot.addEventListener('click', () => goTo(i));
-  });
-
-  let current = 0;
-  function goTo(idx){
-    current = idx;
-    cells.forEach((cell,ci) => {
-      const img = cell.querySelector('img');
-      if(!img) return;
-      img.style.opacity = '0';
-      img.style.transform = 'scale(1.08)';
-      setTimeout(() => {
-        img.src = pool[current][ci];
-        img.style.opacity = '1';
-        img.style.transform = 'scale(1)';
-      }, 250);
-    });
-    dotsContainer.querySelectorAll('button').forEach((d,di) => {
-      d.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (di===current?'bg-gold scale-110':'bg-slate-300');
-    });
-  }
-
-  // Add transition styles to images
-  cells.forEach(cell => {
-    const img = cell.querySelector('img');
-    if(img) img.style.transition = 'opacity .5s ease, transform .7s ease';
-  });
-
-  // Auto-advance every 4s
-  setInterval(() => goTo((current+1)%pool.length), 4000);
-})();
-</script>
-
-</body>
-</html>rval(() => goTo((current+1)%pool.length), 4000);
-})();
-</script>
-
-</body>
-</html>nt+1)%pool.length), 4000);
-})();
-</script>
-
-</body>
-</html>
+</body></html>
