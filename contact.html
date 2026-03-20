@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>Contact — Infinnovate</title>
+<meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -10,22 +12,21 @@
 <script>
   tailwind.config = {
     theme: { extend: {
-      colors: { navy: '#0A1628', gold: '#C9982A', cream: '#F8F6F1' },
+      colors: { navy: '#0A1628', gold: '#C9982A', coral: '#E8703A', cream: '#F8F6F1', sage: '#1B6B45' },
       fontFamily: { display: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
+      boxShadow: { glow: '0 24px 60px rgba(10,22,40,.18)' }
     }}
   }
 </script>
-<link rel="stylesheet" href="premium.css?v=20260319b">
-<title>Contact Us — Infinnovate</title>
+<link rel="stylesheet" href="premium.css?v=20260317b">
 </head>
-<body class="bg-white text-navy font-sans">
+<body>
 
-<!-- NAV -->
-<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur border-b border-white/10">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="shrink-0"><img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto"></a>
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-white">
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3"><img src="images/logo_black.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-navy">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="connect.html">Connect</a>
         <a class="nav-link" href="what-we-do.html">What We Do</a>
@@ -33,121 +34,75 @@
         <a class="nav-link" href="how-we-serve.html">How We Serve</a>
         <a class="nav-link active" href="contact.html">Contact Us</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-5 text-white text-sm">
-        <a href="site-search.html" class="hover:text-gold"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></a>
-        <button class="hover:text-gold flex items-center gap-1 font-medium">🌐 <span class="text-xs">▾</span></button>
-        <a href="portal-select.html" class="font-semibold hover:text-gold">Log-in</a>
+      <div class="hidden lg:flex items-center gap-4">
+        <button class="text-navy hover:text-gold transition" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <button class="text-navy hover:text-gold transition flex items-center gap-1 text-sm font-medium" aria-label="Language selector">
+          🌐 <span>USA</span> <span class="text-xs">▾</span>
+        </button>
+        <a href="#" class="text-sm font-semibold text-navy hover:text-gold transition">Log-in</a>
       </div>
-      <button id="menuBtn" class="lg:hidden text-white border border-white/30 rounded-lg px-3 py-2 text-sm font-semibold">Menu</button>
+      <button id="menuBtn" class="lg:hidden rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
-      <div class="grid gap-3 text-sm font-semibold text-white/90">
-        <a href="index.html">Home</a><a href="connect.html">Connect</a><a href="what-we-do.html">What We Do</a>
-        <a href="who-we-are.html">Who We Are</a><a href="how-we-serve.html">How We Serve</a><a href="contact.html">Contact Us</a>
-        <div class="pt-2 border-t border-white/10 flex gap-4 text-sm"><a href="site-search.html">Search</a><span>🌐 ▾</span><a href="portal-select.html">Log-in</a></div>
+      <div class="grid gap-3 text-sm font-semibold text-slate-700">
+        <a href="index.html">Home</a>
+        <a href="connect.html">Connect</a>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="how-we-serve.html">How We Serve</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Log-in</a>
       </div>
     </div>
   </div>
 </header>
 
 <main>
-
-<!-- Page Title + Sub-nav (per Slide 8) -->
-<section class="bg-navy text-white py-6">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <h1 class="text-3xl font-display font-bold">Contact Us</h1>
-    <div class="mt-3 flex flex-wrap gap-4 text-sm font-medium text-white/70">
-      <span class="text-white/30">|</span>
-      <a href="careers.html" class="subnav-link hover:text-white">Career</a>
-      <span class="text-white/30">|</span>
-      <a href="register.html" class="subnav-link hover:text-white">Register</a>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Form + Info -->
-<section class="py-16 bg-cream">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12">
-    <!-- Left: Form -->
-    <div>
-      <h2 class="font-display text-3xl font-semibold mb-6">Get in Touch</h2>
-      <form class="space-y-5">
-        <div>
-          <label class="block text-sm font-semibold mb-1">Name</label>
-          <input type="text" class="input-premium w-full" placeholder="Your name" required>
-        </div>
-        <div>
-          <label class="block text-sm font-semibold mb-1">Email</label>
-          <input type="email" class="input-premium w-full" placeholder="email@example.com" required>
-        </div>
-        <div>
-          <label class="block text-sm font-semibold mb-1">Subject</label>
-          <select class="input-premium w-full">
-            <option value="">Select...</option>
-            <option>General Inquiry</option>
-            <option>Enrollment</option>
-            <option>School Partnership</option>
-            <option>Business Partnership</option>
-            <option>Careers</option>
-            <option>Media / Press</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm font-semibold mb-1">Message</label>
-          <textarea class="input-premium w-full" rows="5" placeholder="How can we help?" required></textarea>
-        </div>
-        <button type="submit" class="btn-gold">Send Message</button>
-      </form>
-    </div>
-    <!-- Right: Info -->
-    <div>
-      <h2 class="font-display text-3xl font-semibold mb-6">Visit Us</h2>
-      <div class="space-y-6 text-slate-700">
-        <div>
-          <h3 class="font-bold mb-1">Address</h3>
-          <p>2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p>
-        </div>
-        <div>
-          <h3 class="font-bold mb-1">Email</h3>
-          <a href="mailto:info@infinnovateinc.com" class="text-gold hover:underline">info@infinnovateinc.com</a>
-        </div>
-        <div>
-          <h3 class="font-bold mb-1">Hours</h3>
-          <p>Monday – Friday: 9:00 AM – 5:00 PM<br>Weekend sessions by appointment</p>
+  <section class="hero-overlay bg-mesh-navy navy-texture text-white py-28 lg:py-36 relative">
+    <div class="hero-bg" style="background-image:url('images/View01_revised.webp')"></div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 grid gap-10 lg:grid-cols-2 items-start relative z-10">
+      <div class="reveal">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Contact</div>
+        <h1 class="font-display text-6xl mt-3 leading-[.95]">Come see the academy in person.</h1>
+        <p class="mt-6 text-lg text-slate-200 leading-8">Parent Night on March 31 is the fastest way to understand the program, meet the team, and see the space.</p>
+        <div class="mt-8 space-y-5 text-lg">
+          <div><strong>Address:</strong> 2251 Stern Goodman St. Suite A, Fullerton, CA 92833</div>
+          <div><strong>Email:</strong> <a class="text-white underline" href="mailto:info@infinnovateinc.com">info@infinnovateinc.com</a></div>
+          <div><strong>Best next step:</strong> Register for Parent Night or send your questions directly.</div>
         </div>
       </div>
-      <!-- Map placeholder -->
-      <div class="mt-8 bg-slate-200 rounded-2xl h-64 flex items-center justify-center text-slate-500">
-        <p>📍 Map — Fullerton, CA</p>
+      <div id="register" class="reveal card-premium rounded-[2rem] p-8 shadow-glow bg-white text-navy">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Parent Night registration</div>
+        <h2 class="font-display text-4xl mt-3">Tell us you're coming</h2>
+        <p class="mt-3 text-slate-600 leading-7">This form opens an email draft to info@infinnovateinc.com so registration can be handled manually for now.</p>
+        <form id="registerForm" class="mt-6 grid gap-4">
+          <input name="name" required placeholder="Parent name" class="input-premium">
+          <input name="email" type="email" required placeholder="Email address" class="input-premium">
+          <input name="student" placeholder="Student age / grade" class="input-premium">
+          <textarea name="message" rows="5" placeholder="What would you like to know before Parent Night?" class="input-premium"></textarea>
+          <button class="btn-gold w-full">Register for Parent Night — March 31</button>
+        </form>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="bg-navy text-white">
+<footer class="bg-mesh-navy navy-texture text-white">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
     <div class="grid gap-10 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5">
-          <img src="images/ppt_footer_logo.png" alt="Infinnovate" class="h-10 w-auto">
-          <div><div class="font-display text-2xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div>
-        </div>
-        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
-      </div>
+      <div class="lg:col-span-2"><div class="flex items-center gap-3 mb-5"><img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div><p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p></div>
       <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a></div>
+      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a><a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a></div>
     </div>
-    <div class="text-center text-sm text-slate-400 mt-8 pt-4 border-t border-slate-700">
-      <a href="privacy.html" class="hover:text-white">Privacy Statement</a><span class="mx-2">·</span>
-      <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a><span class="mx-2">·</span>
-      <a href="accessibility.html" class="hover:text-white">Accessibility Statement</a>
+    <div class="mt-10 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
+      <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
+      <div class="flex gap-5"><a href="parent.html">Parents</a><a href="programs.html">Programs</a><a href="enrollment.html">Enrollment</a></div>
     </div>
-    <div class="mt-4 text-center text-sm text-slate-500">© 2026 Infinnovate, Inc.</div>
   </div>
 </footer>
-<script>document.getElementById('menuBtn')?.addEventListener('click', () => document.getElementById('mobileNav')?.classList.toggle('hidden'));</script>
+
+<script src="premium.js?v=20260317b"></script>
 </body>
 </html>

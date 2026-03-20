@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<title>I'm a Student — Infinnovate</title>
+<meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -16,29 +18,14 @@
     }}
   }
 </script>
-<link rel="stylesheet" href="premium.css?v=20260319a">
-<style>
-body { font-family: Inter, sans-serif; }
-.subnav-link{position:relative}
-.subnav-link:after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#C9982A;transition:width .25s}
-.subnav-link:hover:after,.subnav-link.active:after{width:100%}
-.site-search{display:none}
-.site-search.open{display:flex}
-.hero-wordmark{font-family:'Cormorant Garamond',serif;letter-spacing:-.03em}
-.metric-number{font-family:'Cormorant Garamond',serif}
-.impact-card{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12)}
-.persona-card{transition:transform .3s ease, box-shadow .3s ease}
-.persona-card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(10,22,40,.12)}
-.search-input{background:rgba(255,255,255,.9); border:1px solid rgba(0,0,0,.08)}
-</style>
-<title>For Students — Infinnovate</title>
-<meta name="description" content="Infinnovate for students.">
+<link rel="stylesheet" href="premium.css?v=20260317b">
 </head>
 <body>
-<header class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="flex items-center justify-between py-4 gap-4">
-      <a href="index.html" class="flex items-center gap-3 shrink-0"><img src="images/logo_black.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3"><img src="images/logo_black.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
       <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-navy">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="connect.html">Connect</a>
@@ -47,14 +34,16 @@ body { font-family: Inter, sans-serif; }
         <a class="nav-link" href="how-we-serve.html">How We Serve</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-4 text-navy">
-        <button class="text-navy hover:text-gold" onclick="window.location.href='site-search.html'" aria-label="Search">
+      <div class="hidden lg:flex items-center gap-4">
+        <button class="text-navy hover:text-gold transition" aria-label="Search">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
         </button>
-        <button class="text-navy hover:text-gold flex items-center gap-1 text-sm font-medium" aria-label="Language selector">🌐 <span>USA</span> <span class="text-xs">▾</span></button>
-        <a href="portal-select.html" class="text-navy hover:text-gold text-sm font-semibold">Log-in</a>
+        <button class="text-navy hover:text-gold transition flex items-center gap-1 text-sm font-medium" aria-label="Language selector">
+          🌐 <span>USA</span> <span class="text-xs">▾</span>
+        </button>
+        <a href="#" class="text-sm font-semibold text-navy hover:text-gold transition">Log-in</a>
       </div>
-      <button id="menuBtn" class="lg:hidden rounded-lg border px-3 py-2 text-sm font-semibold border-slate-300 text-navy">Menu</button>
+      <button id="menuBtn" class="lg:hidden rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
       <div class="grid gap-3 text-sm font-semibold text-slate-700">
@@ -64,58 +53,44 @@ body { font-family: Inter, sans-serif; }
         <a href="who-we-are.html">Who We Are</a>
         <a href="how-we-serve.html">How We Serve</a>
         <a href="contact.html">Contact Us</a>
-        <div class="pt-2 border-t border-white/10 flex gap-4 text-sm">
-          <button onclick="window.location.href='site-search.html'">Search</button>
-          <span>🌐 USA ▾</span>
-          <a href="portal-select.html">Log-in</a>
-        </div>
+        <a href="#">Log-in</a>
       </div>
     </div>
   </div>
 </header>
-<div id="siteSearch" class="site-search fixed inset-0 z-[60] bg-navy/70 backdrop-blur items-start justify-center p-6">
-  <div class="w-full max-w-2xl rounded-3xl bg-white shadow-2xl p-5 mt-16">
-    <div class="flex items-center gap-3">
-      <input id="siteSearchInput" type="text" placeholder="Search this page..." class="search-input flex-1 rounded-2xl px-4 py-3 text-navy" />
-      <button onclick="runSearch()" class="btn-gold">Search</button>
-      <button onclick="window.location.href='site-search.html'" class="rounded-2xl px-4 py-3 border border-slate-200 text-slate-600">Close</button>
+
+<main>
+  <section class="hero-overlay bg-mesh-navy navy-texture text-white py-32 lg:py-44 relative">
+    <div class="hero-bg" style="background-image:url('images/IMG_9010.webp')"></div>
+    <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center relative z-10">
+      <div class="reveal">
+        <div class="text-6xl">🎓</div>
+        <h1 class="font-display text-6xl mt-6">I'm a Student</h1>
+        <p class="mt-6 text-xl text-slate-200 leading-8 max-w-3xl mx-auto">Your Infinnovate journey starts here. From the ESBIE business pathway to AI projects and Shark Tank-style experiences, we are building something ambitious for you. Full student portal coming soon.</p>
+        <div class="mt-8"><a href="enrollment.html#register" class="btn-gold">Contact Us to Learn More</a></div>
+        <div class="mt-10 card-dark rounded-[2rem] p-8 text-left max-w-3xl mx-auto">
+          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Coming soon</div>
+          <p class="mt-4 text-slate-300 leading-8">This page is being expanded next. For now, Parent Night is the best place to get the full overview and ask questions in person.</p>
+        </div>
+      </div>
     </div>
-    <p class="text-sm text-slate-500 mt-3">Quick on-page search for this staging page.</p>
-  </div>
-</div>
-<main><section class="bg-depth-cream py-24 lg:py-32"><div class="max-w-5xl mx-auto px-5 lg:px-8"><div class="reveal text-center max-w-3xl mx-auto"><div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Connect</div><h1 class="font-display text-6xl mt-3">I'm a Student</h1><p class="mt-6 text-lg text-slate-600 leading-8">This legacy page remains accessible by direct URL. The main navigation now routes through Connect and the new site structure.</p><div class="mt-8"><a href="connect.html" class="btn-gold">Back to Connect</a></div></div></div></section></main>
+  </section>
+</main>
+
 <footer class="bg-mesh-navy navy-texture text-white">
   <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
     <div class="grid gap-10 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5"><img src="images/logo_white.png" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div>
-        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
-      </div>
+      <div class="lg:col-span-2"><div class="flex items-center gap-3 mb-5"><img src="images/WHITE LOGO_bold (1).webp" alt="Infinnovate logo" class="h-10 w-auto"><div><div class="font-display text-3xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div></div><p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p></div>
       <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
       <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a><a href="contact.html" class="mt-3 inline-flex text-white font-semibold">Plan your Parent Night visit →</a></div>
     </div>
-    <div class="text-center text-sm text-slate-400 mt-6 pt-4 border-t border-slate-700">
-      <a href="privacy.html" class="hover:text-white transition">Privacy Statement</a>
-      <span class="mx-2">·</span>
-      <a href="terms.html" class="hover:text-white transition">Terms &amp; Conditions</a>
-      <span class="mx-2">·</span>
-      <a href="accessibility.html" class="hover:text-white transition">Accessibility Statement</a>
-    </div>
-    <div class="mt-6 pt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400 border-t border-white/10">
+    <div class="mt-10 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
       <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
-      <div class="flex gap-5"><a href="connect.html">Connect</a><a href="how-we-serve.html">How We Serve</a><a href="register.html">Register</a></div>
+      <div class="flex gap-5"><a href="parent.html">Parents</a><a href="programs.html">Programs</a><a href="enrollment.html">Enrollment</a></div>
     </div>
   </div>
 </footer>
+
 <script src="premium.js?v=20260317b"></script>
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuBtn && mobileNav) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-  function toggleSearch(){ document.getElementById('siteSearch').classList.toggle('open'); }
-  function runSearch(){ const q=document.getElementById('siteSearchInput').value; if(q) window.find(q); }
-  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el=>{
-    new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show') }),{threshold:.15}).observe(el)
-  });
-</script>
-</body></html>
+</body>
+</html>

@@ -91,14 +91,6 @@ if (registerForm) {
   });
 }
 
-// Mobile accordion nav
-document.querySelectorAll('.mobile-accordion-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const panel = btn.nextElementSibling;
-    if (panel) panel.classList.toggle('open');
-  });
-});
-
 // Sticky header scroll effect (for transparent headers)
 const hdr = document.getElementById('site-header');
 if (hdr && hdr.classList.contains('bg-transparent')) {

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Serve — Infinnovate</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,22 +11,59 @@
 <script>
   tailwind.config = {
     theme: { extend: {
-      colors: { navy: '#0A1628', gold: '#C9982A', cream: '#F8F6F1' },
+      colors: { navy: '#0A1628', gold: '#C9982A', coral: '#E8703A', cream: '#F8F6F1', sage: '#1B6B45' },
       fontFamily: { display: ['Cormorant Garamond','serif'], sans: ['Inter','sans-serif'] },
+      boxShadow: { glow: '0 24px 60px rgba(10,22,40,.18)' }
     }}
   }
 </script>
-<link rel="stylesheet" href="premium.css?v=20260319b">
-<title>How We Serve — Infinnovate</title>
+<style>
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,sans-serif;background:#fff;color:#0A1628}
+  .reveal{opacity:0;transform:translateY(28px);transition:all .8s ease}
+  .reveal.show{opacity:1;transform:translateY(0)}
+  .card-lift{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .card-lift:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(10,22,40,.12);border-color:#C9982A}
+  .nav-link{position:relative}
+  .nav-link:after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:#C9982A;transition:width .25s ease}
+  .nav-link:hover:after,.nav-link.active:after{width:100%}
+  .bg-mesh-navy{background:linear-gradient(160deg,#060e1c 0%,#0f2240 25%,#0A1628 50%,#132c52 75%,#0A1628 100%);position:relative}
+  .bg-mesh-navy::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 70% 20%,rgba(201,152,42,.06),transparent 60%),radial-gradient(ellipse 40% 50% at 20% 80%,rgba(27,107,69,.04),transparent 60%);pointer-events:none}
+  .bg-mesh-light{background:linear-gradient(135deg,#f3efe7 0%,#faf8f4 25%,#edeae2 50%,#f8f6f0 75%,#f0ece3 100%);position:relative}
+  .navy-texture{position:relative;overflow:hidden}
+  .navy-texture::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+  .navy-texture::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 10%,rgba(201,152,42,.35) 50%,transparent 90%)}
+  .pillar-card{transition:transform .3s ease,box-shadow .3s ease}
+  .pillar-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(10,22,40,.08)}
+  .card-premium{background:#fff;border:1px solid #e2e8f0;border-radius:1.5rem;padding:2rem}
+  .subpage-hero{background:linear-gradient(160deg,#060e1c 0%,#0f2240 40%,#0A1628 100%);position:relative;overflow:hidden}
+  .subpage-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
+  .capability-card{border:1px solid #e2e8f0;border-radius:1.25rem;padding:1.5rem;background:#fff;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .capability-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(10,22,40,.08);border-color:#C9982A}
+  .persona-card{border:1px solid #e2e8f0;border-radius:1.5rem;padding:2rem;background:#fff;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:pointer}
+  .persona-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(10,22,40,.1);border-color:#C9982A}
+  .location-card{border:1px solid #e2e8f0;border-radius:1.25rem;padding:1.5rem;background:#fff;display:flex;align-items:flex-start;gap:1rem;transition:border-color .25s}
+  .location-card:hover{border-color:#C9982A}
+  .connect-card{border:2px solid #e2e8f0;border-radius:2rem;padding:3rem 2rem;text-align:center;transition:transform .3s,box-shadow .3s,border-color .3s;cursor:pointer;background:#fff}
+  .connect-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(10,22,40,.12);border-color:#C9982A}
+  .reveal-stagger > *{opacity:0;transform:translateY(20px);transition:all .6s ease}
+  .reveal-stagger.show > *:nth-child(1){transition-delay:.05s}
+  .reveal-stagger.show > *:nth-child(2){transition-delay:.1s}
+  .reveal-stagger.show > *:nth-child(3){transition-delay:.15s}
+  .reveal-stagger.show > *:nth-child(4){transition-delay:.2s}
+  .reveal-stagger.show > *:nth-child(5){transition-delay:.25s}
+  .reveal-stagger.show > *{opacity:1;transform:translateY(0)}
+  .subnav{position:sticky;top:73px;z-index:40;background:#fff;border-bottom:1px solid #e2e8f0;padding:.75rem 0}
+</style>
+<link rel="stylesheet" href="premium.css?v=20260317b">
 </head>
-<body class="bg-white text-navy font-sans">
+<body>
 
-<!-- NAV -->
-<header class="sticky top-0 z-50 bg-navy/95 backdrop-blur border-b border-white/10">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="flex items-center justify-between h-16">
-      <a href="index.html" class="shrink-0"><img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto"></a>
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-white">
+    <div class="flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3"><img src="images/logo_black.png" alt="Infinnovate logo" class="h-14 w-auto"></a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-navy">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="connect.html">Connect</a>
         <a class="nav-link" href="what-we-do.html">What We Do</a>
@@ -33,154 +71,177 @@
         <a class="nav-link active" href="how-we-serve.html">How We Serve</a>
         <a class="nav-link" href="contact.html">Contact Us</a>
       </nav>
-      <div class="hidden lg:flex items-center gap-5 text-white text-sm">
-        <a href="site-search.html" class="hover:text-gold"><svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></a>
-        <button class="hover:text-gold flex items-center gap-1 font-medium">🌐 <span class="text-xs">▾</span></button>
-        <a href="portal-select.html" class="font-semibold hover:text-gold">Log-in</a>
+      <div class="hidden lg:flex items-center gap-4">
+        <button class="text-navy hover:text-gold transition" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <button class="text-navy hover:text-gold transition flex items-center gap-1 text-sm font-medium" aria-label="Language selector">
+          🌐 <span>USA</span> <span class="text-xs">▾</span>
+        </button>
+        <a href="#" class="text-sm font-semibold text-navy hover:text-gold transition">Log-in</a>
       </div>
-      <button id="menuBtn" class="lg:hidden text-white border border-white/30 rounded-lg px-3 py-2 text-sm font-semibold">Menu</button>
+      <button id="menuBtn" class="lg:hidden rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold">Menu</button>
     </div>
     <div id="mobileNav" class="hidden lg:hidden pb-4">
-      <div class="grid gap-3 text-sm font-semibold text-white/90">
-        <a href="index.html">Home</a><a href="connect.html">Connect</a><a href="what-we-do.html">What We Do</a>
-        <a href="who-we-are.html">Who We Are</a><a href="how-we-serve.html">How We Serve</a><a href="contact.html">Contact Us</a>
-        <div class="pt-2 border-t border-white/10 flex gap-4 text-sm"><a href="site-search.html">Search</a><span>🌐 ▾</span><a href="portal-select.html">Log-in</a></div>
+      <div class="grid gap-3 text-sm font-semibold text-slate-700">
+        <a href="index.html">Home</a>
+        <a href="connect.html">Connect</a>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="how-we-serve.html">How We Serve</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="#">Log-in</a>
       </div>
     </div>
   </div>
 </header>
 
 <main>
-
-<!-- Page Title + Sub-nav (per Slide 5) -->
-<section class="bg-navy text-white py-6">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <h1 class="text-3xl font-display font-bold">How We Serve</h1>
-    <div class="mt-3 flex flex-wrap gap-4 text-sm font-medium text-white/70">
-      <a href="#programs" class="subnav-link hover:text-white">Our Programs</a>
-      <span class="text-white/30">|</span>
-      <a href="#journey" class="subnav-link hover:text-white">The Student Journey</a>
-      <span class="text-white/30">|</span>
-      <a href="#locations" class="subnav-link hover:text-white">Our Locations</a>
+  <!-- Hero -->
+  <section class="subpage-hero text-white py-28 lg:py-36">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
+      <div class="text-gold text-sm font-bold uppercase tracking-[0.2em] reveal">Programs &amp; pathways</div>
+      <h1 class="font-display text-6xl lg:text-7xl mt-4 max-w-3xl reveal">How We Serve</h1>
+      <p class="mt-6 text-xl text-slate-300 max-w-2xl reveal">Our Programs · The Student Journey · Our Locations</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- OUR PROGRAMS (Slide 5 — exact text from PPT) -->
-<section id="programs" class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-2">Programs</h2>
-    <h3 class="font-display text-3xl lg:text-4xl font-semibold mb-8">Our Programs</h3>
+  <!-- Sub-nav -->
+  <nav class="subnav">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 flex gap-6 text-sm font-semibold">
+      <a href="#programs" class="text-navy hover:text-gold transition">Our Programs</a>
+      <a href="#journey" class="text-navy hover:text-gold transition">The Student Journey</a>
+      <a href="#locations" class="text-navy hover:text-gold transition">Locations</a>
+    </div>
+  </nav>
 
-    <!-- Three Program Cards (exact from PPT programs section) -->
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-2xl p-8 shadow-md border border-slate-100">
-        <div class="text-4xl mb-4">📊</div>
-        <h4 class="text-xl font-bold mb-3">Business Literacy</h4>
-        <p class="text-slate-600 leading-7">Students explore how individuals and teams create value through real projects, events, and marketplace simulations.</p>
+  <!-- Programs -->
+  <section id="programs" class="py-24 lg:py-32 bg-mesh-light">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="reveal max-w-3xl mb-14">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our Programs</div>
+        <h2 class="font-display text-5xl mt-3">Built for real outcomes.</h2>
+        <p class="mt-5 text-lg text-slate-600 leading-8">Every Infinnovate program is experiential, practical, and designed around the ESBIE framework — guiding students from their first role as an Employee all the way to becoming an Entrepreneur.</p>
       </div>
-      <div class="bg-white rounded-2xl p-8 shadow-md border border-slate-100">
-        <div class="text-4xl mb-4">💳</div>
-        <h4 class="text-xl font-bold mb-3">Financial Literacy</h4>
-        <p class="text-slate-600 leading-7">Budgeting, saving, banking, taxes, and investment thinking — framed for real life, not just a test.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 shadow-md border border-slate-100">
-        <div class="text-4xl mb-4">🤖</div>
-        <h4 class="text-xl font-bold mb-3">AI Applications</h4>
-        <p class="text-slate-600 leading-7">Students learn to use AI responsibly for research, brainstorming, branding, and creative problem-solving.</p>
+      <div class="grid gap-6 md:grid-cols-3 reveal-stagger reveal">
+        <div class="card-premium"><div class="text-gold font-display text-5xl">01</div><h3 class="mt-4 font-display text-3xl">Infinnovate for Education</h3><p class="mt-3 text-slate-600 leading-7">District-aligned curriculum delivered in schools. Business literacy, financial literacy, and AI fluency woven into the academic calendar.</p></div>
+        <div class="card-premium"><div class="text-gold font-display text-5xl">02</div><h3 class="mt-4 font-display text-3xl">Academy Programs</h3><p class="mt-3 text-slate-600 leading-7">After-school and weekend intensives at the Infinnovate Innovation Center. Project-based, simulation-driven, leadership-focused.</p></div>
+        <div class="card-premium"><div class="text-gold font-display text-5xl">03</div><h3 class="mt-4 font-display text-3xl">Events &amp; Competitions</h3><p class="mt-3 text-slate-600 leading-7">Live events, student storefronts, business challenges, and entrepreneurship labs. Confidence comes from experience.</p></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- THE JOURNEY (Slide 5 — ESBIE model, exact text) -->
-<section id="journey" class="py-16 bg-cream">
-  <div class="max-w-6xl mx-auto px-5 lg:px-8">
-    <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-2">The Journey</h2>
-    <h3 class="font-display text-3xl lg:text-4xl font-semibold mb-6">How Students Grow</h3>
-
-    <!-- ESBIE Journey Graphic (from PPT Slide 5) -->
-    <div class="mb-10">
-      <img src="images/ppt_journey_detail.png" alt="The ESBIE Journey — Employee, Start-Up, Big Business, Investor, Entrepreneur" class="w-full rounded-2xl shadow-lg">
-    </div>
-
-    <!-- Five ESBIE Cards (supporting detail) -->
-    <div class="grid md:grid-cols-5 gap-6">
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-        <div class="text-gold font-display text-5xl font-bold mb-2">E</div>
-        <h4 class="font-bold mb-2">Employee</h4>
-        <p class="text-sm text-slate-600 leading-6">Learn responsibility, teamwork, communication, and what it means to contribute inside a real organization.</p>
+  <!-- Student Journey / ESBIE Carousel -->
+  <section id="journey" class="py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="reveal max-w-3xl mb-4">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Your Journey</div>
+        <h2 class="font-display text-5xl mt-3">One Academy.<br>Five Personas.<br><span class="text-gold">Infinnovate connects all five.</span></h2>
+        <p class="mt-5 text-lg text-slate-600 leading-8">Infinnovate, Inc. was founded to bridge the gap between traditional education and the real world. Through our flagship program, Infinnovate for Education, we provide interactive, impact-driven learning that develops real-world experience in business leadership, financial literacy, and responsible AI.</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-        <div class="text-gold font-display text-5xl font-bold mb-2">S</div>
-        <h4 class="font-bold mb-2">Start-Up</h4>
-        <p class="text-sm text-slate-600 leading-6">Learn creativity, initiative, problem solving, and how to build something new from the ground up.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-        <div class="text-gold font-display text-5xl font-bold mb-2">B</div>
-        <h4 class="font-bold mb-2">Big Business</h4>
-        <p class="text-sm text-slate-600 leading-6">Learn systems, scale, leadership, structure, and how larger organizations make decisions and deliver results.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-        <div class="text-gold font-display text-5xl font-bold mb-2">I</div>
-        <h4 class="font-bold mb-2">Investor</h4>
-        <p class="text-sm text-slate-600 leading-6">Learn money, risk, opportunity, and how to evaluate ideas, businesses, and long-term value.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
-        <div class="text-gold font-display text-5xl font-bold mb-2">E</div>
-        <h4 class="font-bold mb-2">Entrepreneur</h4>
-        <p class="text-sm text-slate-600 leading-6">Bring it all together — leadership, initiative, resilience, and execution — to create, launch, and lead.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LOCATIONS (Slide 5 — exact text) -->
-<section id="locations" class="py-16 bg-white">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <h2 class="text-gold text-sm font-bold uppercase tracking-[0.2em] mb-2">Locations</h2>
-    <h3 class="font-display text-3xl font-semibold mb-8">Where We Serve</h3>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div>
-        <ul class="space-y-4 text-lg text-slate-700">
-          <li class="flex items-start gap-3"><span class="text-gold">📍</span> Fullerton Innovation Center</li>
-          <li class="flex items-start gap-3"><span class="text-gold">📍</span> Parks Jr High Conservatory</li>
-          <li class="flex items-start gap-3"><span class="text-gold">📍</span> Fountain Valley School District</li>
-          <li class="flex items-start gap-3"><span class="text-gold">📍</span> Fullerton School District</li>
-          <li class="flex items-start gap-3"><span class="text-gold">📍</span> Irvine Elite Academy</li>
-        </ul>
-      </div>
-      <div class="rounded-2xl overflow-hidden shadow-lg">
-        <img src="images/ppt_locations_photo.jpg" alt="Infinnovate locations" class="w-full h-full object-cover">
+      <!-- Carousel -->
+      <div class="mt-12 overflow-x-auto pb-4">
+        <div class="flex gap-5 min-w-max md:min-w-0 md:grid md:grid-cols-5 reveal-stagger reveal">
+          <div class="persona-card w-56 md:w-auto" data-video="true">
+            <div class="font-display text-6xl text-gold">E</div>
+            <h3 class="mt-3 font-semibold text-navy text-lg">The Employee Experience</h3>
+            <p class="mt-2 text-slate-600 text-sm leading-6">Responsibility, teamwork, communication, and contribution inside a real organization.</p>
+            <button class="mt-4 text-xs font-bold text-gold uppercase tracking-wider border border-gold rounded-full px-4 py-2 hover:bg-gold hover:text-white transition" data-video="true">▶ Watch Video</button>
+          </div>
+          <div class="persona-card w-56 md:w-auto" data-video="true">
+            <div class="font-display text-6xl text-gold">S</div>
+            <h3 class="mt-3 font-semibold text-navy text-lg">The Small Business</h3>
+            <p class="mt-2 text-slate-600 text-sm leading-6">Operations, customer service, problem-solving, and the reality of running a small business.</p>
+            <button class="mt-4 text-xs font-bold text-gold uppercase tracking-wider border border-gold rounded-full px-4 py-2 hover:bg-gold hover:text-white transition" data-video="true">▶ Watch Video</button>
+          </div>
+          <div class="persona-card w-56 md:w-auto" data-video="true">
+            <div class="font-display text-6xl text-gold">B</div>
+            <h3 class="mt-3 font-semibold text-navy text-lg">The Big Business</h3>
+            <p class="mt-2 text-slate-600 text-sm leading-6">Strategy, systems thinking, corporate leadership, and how large organizations operate.</p>
+            <button class="mt-4 text-xs font-bold text-gold uppercase tracking-wider border border-gold rounded-full px-4 py-2 hover:bg-gold hover:text-white transition" data-video="true">▶ Watch Video</button>
+          </div>
+          <div class="persona-card w-56 md:w-auto" data-video="true">
+            <div class="font-display text-6xl text-gold">I</div>
+            <h3 class="mt-3 font-semibold text-navy text-lg">The Investor</h3>
+            <p class="mt-2 text-slate-600 text-sm leading-6">Capital allocation, risk assessment, portfolio thinking, and investing in the future.</p>
+            <button class="mt-4 text-xs font-bold text-gold uppercase tracking-wider border border-gold rounded-full px-4 py-2 hover:bg-gold hover:text-white transition" data-video="true">▶ Watch Video</button>
+          </div>
+          <div class="persona-card w-56 md:w-auto" data-video="true">
+            <div class="font-display text-6xl text-gold">E</div>
+            <h3 class="mt-3 font-semibold text-navy text-lg">The Entrepreneur</h3>
+            <p class="mt-2 text-slate-600 text-sm leading-6">Leadership, initiative, resilience, and execution — create, launch, and lead.</p>
+            <button class="mt-4 text-xs font-bold text-gold uppercase tracking-wider border border-gold rounded-full px-4 py-2 hover:bg-gold hover:text-white transition" data-video="true">▶ Watch Video</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Locations -->
+  <section id="locations" class="py-24 lg:py-32 bg-mesh-light">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      <div class="reveal max-w-3xl mb-14">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Where we are</div>
+        <h2 class="font-display text-5xl mt-3">Locations</h2>
+        <p class="mt-5 text-lg text-slate-600 leading-8">Infinnovate programs are delivered across multiple sites in Southern California — in schools, community centers, and our dedicated Innovation Center.</p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 reveal-stagger reveal">
+        <div class="location-card">
+          <div class="text-3xl">📍</div>
+          <div><h3 class="font-semibold text-navy text-lg">Fullerton Innovation Center</h3><p class="mt-1 text-slate-600 text-sm">2251 Stern Goodman St. Suite A, Fullerton, CA 92833</p><p class="mt-2 text-xs text-gold font-semibold uppercase tracking-wider">Primary Campus</p></div>
+        </div>
+        <div class="location-card">
+          <div class="text-3xl">🏫</div>
+          <div><h3 class="font-semibold text-navy text-lg">Parks Jr High Conservatory</h3><p class="mt-1 text-slate-600 text-sm">Fullerton, CA</p></div>
+        </div>
+        <div class="location-card">
+          <div class="text-3xl">🏫</div>
+          <div><h3 class="font-semibold text-navy text-lg">Fountain Valley School District</h3><p class="mt-1 text-slate-600 text-sm">Fountain Valley, CA</p></div>
+        </div>
+        <div class="location-card">
+          <div class="text-3xl">🏫</div>
+          <div><h3 class="font-semibold text-navy text-lg">Fullerton School District</h3><p class="mt-1 text-slate-600 text-sm">Fullerton, CA</p></div>
+        </div>
+        <div class="location-card">
+          <div class="text-3xl">🏫</div>
+          <div><h3 class="font-semibold text-navy text-lg">Irvine Elite Academy</h3><p class="mt-1 text-slate-600 text-sm">Irvine, CA</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="bg-navy text-white">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 py-14">
-    <div class="grid gap-10 lg:grid-cols-4">
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-3 mb-5">
-          <img src="images/ppt_footer_logo.png" alt="Infinnovate" class="h-10 w-auto">
-          <div><div class="font-display text-2xl font-semibold">Infinnovate</div><div class="text-sm text-slate-300">Believe in Being Infinite™</div></div>
-        </div>
-        <p class="max-w-xl text-slate-300 leading-7">A boutique enrichment academy helping students grow in financial literacy, entrepreneurial leadership, AI fluency, and real-world confidence.</p>
+<footer class="bg-mesh-navy navy-texture text-white">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-16 pb-10">
+    <div class="mb-12"><img src="images/logo_white.png" alt="Infinnovate" class="h-12 w-auto"></div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
+      <div><h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Home</h3><ul class="space-y-2"><li><a href="index.html" class="text-slate-300 hover:text-white text-sm transition-colors">Home</a></li></ul></div>
+      <div><h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Connect</h3><ul class="space-y-2"><li><a href="student.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Student</a></li><li><a href="parent.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Parent</a></li><li><a href="school.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a School</a></li><li><a href="business.html" class="text-slate-300 hover:text-white text-sm transition-colors">I'm a Business</a></li></ul></div>
+      <div><h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">What We Do</h3><ul class="space-y-2"><li><a href="what-we-do.html#why" class="text-slate-300 hover:text-white text-sm transition-colors">Why Infinnovate</a></li><li><a href="what-we-do.html#capabilities" class="text-slate-300 hover:text-white text-sm transition-colors">Our Capabilities</a></li></ul></div>
+      <div><h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Who We Are</h3><ul class="space-y-2"><li><a href="who-we-are.html#vision" class="text-slate-300 hover:text-white text-sm transition-colors">Vision &amp; Mission</a></li><li><a href="who-we-are.html#pillars" class="text-slate-300 hover:text-white text-sm transition-colors">Our 6 Pillars</a></li><li><a href="who-we-are.html#leadership" class="text-slate-300 hover:text-white text-sm transition-colors">Leadership</a></li></ul></div>
+      <div><h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">How We Serve</h3><ul class="space-y-2"><li><a href="how-we-serve.html#programs" class="text-slate-300 hover:text-white text-sm transition-colors">Our Programs</a></li><li><a href="how-we-serve.html#journey" class="text-slate-300 hover:text-white text-sm transition-colors">Student Journey</a></li><li><a href="how-we-serve.html#locations" class="text-slate-300 hover:text-white text-sm transition-colors">Locations</a></li></ul></div>
+      <div><h3 class="text-gold text-xs font-bold uppercase tracking-[0.2em] mb-4">Contact Us</h3><ul class="space-y-2"><li><a href="contact.html" class="text-slate-300 hover:text-white text-sm transition-colors">Contact</a></li><li><a href="careers.html" class="text-slate-300 hover:text-white text-sm transition-colors">Careers</a></li><li><a href="register.html" class="text-slate-300 hover:text-white text-sm transition-colors">Register</a></li></ul></div>
+    </div>
+    <div class="mt-12 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
+      <div>© 2026 Infinnovate, Inc. All rights reserved.</div>
+      <div class="flex flex-wrap gap-5">
+        <a href="#" class="hover:text-white transition-colors">Privacy Statement</a>
+        <a href="#" class="hover:text-white transition-colors">Terms &amp; Conditions</a>
+        <a href="#" class="hover:text-white transition-colors">Accessibility Statement</a>
       </div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Visit</h3><p class="text-slate-300 leading-7">2251 Stern Goodman St. Suite A<br>Fullerton, CA 92833</p></div>
-      <div><h3 class="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-4">Contact</h3><a href="mailto:info@infinnovateinc.com" class="block text-slate-300 hover:text-white">info@infinnovateinc.com</a></div>
     </div>
-    <div class="text-center text-sm text-slate-400 mt-8 pt-4 border-t border-slate-700">
-      <a href="privacy.html" class="hover:text-white">Privacy Statement</a><span class="mx-2">·</span>
-      <a href="terms.html" class="hover:text-white">Terms &amp; Conditions</a><span class="mx-2">·</span>
-      <a href="accessibility.html" class="hover:text-white">Accessibility Statement</a>
-    </div>
-    <div class="mt-4 text-center text-sm text-slate-500">© 2026 Infinnovate, Inc.</div>
   </div>
 </footer>
-<script>document.getElementById('menuBtn')?.addEventListener('click', () => document.getElementById('mobileNav')?.classList.toggle('hidden'));</script>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
