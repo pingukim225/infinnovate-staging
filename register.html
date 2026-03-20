@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>I'm a Small Business — Infinnovate</title>
+<title>Register — Infinnovate</title>
 <meta name="description" content="Infinnovate for Education — Believe in Being Infinite™">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,17 +60,33 @@
 </header>
 
 <main>
-  <section class="hero-overlay bg-mesh-navy navy-texture text-white py-32 lg:py-44 relative">
-    <div class="hero-bg" style="background-image:url('images/IMG_6506.webp')"></div>
-    <div class="max-w-5xl mx-auto px-5 lg:px-8 text-center relative z-10">
-      <div class="reveal">
-        <div class="text-6xl">🤝</div>
-        <h1 class="font-display text-6xl mt-6">I'm a Small Business</h1>
-        <p class="mt-6 text-xl text-slate-200 leading-8 max-w-3xl mx-auto">Support the next generation while building local visibility. Community partnerships and AI business services are in development now.</p>
-        <div class="mt-8"><a href="enrollment.html#register" class="btn-gold">Get Involved</a></div>
-        <div class="mt-10 card-dark rounded-[2rem] p-8 text-left max-w-3xl mx-auto">
-          <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Coming soon</div>
-          <p class="mt-4 text-slate-300 leading-8">This page is being expanded next. For now, Parent Night is the best place to get the full overview and ask questions in person.</p>
+  <section id="register" class="bg-depth-cream bg-accent-glow py-28 lg:py-36 relative overflow-hidden">
+    <div class="float-orb" style="width:400px;height:400px;background:rgba(201,152,42,.04);top:-10%;right:-8%"></div>
+    <div class="float-orb" style="width:300px;height:300px;background:rgba(27,107,69,.03);bottom:-10%;left:-5%;animation-delay:-4s"></div>
+    <div class="max-w-6xl mx-auto px-5 lg:px-8 relative">
+      <div class="text-center reveal mb-14">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Get started</div>
+        <h1 class="font-display text-6xl mt-3">Enrollment starts with Parent Night.</h1>
+        <p class="mt-6 max-w-3xl mx-auto text-lg text-slate-600 leading-8">Our programs are tailored to your needs. Contact us to discuss enrollment options — or better yet, join us for Parent Night on March 31 to see the academy firsthand.</p>
+      </div>
+      <div class="max-w-2xl mx-auto reveal">
+        <div class="card-premium rounded-[2rem] p-8 shadow-glow">
+          <h2 class="font-display text-4xl">Tell us you're coming</h2>
+          <p class="mt-3 text-slate-600 leading-7">This form opens an email to <a href="mailto:info@infinnovateinc.com" class="text-gold font-semibold">info@infinnovateinc.com</a> so we can follow up personally.</p>
+          <form id="registerForm" class="mt-6 grid gap-4">
+            <input name="name" required placeholder="Parent name" class="input-premium">
+            <input name="email" type="email" required placeholder="Email address" class="input-premium">
+            <input name="student" placeholder="Student age / grade" class="input-premium">
+            <textarea name="message" rows="4" placeholder="What would you like to know before Parent Night?" class="input-premium"></textarea>
+            <button class="btn-gold w-full">Register for Parent Night — March 31</button>
+          </form>
+        </div>
+        <div class="mt-8 text-center">
+          <div class="rounded-[2rem] bg-mesh-navy navy-texture text-white p-7 relative overflow-hidden">
+            <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Visit us</div>
+            <div class="mt-3 text-xl font-semibold">2251 Stern Goodman St. Suite A, Fullerton, CA 92833</div>
+            <div class="mt-2 text-slate-300"><a href="mailto:info@infinnovateinc.com" class="text-white">info@infinnovateinc.com</a></div>
+          </div>
         </div>
       </div>
     </div>
@@ -86,11 +102,20 @@
     </div>
     <div class="mt-10 border-t border-white/10 pt-6 flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
       <div>© 2026 Infinnovate, Inc. — Believe in Being Infinite™</div>
-      <div class="flex gap-5"><a href="parent.html">Parents</a><a href="programs.html">Programs</a><a href="enrollment.html">Enrollment</a></div>
+      <div class="flex gap-5"><a href="parent.html">Parents</a><a href="how-we-serve.html">Programs</a><a href="enrollment.html">Enrollment</a></div>
     </div>
   </div>
 </footer>
 
 <script src="premium.js?v=20260317b"></script>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
