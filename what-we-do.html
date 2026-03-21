@@ -38,8 +38,10 @@
   .card-premium{background:#fff;border:1px solid #e2e8f0;border-radius:1.5rem;padding:2rem}
   .subpage-hero{background:linear-gradient(160deg,#060e1c 0%,#0f2240 40%,#0A1628 100%);position:relative;overflow:hidden}
   .subpage-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
-  .capability-card{border:1px solid #e2e8f0;border-radius:1.25rem;padding:1.5rem;background:#fff;transition:transform .25s,box-shadow .25s,border-color .25s}
-  .capability-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(10,22,40,.08);border-color:#C9982A}
+  .capability-card{border:1px solid #e2e8f0;border-radius:1.25rem;padding:1.5rem;background:#fff;transition:transform .35s cubic-bezier(.25,.46,.45,.94),box-shadow .35s ease,border-color .35s ease}
+  .capability-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 40px rgba(10,22,40,.1);border-color:#C9982A}
+  @keyframes gridPulse{0%{opacity:.06}100%{opacity:.12}}
+  @keyframes float-slow{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-18px) scale(1.04)}}
   .persona-card{border:1px solid #e2e8f0;border-radius:1.5rem;padding:2rem;background:#fff;text-align:center;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:pointer}
   .persona-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(10,22,40,.1);border-color:#C9982A}
   .location-card{border:1px solid #e2e8f0;border-radius:1.25rem;padding:1.5rem;background:#fff;display:flex;align-items:flex-start;gap:1rem;transition:border-color .25s}
@@ -177,8 +179,13 @@
 </header>
 
 <main>
-  <!-- Hero -->
-  <section class="subpage-hero text-white py-28 lg:py-36">
+  <!-- Hero with AI-themed animated background -->
+  <section class="subpage-hero text-white py-28 lg:py-36 relative overflow-hidden">
+    <!-- Animated grid overlay -->
+    <div class="absolute inset-0 opacity-10" style="background-image:linear-gradient(rgba(201,152,42,.3) 1px, transparent 1px),linear-gradient(90deg, rgba(201,152,42,.3) 1px, transparent 1px);background-size:60px 60px;animation:gridPulse 4s ease-in-out infinite alternate"></div>
+    <!-- Floating orbs -->
+    <div class="absolute top-20 right-10 w-64 h-64 rounded-full" style="background:radial-gradient(circle,rgba(201,152,42,.15),transparent 70%);animation:float-slow 6s ease-in-out infinite"></div>
+    <div class="absolute bottom-10 left-10 w-48 h-48 rounded-full" style="background:radial-gradient(circle,rgba(27,107,69,.1),transparent 70%);animation:float-slow 8s ease-in-out infinite reverse"></div>
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10">
       <div class="text-gold text-sm font-bold uppercase tracking-[0.2em] reveal">Our approach</div>
       <h1 class="font-display text-6xl lg:text-7xl mt-4 max-w-3xl reveal">What We Do</h1>
@@ -220,26 +227,79 @@
     </div>
   </section>
 
-  <!-- Section 2: Our Capabilities -->
-  <section id="capabilities" class="py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+  <!-- Section 2: Our Capabilities — AI Visual Refresh -->
+  <section id="capabilities" class="py-24 lg:py-32 relative overflow-hidden">
+    <!-- Subtle animated background gradient -->
+    <div class="absolute inset-0" style="background:linear-gradient(135deg,#f8f6f1 0%,#fff 30%,#f0ede6 60%,#f8f6f1 100%)"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full" style="background:radial-gradient(circle,rgba(201,152,42,.06),transparent 60%);filter:blur(60px)"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full" style="background:radial-gradient(circle,rgba(27,107,69,.04),transparent 60%);filter:blur(60px)"></div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal max-w-3xl mb-14">
         <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our Capabilities</div>
         <h2 class="font-display text-5xl mt-3">This Is Not Tutoring.<br>This Is an Academy.</h2>
       </div>
       <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4 reveal-stagger reveal">
-        <div class="capability-card"><div class="text-3xl mb-3">🏗️</div><h3 class="font-semibold text-navy text-lg">Project-based learning</h3><p class="mt-2 text-slate-600 text-sm leading-6">We build real impact, not worksheets.</p></div>
-        <div class="capability-card"><div class="text-3xl mb-3">📈</div><h3 class="font-semibold text-navy text-lg">Business simulations</h3><p class="mt-2 text-slate-600 text-sm leading-6">Run companies, make decisions.</p></div>
-        <div class="capability-card"><div class="text-3xl mb-3">💰</div><h3 class="font-semibold text-navy text-lg">Financial literacy</h3><p class="mt-2 text-slate-600 text-sm leading-6">Money, budgets, and real economics.</p></div>
-        <div class="capability-card"><div class="text-3xl mb-3">🤖</div><h3 class="font-semibold text-navy text-lg">AI fluency</h3><p class="mt-2 text-slate-600 text-sm leading-6">Modern tools, used responsibly.</p></div>
-        <div class="capability-card"><div class="text-3xl mb-3">🧭</div><h3 class="font-semibold text-navy text-lg">Leadership training</h3><p class="mt-2 text-slate-600 text-sm leading-6">Confidence to lead from day one.</p></div>
-        <div class="capability-card"><div class="text-3xl mb-3">🎤</div><h3 class="font-semibold text-navy text-lg">Presentations</h3><p class="mt-2 text-slate-600 text-sm leading-6">Communicate ideas with clarity.</p></div>
-        <div class="capability-card"><div class="text-3xl mb-3">🤝</div><h3 class="font-semibold text-navy text-lg">Team challenges</h3><p class="mt-2 text-slate-600 text-sm leading-6">Collaborate, negotiate, deliver.</p></div>
-        <div class="capability-card"><div class="text-3xl mb-3">⚡</div><h3 class="font-semibold text-navy text-lg">Real responsibility</h3><p class="mt-2 text-slate-600 text-sm leading-6">Ownership &amp; accountability that builds character.</p></div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">🏗️</div><h3 class="font-semibold text-navy text-lg">Project-based learning</h3><p class="mt-2 text-slate-600 text-sm leading-6">We build real impact, not worksheets.</p></div>
+        </div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">📈</div><h3 class="font-semibold text-navy text-lg">Business simulations</h3><p class="mt-2 text-slate-600 text-sm leading-6">Run companies, make decisions.</p></div>
+        </div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">💰</div><h3 class="font-semibold text-navy text-lg">Financial literacy</h3><p class="mt-2 text-slate-600 text-sm leading-6">Money, budgets, and real economics.</p></div>
+        </div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80" style="border:2px solid transparent;background-clip:padding-box;box-shadow:0 0 0 2px rgba(201,152,42,.2)">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/10 to-sage/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">🤖</div><h3 class="font-semibold text-navy text-lg">AI fluency</h3><p class="mt-2 text-slate-600 text-sm leading-6">Modern tools, used responsibly. The skill that multiplies every other skill.</p></div>
+        </div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">🧭</div><h3 class="font-semibold text-navy text-lg">Leadership training</h3><p class="mt-2 text-slate-600 text-sm leading-6">Confidence to lead from day one.</p></div>
+        </div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">🎤</div><h3 class="font-semibold text-navy text-lg">Presentations</h3><p class="mt-2 text-slate-600 text-sm leading-6">Communicate ideas with clarity.</p></div>
+        </div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">🤝</div><h3 class="font-semibold text-navy text-lg">Team challenges</h3><p class="mt-2 text-slate-600 text-sm leading-6">Collaborate, negotiate, deliver.</p></div>
+        </div>
+        <div class="capability-card group relative overflow-hidden backdrop-blur-sm bg-white/80">
+          <div class="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative"><div class="text-3xl mb-3">⚡</div><h3 class="font-semibold text-navy text-lg">Real responsibility</h3><p class="mt-2 text-slate-600 text-sm leading-6">Ownership &amp; accountability that builds character.</p></div>
+        </div>
       </div>
+
+      <!-- AI-themed feature highlight -->
+      <div class="mt-20 reveal">
+        <div class="rounded-[2rem] border border-slate-200 bg-white/70 backdrop-blur p-10 lg:p-14 relative overflow-hidden">
+          <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full" style="background:radial-gradient(circle,rgba(201,152,42,.08),transparent 60%)"></div>
+          <div class="relative grid gap-8 lg:grid-cols-2 items-center">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-navy/5 px-4 py-2 text-sm font-semibold text-navy mb-4">
+                <span class="text-lg">🧠</span> AI-Powered Learning
+              </div>
+              <h3 class="font-display text-4xl text-navy">Every Skill Is Amplified by AI</h3>
+              <p class="mt-4 text-lg text-slate-600 leading-8">AI isn't a separate class — it's woven into every project. Students use it for branding, financial models, research reports, and pitch decks. The result: graduates who are comfortable, capable, and responsible with the tools that will define their generation.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="rounded-xl bg-navy/5 p-4 text-center"><div class="text-2xl">🔎</div><div class="mt-2 text-sm font-semibold text-navy">Research</div></div>
+              <div class="rounded-xl bg-navy/5 p-4 text-center"><div class="text-2xl">✍️</div><div class="mt-2 text-sm font-semibold text-navy">Writing</div></div>
+              <div class="rounded-xl bg-navy/5 p-4 text-center"><div class="text-2xl">💻</div><div class="mt-2 text-sm font-semibold text-navy">Coding</div></div>
+              <div class="rounded-xl bg-navy/5 p-4 text-center"><div class="text-2xl">🎨</div><div class="mt-2 text-sm font-semibold text-navy">Design</div></div>
+              <div class="rounded-xl bg-navy/5 p-4 text-center"><div class="text-2xl">📊</div><div class="mt-2 text-sm font-semibold text-navy">Business</div></div>
+              <div class="rounded-xl bg-navy/5 p-4 text-center"><div class="text-2xl">🧩</div><div class="mt-2 text-sm font-semibold text-navy">Problem Solving</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="mt-16 text-center reveal">
         <p class="font-display text-3xl text-navy">Our students don't just learn.<br>They become <span class="text-gold">'future ready'</span>.</p>
-        <a href="how-we-serve.html" class="mt-8 inline-flex rounded-full bg-navy px-8 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg">See How We Serve</a>
+        <a href="how-we-serve.html" class="mt-8 inline-flex rounded-full bg-navy px-8 py-4 text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-lg hover:bg-gold transition-colors duration-300">See How We Serve</a>
       </div>
     </div>
   </section>
