@@ -119,6 +119,11 @@
     .journey-card:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:#C9982A;font-size:1.2rem;font-weight:700;z-index:2}
   }
 
+  /* === Event gallery staggered animation === */
+  .event-card{opacity:0;transform:translateY(24px) scale(.97);transition:all .6s cubic-bezier(.25,.46,.45,.94)}
+  .event-card.show{opacity:1;transform:translateY(0) scale(1)}
+  #studentCarousel::-webkit-scrollbar,#esbieCarousel::-webkit-scrollbar{display:none}
+
   /* === Why Slideshow cells === */
   .why-slide-cell{background:#f0ede6}
 
@@ -261,6 +266,10 @@
     <div class="hero-slide" style="background-image:url('images/IMG_6506.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_7097.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_9010.webp')"></div>
+    <div class="hero-slide" style="background-image:url('images/jimmy_girls_tshirts.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/jimmy_basketball_group.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/jimmy_kids_pizza_making.png')"></div>
+    <div class="hero-slide" style="background-image:url('images/jimmy_outdoor_pizza.jpg')"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/30"></div>
     <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-36 pb-24 lg:pt-44 lg:pb-32">
       <div class="max-w-3xl reveal">
@@ -280,15 +289,15 @@
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl pt-12 metrics-grid">
   <div class="text-center">
-    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">190+</div>
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2" data-counter="190" data-suffix="+">0</div>
     <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Students reached through district-aligned programming.</div>
   </div>
   <div class="text-center">
-    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">19+</div>
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2" data-counter="19" data-suffix="+">0</div>
     <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Entrepreneurship and financial literacy events delivered.</div>
   </div>
   <div class="text-center">
-    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">20–25+</div>
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2" data-counter="25" data-prefix="20–" data-suffix="+">20–25+</div>
     <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Years of leadership and instructional experience guiding the academy vision.</div>
   </div>
 </div>
@@ -384,38 +393,118 @@
     </div>
   </section>
 
-  <!-- 5. ESBIE model / Journey -->
+  <!-- Student Stories Carousel (Intuit-style) -->
   <section class="py-20 lg:py-28 bg-depth-cream section-divider">
     <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
+      <div class="reveal mb-10">
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Student Stories</div>
+        <h2 class="font-display text-5xl mt-3">Meet Our Students</h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl">Real students. Real growth. Hear their journeys in their own words.</p>
+      </div>
+      <div class="relative reveal">
+        <div id="studentCarousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-2 px-2" style="scrollbar-width:none;-webkit-overflow-scrolling:touch">
+          <!-- Ruby Cho -->
+          <div class="snap-start shrink-0 w-[300px] sm:w-[340px] card-premium rounded-[2rem] p-8 border border-slate-200/80 hover:border-gold/30 transition-all duration-300">
+            <div class="w-20 h-20 rounded-full bg-navy flex items-center justify-center mb-5">
+              <span class="text-2xl font-display font-bold text-gold">RC</span>
+            </div>
+            <div class="text-xs text-gold font-bold uppercase tracking-wider">Class of '29</div>
+            <h3 class="font-display text-2xl mt-1">Ruby Cho</h3>
+            <p class="mt-3 text-slate-600 leading-7 text-sm">"Infinnovate taught me that business isn't just for adults. I learned to pitch ideas, manage a budget, and believe in myself. Now I see opportunities everywhere."</p>
+            <a href="#" class="mt-4 inline-flex items-center text-gold font-semibold text-sm hover:underline">Read her story →</a>
+          </div>
+          <!-- Grayson Park -->
+          <div class="snap-start shrink-0 w-[300px] sm:w-[340px] card-premium rounded-[2rem] p-8 border border-slate-200/80 hover:border-gold/30 transition-all duration-300">
+            <div class="w-20 h-20 rounded-full bg-navy flex items-center justify-center mb-5">
+              <span class="text-2xl font-display font-bold text-gold">GP</span>
+            </div>
+            <div class="text-xs text-gold font-bold uppercase tracking-wider">Class of '31</div>
+            <h3 class="font-display text-2xl mt-1">Grayson Park</h3>
+            <p class="mt-3 text-slate-600 leading-7 text-sm">"Before Infinnovate, I was shy about speaking up. After running my first business simulation, I realized I could lead a team. That confidence changed everything."</p>
+            <a href="#" class="mt-4 inline-flex items-center text-gold font-semibold text-sm hover:underline">Read his story →</a>
+          </div>
+          <!-- Anabelle Fahim -->
+          <div class="snap-start shrink-0 w-[300px] sm:w-[340px] card-premium rounded-[2rem] p-8 border border-slate-200/80 hover:border-gold/30 transition-all duration-300">
+            <div class="w-20 h-20 rounded-full bg-navy flex items-center justify-center mb-5">
+              <span class="text-2xl font-display font-bold text-gold">AF</span>
+            </div>
+            <div class="text-xs text-gold font-bold uppercase tracking-wider">Class of '28</div>
+            <h3 class="font-display text-2xl mt-1">Anabelle Fahim</h3>
+            <p class="mt-3 text-slate-600 leading-7 text-sm">"I used AI to design a logo for my student business — and it actually won a competition. Infinnovate showed me that creativity and technology go hand in hand."</p>
+            <a href="#" class="mt-4 inline-flex items-center text-gold font-semibold text-sm hover:underline">Read her story →</a>
+          </div>
+          <!-- Brandon Kim -->
+          <div class="snap-start shrink-0 w-[300px] sm:w-[340px] card-premium rounded-[2rem] p-8 border border-slate-200/80 hover:border-gold/30 transition-all duration-300">
+            <div class="w-20 h-20 rounded-full bg-navy flex items-center justify-center mb-5">
+              <span class="text-2xl font-display font-bold text-gold">BK</span>
+            </div>
+            <div class="text-xs text-gold font-bold uppercase tracking-wider">Class of '32</div>
+            <h3 class="font-display text-2xl mt-1">Brandon Kim</h3>
+            <p class="mt-3 text-slate-600 leading-7 text-sm">"I'm in 4th grade and I already know how to calculate profit margins. My friends think it's cool. My parents think it's incredible. I just think it's fun."</p>
+            <a href="#" class="mt-4 inline-flex items-center text-gold font-semibold text-sm hover:underline">Read his story →</a>
+          </div>
+        </div>
+        <!-- Carousel arrows -->
+        <button onclick="document.getElementById('studentCarousel').scrollBy({left:-360,behavior:'smooth'})" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 hidden lg:flex w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center hover:bg-gold hover:text-white hover:border-gold transition z-10">←</button>
+        <button onclick="document.getElementById('studentCarousel').scrollBy({left:360,behavior:'smooth'})" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 hidden lg:flex w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center hover:bg-gold hover:text-white hover:border-gold transition z-10">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ESBIE model / Journey — Five Personas -->
+  <section class="py-20 lg:py-28 bg-mesh-navy navy-texture text-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 relative">
       <div class="reveal mb-12">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The Journey</div>
-        <h2 class="font-display text-5xl mt-3">How Students Grow</h2>
-        <div class="mt-4 flex flex-wrap gap-2.5">
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Employee</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Start-Up</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Big Business</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Investor</span>
-          <span class="inline-flex items-center rounded-full bg-cream border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-700">Entrepreneur</span>
-        </div>
-        <p class="mt-6 text-lg text-slate-600 leading-8 max-w-4xl">Students progress through real stages of the business world.</p>
-        <div class="mt-4 flex flex-wrap gap-2.5 max-w-4xl">
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">💬 Communication</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🧭 Strategy</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">💰 Money</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🏅 Leadership</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">✨ Innovation</span>
-          <span class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">🧠 Decisions</span>
-        </div>
-        <p class="mt-4 text-lg text-slate-700 font-semibold">They learn how the world works.</p>
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">The ESBIE Framework</div>
+        <h2 class="font-display text-5xl mt-3">Five Personas.<br>One Journey.</h2>
+        <p class="mt-4 text-xl text-slate-300 max-w-3xl">Students progress through real stages of the business world — learning how each persona thinks, operates, and creates value.</p>
       </div>
 
-      <div class="grid gap-5 md:grid-cols-5 reveal-stagger reveal">
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Employee</div><p class="mt-3 text-slate-600 leading-7">Learn responsibility, teamwork, communication, and what it means to contribute inside a real organization.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">S</div><div class="mt-3 text-xl font-semibold">Start-Up</div><p class="mt-3 text-slate-600 leading-7">Learn creativity, initiative, problem solving, and how to build something new from the ground up.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">B</div><div class="mt-3 text-xl font-semibold">Big Business</div><p class="mt-3 text-slate-600 leading-7">Learn systems, scale, leadership, structure, and how larger organizations make decisions and deliver results.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">I</div><div class="mt-3 text-xl font-semibold">Investor</div><p class="mt-3 text-slate-600 leading-7">Learn money, risk, opportunity, and how to evaluate ideas, businesses, and long-term value.</p></div>
-        <div class="journey-card card-premium rounded-[2rem] p-6 text-left h-full"><div class="font-display text-5xl text-gold">E</div><div class="mt-3 text-xl font-semibold">Entrepreneur</div><p class="mt-3 text-slate-600 leading-7">Bring it all together — leadership, initiative, resilience, and execution — to create, launch, and lead.</p></div>
+      <!-- ESBIE Carousel (scrollable on mobile, grid on desktop) -->
+      <div class="relative">
+        <div id="esbieCarousel" class="flex lg:grid lg:grid-cols-5 gap-5 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scroll-smooth pb-4 lg:pb-0" style="scrollbar-width:none">
+          <div class="snap-start shrink-0 w-[260px] lg:w-auto journey-card rounded-[2rem] bg-white/5 border border-white/10 p-7 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
+            <div class="font-display text-6xl text-gold">E</div>
+            <div class="mt-3 text-xl font-semibold">Employee</div>
+            <p class="mt-3 text-slate-400 leading-7 text-sm">Learn responsibility, teamwork, communication, and what it means to contribute inside a real organization.</p>
+            <button class="mt-4 text-gold text-sm font-semibold hover:underline">▶ Watch Video</button>
+          </div>
+          <div class="snap-start shrink-0 w-[260px] lg:w-auto journey-card rounded-[2rem] bg-white/5 border border-white/10 p-7 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
+            <div class="font-display text-6xl text-gold">S</div>
+            <div class="mt-3 text-xl font-semibold">Small Business</div>
+            <p class="mt-3 text-slate-400 leading-7 text-sm">Learn creativity, initiative, problem solving, and how to build something new from the ground up.</p>
+            <button class="mt-4 text-gold text-sm font-semibold hover:underline">▶ Watch Video</button>
+          </div>
+          <div class="snap-start shrink-0 w-[260px] lg:w-auto journey-card rounded-[2rem] bg-white/5 border border-white/10 p-7 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
+            <div class="font-display text-6xl text-gold">B</div>
+            <div class="mt-3 text-xl font-semibold">Big Business</div>
+            <p class="mt-3 text-slate-400 leading-7 text-sm">Learn systems, scale, leadership, structure, and how larger organizations make decisions and deliver results.</p>
+            <button class="mt-4 text-gold text-sm font-semibold hover:underline">▶ Watch Video</button>
+          </div>
+          <div class="snap-start shrink-0 w-[260px] lg:w-auto journey-card rounded-[2rem] bg-white/5 border border-white/10 p-7 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
+            <div class="font-display text-6xl text-gold">I</div>
+            <div class="mt-3 text-xl font-semibold">Investor</div>
+            <p class="mt-3 text-slate-400 leading-7 text-sm">Learn money, risk, opportunity, and how to evaluate ideas, businesses, and long-term value.</p>
+            <button class="mt-4 text-gold text-sm font-semibold hover:underline">▶ Watch Video</button>
+          </div>
+          <div class="snap-start shrink-0 w-[260px] lg:w-auto journey-card rounded-[2rem] bg-white/5 border border-white/10 p-7 hover:bg-white/10 hover:border-gold/30 transition-all duration-300">
+            <div class="font-display text-6xl text-gold">E</div>
+            <div class="mt-3 text-xl font-semibold">Entrepreneur</div>
+            <p class="mt-3 text-slate-400 leading-7 text-sm">Bring it all together — leadership, initiative, resilience, and execution — to create, launch, and lead.</p>
+            <button class="mt-4 text-gold text-sm font-semibold hover:underline">▶ Watch Video</button>
+          </div>
+        </div>
       </div>
+
+      <div class="reveal mt-10 flex flex-wrap gap-3">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">💬 Communication</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">🧭 Strategy</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">💰 Money</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">🏅 Leadership</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">✨ Innovation</span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-semibold text-slate-300">🧠 Decisions</span>
+      </div>
+      <p class="reveal mt-6 text-xl text-slate-200 font-semibold">They learn how the world works.</p>
     </div>
   </section>
 
@@ -549,13 +638,22 @@
         <h2 class="font-display text-5xl mt-3">One Academy.<br>Five Personas.</h2>
         <p class="mt-4 text-slate-600 text-lg leading-8">Infinnovate connects all five.</p>
       </div>
-      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        <a href="parent.html" class="card-lift reveal rounded-[2rem] border-2 border-gold bg-white p-8 shadow-glow">
-          <div class="text-4xl">🛡️</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Parent</h3><p class="mt-3 text-slate-600 leading-7">See how Infinnovate prepares your child for life with confidence, business fluency, and practical skills.</p>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+        <a href="parent.html" class="card-lift reveal rounded-[2rem] border-2 border-gold bg-white p-7 shadow-glow">
+          <div class="text-4xl">🛡️</div><h3 class="mt-4 text-xl font-display font-semibold">I'm a Parent</h3><p class="mt-2 text-slate-600 leading-7 text-sm">See how Infinnovate prepares your child for life with confidence and business fluency.</p>
         </a>
-        <a href="student.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🎓</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Student</h3><p class="mt-3 text-slate-600 leading-7">A polished preview of the student experience, with the full portal coming soon.</p></a>
-        <a href="school.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🏫</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a School</h3><p class="mt-3 text-slate-600 leading-7">District-aligned enrichment, partnership-ready delivery, and a clear local track record.</p></a>
-        <a href="business.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-8"><div class="text-4xl">🤝</div><h3 class="mt-5 text-2xl font-display font-semibold">I'm a Small Business</h3><p class="mt-3 text-slate-600 leading-7">Community partnerships, sponsorship opportunities, and AI-powered business support.</p></a>
+        <a href="student.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-7">
+          <div class="text-4xl">🎓</div><h3 class="mt-4 text-xl font-display font-semibold">I'm a Student</h3><p class="mt-2 text-slate-600 leading-7 text-sm">A polished preview of the student experience, with the full portal coming soon.</p>
+        </a>
+        <a href="school.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-7">
+          <div class="text-4xl">🏫</div><h3 class="mt-4 text-xl font-display font-semibold">I'm a School</h3><p class="mt-2 text-slate-600 leading-7 text-sm">District-aligned enrichment, partnership-ready delivery, and a clear local track record.</p>
+        </a>
+        <a href="business.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-7">
+          <div class="text-4xl">🤝</div><h3 class="mt-4 text-xl font-display font-semibold">I'm a Business</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Community partnerships, sponsorship opportunities, and AI-powered business support.</p>
+        </a>
+        <a href="connect.html" class="card-lift reveal rounded-[2rem] border border-slate-200 bg-white p-7">
+          <div class="text-4xl">🚀</div><h3 class="mt-4 text-xl font-display font-semibold">I'm an Investor</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Learn about our vision and the growing opportunity to support next-generation education.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -598,15 +696,55 @@
         </div>
         <p class="max-w-2xl text-slate-600 text-lg leading-8">Business challenges<br>Live events<br>Student storefronts<br>Presentations<br>Competitions<br>Entrepreneurship labs<br>Leadership roles<br><br>Confidence comes from experience.</p>
       </div>
-      <div class="masonry reveal">
-        <img src="images/IMG_7097.webp" alt="Students doing hands-on activity" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_9010.webp" alt="Student presenting at whiteboard" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7569.webp" alt="Students outdoors on sports field" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7041.webp" alt="Young student engaged in classroom activity" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7478.webp" alt="Students collaborating in group work" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_6564.webp" alt="Group activity inside Infinnovate" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_7732.webp" alt="Obeya room and progress wall" class="rounded-[1.6rem] shadow-lg w-full">
-        <img src="images/IMG_6359.webp" alt="Outdoor student event with food" class="rounded-[1.6rem] shadow-lg w-full">
+      <div class="masonry reveal-stagger reveal" id="eventGallery">
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_7097.webp" alt="Students doing hands-on activity" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_coach_pizza.jpg" alt="Coach Jimmy teaching pizza making" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_9010.webp" alt="Student presenting at whiteboard" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_kids_pizza_making.png" alt="Kids making pizza in Infinnovate shirts" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_basketball_group.jpg" alt="Group photo with basketball" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_7569.webp" alt="Students outdoors on sports field" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_girls_tshirts.jpg" alt="Girls with Infinnovate t-shirts outdoors" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_outdoor_pizza.jpg" alt="Outdoor pizza-making event" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_classroom_girls.jpg" alt="Students at desk" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_7041.webp" alt="Young student engaged in classroom activity" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_student_packaging.jpg" alt="Student working with boxes" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/jimmy_classroom_lab.jpg" alt="Students in lab" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_7478.webp" alt="Students collaborating in group work" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_6564.webp" alt="Group activity inside Infinnovate" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_7732.webp" alt="Obeya room and progress wall" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
+        <div class="event-card mb-4 break-inside-avoid rounded-[1.6rem] overflow-hidden shadow-lg group cursor-pointer">
+          <img src="images/IMG_6359.webp" alt="Outdoor student event with food" class="w-full transition-transform duration-500 group-hover:scale-110">
+        </div>
       </div>
     </div>
   </section>
@@ -818,19 +956,21 @@
   document.querySelectorAll('[data-counter]').forEach(el => {
     const target = Number(el.dataset.counter);
     const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(!entry.isIntersecting) return;
-        let start = 0; const dur = 1600; const startTime = performance.now();
+        let start = 0; const dur = 2000; const startTime = performance.now();
         function tick(now){
           const progress = Math.min((now-startTime)/dur,1);
-          const value = Math.floor(progress*target);
-          el.textContent = value + suffix;
-          if(progress < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
+          const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+          const value = Math.floor(eased*target);
+          el.textContent = prefix + value + suffix;
+          if(progress < 1) requestAnimationFrame(tick); else el.textContent = prefix + target + suffix;
         }
         requestAnimationFrame(tick); io.disconnect();
       });
-    }, {threshold:.4});
+    }, {threshold:.3});
     io.observe(el);
   });
 
@@ -885,6 +1025,24 @@ Message: ${fd.get('message')}`);
 
 
 <script>(function(){ const hdr = document.getElementById('site-header'); window.addEventListener('scroll', function(){ if(window.scrollY > 80){ hdr.classList.add('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.remove('bg-transparent'); } else { hdr.classList.remove('bg-navy/90','backdrop-blur','border-b','border-white/10'); hdr.classList.add('bg-transparent'); } }, {passive:true}); })();</script>
+
+<!-- Event gallery staggered reveal -->
+<script>
+(function(){
+  const cards = document.querySelectorAll('.event-card');
+  if(!cards.length) return;
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const idx = Array.from(cards).indexOf(entry.target);
+        setTimeout(()=>entry.target.classList.add('show'), idx * 80);
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.1});
+  cards.forEach(c=>io.observe(c));
+})();
+</script>
 
 <!-- Why Infinnovate: Image Slideshow (cycles groups of 4 from pool of images) -->
 <script>
