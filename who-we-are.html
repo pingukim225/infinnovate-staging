@@ -397,10 +397,19 @@
   const menuBtn = document.getElementById('menuBtn');
   const mobileNav = document.getElementById('mobileNav');
   if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } });
-  }, {threshold:.15});
-  document.querySelectorAll('.reveal,.reveal-stagger').forEach(el => observer.observe(el));
+  function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+document.addEventListener('DOMContentLoaded', revealOnScroll);
+revealOnScroll();
 
   // Pillars Carousel
   (function(){

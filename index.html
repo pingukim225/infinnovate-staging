@@ -266,10 +266,7 @@
     <div class="hero-slide" style="background-image:url('images/IMG_6506.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_7097.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_9010.webp')"></div>
-    <div class="hero-slide" style="background-image:url('images/jimmy_girls_tshirts.jpg')"></div>
     <div class="hero-slide" style="background-image:url('images/jimmy_basketball_group.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('images/jimmy_kids_pizza_making.png')"></div>
-    <div class="hero-slide" style="background-image:url('images/jimmy_outdoor_pizza.jpg')"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/30"></div>
     <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-36 pb-24 lg:pt-44 lg:pb-32">
       <div class="max-w-3xl reveal">
@@ -297,7 +294,7 @@
     <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Entrepreneurship and financial literacy events delivered.</div>
   </div>
   <div class="text-center">
-    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2" data-counter="25" data-prefix="20–" data-suffix="+">20–25+</div>
+    <div class="font-display text-5xl md:text-6xl font-bold text-gold mb-2">20–25+</div>
     <div class="text-sm uppercase tracking-[0.2em] text-slate-400">Years of leadership and instructional experience guiding the academy vision.</div>
   </div>
 </div>
@@ -944,10 +941,19 @@
   const mobileNav = document.getElementById('mobileNav');
   if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
 
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('show'); } });
-  }, {threshold:.15});
-  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el=>observer.observe(el));
+  function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal, .reveal-stagger');
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+document.addEventListener('DOMContentLoaded', revealOnScroll);
+revealOnScroll();
 
   document.querySelectorAll('[data-counter]').forEach(el => {
     const target = Number(el.dataset.counter);
