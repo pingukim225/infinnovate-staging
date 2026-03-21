@@ -193,7 +193,7 @@
       <a href="#pillars" class="text-navy hover:text-gold transition">Our Values</a>
       <a href="#leadership" class="text-navy hover:text-gold transition">Leadership</a>
       <a href="#expertise" class="text-navy hover:text-gold transition">Expertise</a>
-      <a href="#awards" class="text-navy hover:text-gold transition">Awards &amp; Recognition</a>
+      <a href="#stories" class="text-navy hover:text-gold transition">Stories &amp; Impact</a>
     </div>
   </nav>
 
@@ -216,15 +216,50 @@
           </blockquote>
           <div class="mt-10" id="pillars">
             <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Our Values</div>
-            <h3 class="font-display text-3xl mt-3">The six pillars behind the experience.</h3>
+            <h3 class="font-display text-3xl mt-3">Our 6 Life Pillars</h3>
             <p class="mt-3 text-slate-600 leading-7 mb-8">Every program, every interaction, every lesson is guided by these.</p>
-            <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3 reveal-stagger reveal">
-              <div class="pillar-card card-premium"><div class="flex items-start gap-4"><img src="images/pillars/spiritual.png" alt="Spiritual" class="h-12 w-12"><div><h3 class="font-display text-2xl">Spiritual</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Character, values, identity, and purpose.</p></div></div></div>
-              <div class="pillar-card card-premium"><div class="flex items-start gap-4"><img src="images/pillars/academics.png" alt="Academics" class="h-12 w-12"><div><h3 class="font-display text-2xl">Academics</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Strong learning habits, discipline, focus, and intellectual growth.</p></div></div></div>
-              <div class="pillar-card card-premium"><div class="flex items-start gap-4"><img src="images/pillars/health.png" alt="Health" class="h-12 w-12"><div><h3 class="font-display text-2xl">Health</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Physical wellness, energy, resilience, and healthy routines.</p></div></div></div>
-              <div class="pillar-card card-premium"><div class="flex items-start gap-4"><img src="images/pillars/finances.png" alt="Finances" class="h-12 w-12"><div><h3 class="font-display text-2xl">Finances</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Money management, saving, budgeting, and financial literacy.</p></div></div></div>
-              <div class="pillar-card card-premium"><div class="flex items-start gap-4"><img src="images/pillars/social.png" alt="Social" class="h-12 w-12"><div><h3 class="font-display text-2xl">Social</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Communication, relationships, teamwork, and confidence with others.</p></div></div></div>
-              <div class="pillar-card card-premium"><div class="flex items-start gap-4"><img src="images/pillars/career.png" alt="Career" class="h-12 w-12"><div><h3 class="font-display text-2xl">Career</h3><p class="mt-2 text-slate-600 leading-7 text-sm">Exposure to business, leadership, entrepreneurship, and future pathways.</p></div></div></div>
+            <!-- Pillars Carousel -->
+            <div class="relative reveal">
+              <div id="pillarsCarousel" class="overflow-hidden rounded-[2rem]">
+                <div id="pillarsTrack" class="flex transition-transform duration-500 ease-in-out">
+                  <div class="w-full shrink-0 flex flex-col items-center text-center p-10 bg-white rounded-[2rem] border border-slate-200">
+                    <img src="images/pillars/spiritual.png" alt="Spiritual" class="h-28 w-28 mb-5">
+                    <h3 class="font-display text-3xl">Spiritual</h3>
+                    <p class="mt-3 text-slate-600 leading-7 max-w-md">In God we trust. Character, values, identity, and purpose — the foundation of everything we build.</p>
+                  </div>
+                  <div class="w-full shrink-0 flex flex-col items-center text-center p-10 bg-white rounded-[2rem] border border-slate-200">
+                    <img src="images/pillars/academics.png" alt="Academics" class="h-28 w-28 mb-5">
+                    <h3 class="font-display text-3xl">Academics</h3>
+                    <p class="mt-3 text-slate-600 leading-7 max-w-md">We foster a love of learning, creating opportunities for intellectual growth and achievement.</p>
+                  </div>
+                  <div class="w-full shrink-0 flex flex-col items-center text-center p-10 bg-white rounded-[2rem] border border-slate-200">
+                    <img src="images/pillars/health.png" alt="Health" class="h-28 w-28 mb-5">
+                    <h3 class="font-display text-3xl">Health</h3>
+                    <p class="mt-3 text-slate-600 leading-7 max-w-md">We champion well-being, encouraging healthy habits and a balanced lifestyle.</p>
+                  </div>
+                  <div class="w-full shrink-0 flex flex-col items-center text-center p-10 bg-white rounded-[2rem] border border-slate-200">
+                    <img src="images/pillars/finances.png" alt="Finances" class="h-28 w-28 mb-5">
+                    <h3 class="font-display text-3xl">Finances</h3>
+                    <p class="mt-3 text-slate-600 leading-7 max-w-md">We promote financial literacy, empowering individuals on their path to financial freedom.</p>
+                  </div>
+                  <div class="w-full shrink-0 flex flex-col items-center text-center p-10 bg-white rounded-[2rem] border border-slate-200">
+                    <img src="images/pillars/social.png" alt="Social" class="h-28 w-28 mb-5">
+                    <h3 class="font-display text-3xl">Social</h3>
+                    <p class="mt-3 text-slate-600 leading-7 max-w-md">We cultivate a supportive and inclusive community, fostering collaboration and respect.</p>
+                  </div>
+                  <div class="w-full shrink-0 flex flex-col items-center text-center p-10 bg-white rounded-[2rem] border border-slate-200">
+                    <img src="images/pillars/career.png" alt="Career" class="h-28 w-28 mb-5">
+                    <h3 class="font-display text-3xl">Career</h3>
+                    <p class="mt-3 text-slate-600 leading-7 max-w-md">We inspire a relentless pursuit of purpose-driven careers that ignite passion and create meaningful impact.</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Carousel controls -->
+              <div class="flex items-center justify-center gap-4 mt-6">
+                <button id="pillarPrev" class="w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center hover:bg-gold hover:text-white hover:border-gold transition">←</button>
+                <div id="pillarDots" class="flex gap-2"></div>
+                <button id="pillarNext" class="w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 flex items-center justify-center hover:bg-gold hover:text-white hover:border-gold transition">→</button>
+              </div>
             </div>
           </div>
         </div>
@@ -284,18 +319,53 @@
     </div>
   </section>
 
-  <!-- Awards & Recognition -->
-  <section id="awards" class="py-24 lg:py-32 bg-mesh-light">
+  <!-- Stories & Impact -->
+  <section id="stories" class="py-24 lg:py-32 bg-mesh-light">
     <div class="max-w-7xl mx-auto px-5 lg:px-8">
       <div class="reveal max-w-3xl mb-10">
-        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Awards &amp; Recognition</div>
-        <h2 class="font-display text-5xl mt-3">Our Stories &amp; Impact</h2>
-        <p class="mt-6 text-lg text-slate-600 leading-8">Stories of students who've grown through the Infinnovate experience. More coming soon.</p>
+        <div class="text-gold text-sm font-bold uppercase tracking-[0.2em]">Stories &amp; Impact</div>
+        <h2 class="font-display text-5xl mt-3">Real Students. Real Growth.</h2>
+        <p class="mt-6 text-lg text-slate-600 leading-8">Hear from the students and families who've experienced the Infinnovate difference.</p>
       </div>
-      <div class="grid gap-6 md:grid-cols-3 reveal-stagger reveal">
-        <div class="card-premium text-center opacity-60"><div class="font-display text-2xl text-navy">Student Story</div><p class="mt-3 text-slate-500 text-sm">Coming soon.</p></div>
-        <div class="card-premium text-center opacity-60"><div class="font-display text-2xl text-navy">Partner Impact</div><p class="mt-3 text-slate-500 text-sm">Coming soon.</p></div>
-        <div class="card-premium text-center opacity-60"><div class="font-display text-2xl text-navy">Community Recognition</div><p class="mt-3 text-slate-500 text-sm">Coming soon.</p></div>
+      <!-- Impact Stories Carousel -->
+      <div class="relative reveal">
+        <div id="impactCarousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-2 px-2" style="scrollbar-width:none">
+          <div class="snap-start shrink-0 w-[320px] sm:w-[380px] card-premium rounded-[2rem] p-8 border border-slate-200/80">
+            <div class="text-gold text-4xl mb-4">"</div>
+            <p class="text-slate-700 leading-7">"My daughter came home talking about profit margins and business plans. She's in 5th grade. Infinnovate is teaching her things I didn't learn until college."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center"><span class="text-gold font-bold text-sm">SP</span></div>
+              <div><div class="font-semibold text-sm">Sarah P.</div><div class="text-xs text-slate-500">Parent — Fullerton</div></div>
+            </div>
+          </div>
+          <div class="snap-start shrink-0 w-[320px] sm:w-[380px] card-premium rounded-[2rem] p-8 border border-slate-200/80">
+            <div class="text-gold text-4xl mb-4">"</div>
+            <p class="text-slate-700 leading-7">"I used to be afraid of speaking in front of people. After Infinnovate, I pitched my business idea to a room of adults — and they loved it."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center"><span class="text-gold font-bold text-sm">RC</span></div>
+              <div><div class="font-semibold text-sm">Ruby C.</div><div class="text-xs text-slate-500">Student — Class of '29</div></div>
+            </div>
+          </div>
+          <div class="snap-start shrink-0 w-[320px] sm:w-[380px] card-premium rounded-[2rem] p-8 border border-slate-200/80">
+            <div class="text-gold text-4xl mb-4">"</div>
+            <p class="text-slate-700 leading-7">"The partnership with Infinnovate brought real entrepreneurship education into our school district. Students are more engaged than we've ever seen."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center"><span class="text-gold font-bold text-sm">MR</span></div>
+              <div><div class="font-semibold text-sm">Mark R.</div><div class="text-xs text-slate-500">District Partner — OC</div></div>
+            </div>
+          </div>
+          <div class="snap-start shrink-0 w-[320px] sm:w-[380px] card-premium rounded-[2rem] p-8 border border-slate-200/80">
+            <div class="text-gold text-4xl mb-4">"</div>
+            <p class="text-slate-700 leading-7">"My son learned to budget, plan, and even use AI tools responsibly. It's the education I wish I had growing up."</p>
+            <div class="mt-6 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center"><span class="text-gold font-bold text-sm">DK</span></div>
+              <div><div class="font-semibold text-sm">David K.</div><div class="text-xs text-slate-500">Parent — Irvine</div></div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel arrows -->
+        <button onclick="document.getElementById('impactCarousel').scrollBy({left:-400,behavior:'smooth'})" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 hidden lg:flex w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center hover:bg-gold hover:text-white hover:border-gold transition z-10">←</button>
+        <button onclick="document.getElementById('impactCarousel').scrollBy({left:400,behavior:'smooth'})" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 hidden lg:flex w-10 h-10 rounded-full bg-white shadow-lg border border-slate-200 items-center justify-center hover:bg-gold hover:text-white hover:border-gold transition z-10">→</button>
       </div>
     </div>
   </section>
@@ -331,6 +401,43 @@
     entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); } });
   }, {threshold:.15});
   document.querySelectorAll('.reveal,.reveal-stagger').forEach(el => observer.observe(el));
+
+  // Pillars Carousel
+  (function(){
+    const track = document.getElementById('pillarsTrack');
+    const dotsContainer = document.getElementById('pillarDots');
+    if(!track || !dotsContainer) return;
+    const slides = track.children;
+    const total = slides.length;
+    let current = 0;
+
+    // Build dots
+    for(let i=0; i<total; i++){
+      const dot = document.createElement('button');
+      dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (i===0?'bg-gold scale-110':'bg-slate-300');
+      dot.setAttribute('aria-label','Pillar '+(i+1));
+      dotsContainer.appendChild(dot);
+      dot.addEventListener('click', ()=>goTo(i));
+    }
+
+    function goTo(idx){
+      current = idx;
+      track.style.transform = 'translateX(-'+current*100+'%)';
+      dotsContainer.querySelectorAll('button').forEach((d,di)=>{
+        d.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 ' + (di===current?'bg-gold scale-110':'bg-slate-300');
+      });
+    }
+
+    document.getElementById('pillarPrev').addEventListener('click', ()=>goTo((current-1+total)%total));
+    document.getElementById('pillarNext').addEventListener('click', ()=>goTo((current+1)%total));
+
+    // Auto-rotate
+    setInterval(()=>goTo((current+1)%total), 5000);
+  })();
+
+  // Impact carousel scrollbar hide
+  const ic = document.getElementById('impactCarousel');
+  if(ic) ic.style.scrollbarWidth = 'none';
 </script>
 
 </body>
