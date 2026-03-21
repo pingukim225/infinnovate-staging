@@ -267,10 +267,10 @@
     <div class="hero-slide" style="background-image:url('images/IMG_7097.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/IMG_9010.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/jimmy_basketball_group.jpg')"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/55 to-navy/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/40"></div>
     <div class="relative max-w-7xl mx-auto px-5 lg:px-8 pt-36 pb-24 lg:pt-44 lg:pb-32">
       <div class="max-w-3xl reveal">
-        <h1 class="mt-6 font-display text-7xl sm:text-8xl lg:text-[10rem] leading-[.90]">Believe in Being Infinite<sup class="text-3xl align-super">™</sup></h1>
+        <h1 class="mt-6 font-display text-7xl sm:text-8xl lg:text-[10rem] leading-[.90]" style="text-shadow: 0 4px 24px rgba(0,0,0,0.6)">Believe in Being Infinite<sup class="text-3xl align-super">™</sup></h1>
         <p class="mt-6 max-w-3xl text-xl md:text-2xl leading-8 text-slate-200">Education Was Designed for the Past.<br>We Build for the Future.</p>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-200">Infinnovate is a next-generation academy where students learn<br>business, finance, leadership, and AI through real-world experience.</p>
 
@@ -955,26 +955,29 @@ window.addEventListener('load', revealOnScroll);
 document.addEventListener('DOMContentLoaded', revealOnScroll);
 revealOnScroll();
 
-  document.querySelectorAll('[data-counter]').forEach(el => {
-    const target = Number(el.dataset.counter);
-    const suffix = el.dataset.suffix || '';
-    const prefix = el.dataset.prefix || '';
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        let start = 0; const dur = 2000; const startTime = performance.now();
+  // Animated counters (scroll-based)
+  function initCounters() {
+    document.querySelectorAll('[data-counter]:not([data-counted])').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.setAttribute('data-counted', 'true');
+        const target = Number(el.dataset.counter);
+        const suffix = el.dataset.suffix || '';
+        const prefix = el.dataset.prefix || '';
+        const dur = 2000; const startTime = performance.now();
         function tick(now){
           const progress = Math.min((now-startTime)/dur,1);
-          const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-          const value = Math.floor(eased*target);
-          el.textContent = prefix + value + suffix;
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = prefix + Math.floor(eased*target) + suffix;
           if(progress < 1) requestAnimationFrame(tick); else el.textContent = prefix + target + suffix;
         }
-        requestAnimationFrame(tick); io.disconnect();
-      });
-    }, {threshold:.3});
-    io.observe(el);
-  });
+        requestAnimationFrame(tick);
+      }
+    });
+  }
+  window.addEventListener('scroll', initCounters, { passive: true });
+  window.addEventListener('load', initCounters);
+  initCounters();
 
   const deadline = new Date('2026-03-31T18:30:00-07:00').getTime();
   function paintCountdown(){

@@ -6,41 +6,52 @@ const mobileNav = document.getElementById('mobileNav');
 if (menuBtn && mobileNav) menuBtn.onclick = () => mobileNav.classList.toggle('hidden');
 
 // Scroll reveal (supports .reveal and .reveal-stagger)
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { 
-    if (entry.isIntersecting) { 
-      entry.target.classList.add('show'); 
+// Uses scroll listener instead of IntersectionObserver for maximum compatibility
+function revealOnScroll() {
+  document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add('show');
       // Trigger not-real animation
-      const grid = entry.target.closest('.not-real-grid');
+      const grid = el.closest('.not-real-grid');
       if (grid) {
-        grid.querySelectorAll('.animate-left, .animate-right').forEach((el, i) => {
-          el.style.animation = i % 2 === 0 ? 'slideInLeft 0.8s ease forwards' : 'slideInRight 0.8s ease forwards';
-          el.style.animationDelay = `${(Math.floor(i/2)) * 0.3}s`;
+        grid.querySelectorAll('.animate-left, .animate-right').forEach((item, i) => {
+          item.style.animation = i % 2 === 0 ? 'slideInLeft 0.8s ease forwards' : 'slideInRight 0.8s ease forwards';
+          item.style.animationDelay = `${(Math.floor(i/2)) * 0.3}s`;
         });
       }
-    } 
+    }
   });
-}, { threshold: .15 });
-document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => observer.observe(el));
+}
+window.addEventListener('scroll', revealOnScroll, { passive: true });
+window.addEventListener('load', revealOnScroll);
+document.addEventListener('DOMContentLoaded', revealOnScroll);
+revealOnScroll();
 
-// Animated counters
-document.querySelectorAll('[data-counter]').forEach(el => {
-  const target = Number(el.dataset.counter);
-  const suffix = el.dataset.suffix || '';
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
+// Animated counters (scroll-based for maximum compatibility)
+function initCounters() {
+  document.querySelectorAll('[data-counter]:not([data-counted])').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.setAttribute('data-counted', 'true');
+      const target = Number(el.dataset.counter);
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
       const dur = 1600; const startTime = performance.now();
       function tick(now) {
         const progress = Math.min((now - startTime) / dur, 1);
-        el.textContent = Math.floor(progress * target) + suffix;
-        if (progress < 1) requestAnimationFrame(tick); else el.textContent = target + suffix;
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = prefix + Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick); else el.textContent = prefix + target + suffix;
       }
-      requestAnimationFrame(tick); io.disconnect();
-    });
-  }, { threshold: .4 });
-  io.observe(el);
-});
+      requestAnimationFrame(tick);
+    }
+  });
+}
+window.addEventListener('scroll', initCounters, { passive: true });
+window.addEventListener('load', initCounters);
+document.addEventListener('DOMContentLoaded', initCounters);
+initCounters();
 
 // Countdown to Parent Night
 const deadline = new Date('2026-03-31T18:30:00-07:00').getTime();
